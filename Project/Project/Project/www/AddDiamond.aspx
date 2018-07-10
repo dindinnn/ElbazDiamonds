@@ -14,6 +14,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1>Insert a new stone into the system</h1>
     <table style="width: 100%;">
+        <%-- dinaaaaaaaaaaaaaaaaaaaaa --%>
         <%-- NAME --%>
         <tr>
             <td>Name:</td>
