@@ -11,7 +11,7 @@ public partial class www_AddDiamond : System.Web.UI.Page
     {
         //if (Session["User"] == null)
         //{
-        //    Response.Redirect("Admin.aspx");
+        //    Response.Redirect("HomePageAdmin.aspx");
         //}
 
     }

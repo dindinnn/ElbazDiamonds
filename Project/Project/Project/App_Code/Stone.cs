@@ -209,13 +209,13 @@ public class Stone
         Status = _status;
     }
 
-    public string insert(string name)
-    {
-        /*DBservices dbs = new DBservices();
-        int numAffected = dbs.insert_Stone(P);
-        return numAffected;*/
-        return name; 
-    }
+    //public string insert(string name)
+    //{
+    //    /*DBservices dbs = new DBservices();
+    //    int numAffected = dbs.insert_Stone(P);
+    //    return numAffected;*/
+    //    return name; 
+    //}
 
     //public List<Stone> readStoneDS()
     //{

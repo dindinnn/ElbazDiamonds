@@ -24,10 +24,10 @@
                         <h2>Username:</h2>
                     </td>
                     <td>
-                        <input id="userNameTB" type="text" runat="server" />
+                        <input id="Username_TB" type="text" runat="server" />
                     </td>
                     <td>
-                        <asp:RequiredFieldValidator ControlToValidate="userNameTB" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter user name"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ControlToValidate="Username_TB" ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please enter username"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -35,10 +35,10 @@
                         <h2>Password :</h2>
                     </td>
                     <td>
-                        <input id="passwordTB" type="password" runat="server" />
+                        <input id="Password_TB" type="password" runat="server" />
                     </td>
                     <td>
-                        <asp:RequiredFieldValidator ControlToValidate="passwordTB" ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter Password"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ControlToValidate="Password_TB" ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please enter password"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -46,13 +46,12 @@
                         <h4>Save password</h4>
                     </td>
                     <td>
-                        <asp:CheckBox ID="checkBoxCookie" runat="server" />
+                        <asp:CheckBox ID="SavePasswordCookie_CB" runat="server" />
                     </td>
                 </tr>
             </table>
-            <asp:Button ID="submitBTN" runat="server" Text="Submit" OnClick="SubmitBTN_Click"></asp:Button>
-
-            <asp:Label ID="WorngusernameorpasswordLBL" runat="server" Text="Worng user name or password" Visible="False"></asp:Label>
+            <asp:Button ID="submitAdmin_BTN" runat="server" Text="Submit" OnClick="submitAdmin_BTN_Click"></asp:Button>
+            <asp:Label ID="WrongusernameorpasswordLBL" runat="server" Text="Worng username or password" Visible="False"></asp:Label>
         </div>
     </form>
 

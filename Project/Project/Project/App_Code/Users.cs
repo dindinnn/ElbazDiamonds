@@ -1,59 +1,59 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Web;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-///// <summary>
-///// Summary description for Users
-///// </summary>
-//public class Users
-//{
-//    public Users()
-//    {
-//        //
-//        // TODO: Add constructor logic here
-//        //
-//    }
-    
-//    public Users(string _user_name, string _password)
-//    {
-//        UserName = _user_name;
-//        Password = _password;
-//    }
+/// <summary>
+/// Summary description for Users
+/// </summary>
+public class Users
+{
+    public Users()
+    {
+        //
+        // TODO: Add constructor logic here
+        //
+    }
 
-//   protected string userName;
-//    protected string password;
+    public Users(string _user_name, string _password)
+    {
+        UserName = _user_name;
+        Password = _password;
+    }
 
-//    public string UserName
-//    {
-//        get
-//        {
-//            return userName;
-//        }
+    protected string userName;
+    protected string password;
 
-//        set
-//        {
-//            userName = value;
-//        }
-//    }
+    public string UserName
+    {
+        get
+        {
+            return userName;
+        }
 
-//    public string Password
-//    {
-//        get
-//        {
-//            return password;
-//        }
+        set
+        {
+            userName = value;
+        }
+    }
 
-//        set
-//        {
-//            password = value;
-//        }
-//    }
+    public string Password
+    {
+        get
+        {
+            return password;
+        }
 
-//    public bool userAdminConformation(string username, string password)
-//    {
-//        DBservices dbs = new DBservices();
-//        return dbs.userAdminConformation("DBConnectionString", "Admin", "User_Name", username, password);
-        
-//    }
-//}
+        set
+        {
+            password = value;
+        }
+    }
+
+    //public bool userAdminConformation(string username, string password)
+    //{
+    //    DBservices dbs = new DBservices();
+    //    return dbs.userAdminConformation("DBConnectionString", "Admin", "User_Name", username, password);
+
+    //}
+}
