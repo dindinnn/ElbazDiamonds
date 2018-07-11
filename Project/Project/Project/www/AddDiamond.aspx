@@ -16,7 +16,7 @@
     <table style="width: 100%;">
       
         <%-- NAME --%>
-     <%--Tzipi--%>
+     <%--Dina--%>
          
         <tr>
             <td>Name:</td>
