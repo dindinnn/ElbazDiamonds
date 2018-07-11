@@ -15,9 +15,7 @@
     <h1>Insert a new stone into the system</h1>
     <table style="width: 100%;">
       
-        <%-- NAME --%>
-     <%--dina--%>
-         
+        <%-- NAME --%>         
         <tr>
             <td>Name:</td>
             <td>
