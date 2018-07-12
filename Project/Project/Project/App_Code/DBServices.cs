@@ -12,9 +12,9 @@ using System.Text;
 /// </summary>
 public class DBservices
 {
-    //public SqlDataAdapter da;
-    //public DataTable dt;
-    //SqlConnection con = null;
+    public SqlDataAdapter da;
+    public DataTable dt;
+    SqlConnection con = null;
 
     public DBservices()
     {

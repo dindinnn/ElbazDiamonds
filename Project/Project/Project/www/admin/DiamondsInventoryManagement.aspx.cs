@@ -9,9 +9,9 @@ public partial class www_diamondsInventoryManagement : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (Session["User"] == null)
-        //{
-        //    Response.Redirect("Admin.aspx");
-        //}
+        if (Session["User"] == null)
+        {
+            Response.Redirect("Admin.aspx");
+        }
     }
 }

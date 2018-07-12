@@ -11,7 +11,7 @@ public partial class www_AddDiamond : System.Web.UI.Page
     {
         //if (Session["User"] == null)
         //{
-        //    Response.Redirect("HomePageAdmin.aspx");
+        //    Response.Redirect("Admin.aspx");
         //}
 
     }
@@ -25,7 +25,7 @@ public partial class www_AddDiamond : System.Web.UI.Page
         //    //שמירת תמונה
         //    string fname = File_Load.FileName;
         //    string path = Server.MapPath("."); // gets the path to the current directory
-        //    File_Load.SaveAs(path + "/images/" + fname);
+        //    File_Load.SaveAs(path + "/img/" + fname);
 
         //    //בדיקה פעיל או לא פעיל 
         //    bool status;
@@ -41,7 +41,7 @@ public partial class www_AddDiamond : System.Web.UI.Page
         //    {
         //        P = new Stone(DDL_ShapeId.SelectedValue.ToString(),//קטגוריה
         //            Name_TB.Value.ToString()//שם מוצר
-        //            , "images/" + fname //נתיב תמונה
+        //            , "img/" + fname //נתיב תמונה
         //            , Convert.ToDouble(Price_TB.Value.ToString()),//מחיר
         //            Convert.ToInt16(Size.Value.ToString()),//כמות במלאי
         //           status//סטטוס           
