@@ -47,7 +47,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="Admin.aspx">DTG</a>
+                                <a class="navbar-brand" href="HomePageAdmin.aspx">DTG</a>
                             </div>
                             <div class="collapse navbar-collapse" id="myNavbar">
                                 <ul class="nav navbar-nav">
@@ -58,18 +58,18 @@
                                     <li></li>
                                 </ul>
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+                                    <li><a href="LoginAdmin.aspx"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
                                 </ul>
                             </div>
                         </div>
                     </nav>
                 </header>
             </div>
-            <div>
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
     </form>
 </body>
-<script src="../js/AjaxCalls.js"></script>
 </html>
