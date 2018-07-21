@@ -17,99 +17,101 @@ public class DBServices
     SqlConnection con = null;
 
     public DBServices()
-    {
+{
 
+}
+
+//-----------------------------------------------------------------------------------------------------------
+// This method creates a connection to the database according to the connectionString name in the web.config 
+//-----------------------------------------------------------------------------------------------------------
+public SqlConnection connect(String conString)
+{
+    // read the connection string from the configuration file
+    string cStr = WebConfigurationManager.ConnectionStrings[conString].ConnectionString;
+    SqlConnection con = new SqlConnection(cStr);
+    con.Open();
+    return con;
+}
+
+//--------------------------------------------------------------------------------------------------
+// This method inserts a Stone to the "Stone" table
+//--------------------------------------------------------------------------------------------------
+public int insert_Stone(Stone S)
+{
+    SqlConnection con;
+    SqlCommand cmd;
+
+    try
+    {
+        con = connect("DBConnectionString"); // create the connection
     }
-
-    //-----------------------------------------------------------------------------------------------------------
-    // This method creates a connection to the database according to the connectionString name in the web.config 
-    //-----------------------------------------------------------------------------------------------------------
-    public SqlConnection connect(String conString)
+    catch (Exception ex)
     {
-        // read the connection string from the configuration file
-        string cStr = WebConfigurationManager.ConnectionStrings[conString].ConnectionString;
-        SqlConnection con = new SqlConnection(cStr);
-        con.Open();
-        return con;
+        // write to log
+        throw (ex);
     }
-
-    //--------------------------------------------------------------------------------------------------
-    // This method inserts a Stone to the "Stone" table
-    //--------------------------------------------------------------------------------------------------
-    public int insert_Stone(Stone S)
-    {
-        SqlConnection con;
-        SqlCommand cmd;
-
-        try
-        {
-            con = connect("DBConnectionString"); // create the connection
-        }
-        catch (Exception ex)
-        {
-            // write to log
-            throw (ex);
-        }
 
         String cStr = BuildInsertCommand_Stone(S); // helper method to build the insert string
-        cmd = CreateCommand(cStr, con); // create the command
+  //      String cStr = "INSERT INTO [dbo].[Stone] (Stone_Name) Values ('abc')";
 
-        try
-        {
-            int numEffected = cmd.ExecuteNonQuery(); // execute the command
-            return numEffected;
-        }
-        catch (Exception ex)
-        {
-            return 0;
-            // write to log
-            throw (ex);
-        }
-        finally
-        {
-            if (con != null)
-            {
-                // close the db connection
-                con.Close();
-            }
-        }
-    }
+    cmd = CreateCommand(cStr, con); // create the command
 
-    //---------------------------------------------------------------------------------
-    // Create the SqlCommand
-    //---------------------------------------------------------------------------------
-    private SqlCommand CreateCommand(String CommandSTR, SqlConnection con)
+    try
     {
-        SqlCommand cmd = new SqlCommand(); // create the command object
-        cmd.Connection = con;              // assign the connection to the command object
-        cmd.CommandText = CommandSTR;      // can be Select, Insert, Update, Delete 
-        cmd.CommandTimeout = 10;           // Time to wait for the execution' The default is 30 seconds
-        cmd.CommandType = System.Data.CommandType.Text; // the type of the command, can also be stored procedure
-        return cmd;
+        int numEffected = cmd.ExecuteNonQuery(); // execute the command
+        return numEffected;
     }
-
-    //--------------------------------------------------------------------
-    // Build the Insert command String for Stone
-    //--------------------------------------------------------------------
-    private string BuildInsertCommand_Stone(Stone S)
+    catch (Exception ex)
     {
-        String command;
-        StringBuilder sb = new StringBuilder();
-        // use a string builder to create the dynamic string
-        sb.AppendFormat("Values ('{0}' , {1} , '{2}' , '{3}' , '{4}' , {5} , {6} , {7} , {8} , {9} , '{10}' "
-            + ", '{11}' , '{12}' , '{13}' , '{14}' , '{15}' , '{16}' , {17} , {18} , {19} , {20} "
-            + ", {21} , {22} , {23} , '{24}' , '{25}')",
-            S.Name, S.Weight, S.Shape, S.Color, S.Clarity, S.M1, S.M2, S.M3, S.Depth, S.Table, S.Girdle, S.Culet, S.Cut,
-            S.Polish, S.Symmetry, S.Fluorescence, S.Lab, S.Certificate, S.Cost_P_Discount, S.Cost_Price_CT, S.T_Cost_Price, 
-            S.Sale_P_Discount, S.Sale_Price_CT, S.T_Sale_Price, S.ImagePath, S.Status);
-
-        String prefix = "INSERT INTO [dbo].[Stone] " + "(Stone_Name, Stone_Weight, Stone_Shape, Stone_Color, Stone_Clarity, "
-           + "Stone_M1, Stone_M2, Stone_M3, Stone_Depth, Stone_Table, Stone_Girdle, Stone_Culet, Stone_Cut, Stone_Polish, "
-           + "Stone_Symmetry, Stone_Fluorescence, Stone_Lab, Stone_Certificate, Stone_Cost_P_Discount, Stone_Cost_Price_$_ct, "
-           + "Stone_T_Cost_Price, Stone_Sale_P_Discount, Stone_Sale_Price_$_ct, Stone_T_Sale_Price, Stone_Image, Stone_Status)";
-        command = prefix + sb.ToString();
-        return command;
+        return 0;
+        // write to log
+        throw (ex);
     }
+    finally
+    {
+        if (con != null)
+        {
+            // close the db connection
+            con.Close();
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------
+// Create the SqlCommand
+//---------------------------------------------------------------------------------
+private SqlCommand CreateCommand(String CommandSTR, SqlConnection con)
+{
+    SqlCommand cmd = new SqlCommand(); // create the command object
+    cmd.Connection = con;              // assign the connection to the command object
+    cmd.CommandText = CommandSTR;      // can be Select, Insert, Update, Delete 
+    cmd.CommandTimeout = 10;           // Time to wait for the execution' The default is 30 seconds
+    cmd.CommandType = System.Data.CommandType.Text; // the type of the command, can also be stored procedure
+    return cmd;
+}
+
+//--------------------------------------------------------------------
+// Build the Insert command String for Stone
+//--------------------------------------------------------------------
+private string BuildInsertCommand_Stone(Stone S)
+{
+    String command;
+    StringBuilder sb = new StringBuilder();
+    // use a string builder to create the dynamic string
+    sb.AppendFormat("Values ('{0}' , {1} , {2} , {3} , {4} , {5} , {6} , {7} , {8} , {9} , {10} "
+        + ", {11} , {12} , {13} , {14} , {15} , {16} , {17} , {18} , {19} , {20} "
+        + ", {21} , {22} , {23} , '{24}' , {25})",
+        S.Name, S.Weight, S.Shape, S.Color, S.Clarity, S.M1, S.M2, S.M3, S.Depth, S.Table, S.Girdle, S.Culet, S.Cut,
+        S.Polish, S.Symmetry, S.Fluorescence, S.Lab, S.Certificate, S.Cost_P_Discount, S.Cost_Price_CT, S.T_Cost_Price,
+        S.Sale_P_Discount, S.Sale_Price_CT, S.T_Sale_Price, S.ImagePath, S.Status);
+
+    String prefix = "INSERT INTO [dbo].[Stone] " + "(Stone_Name, Stone_Weight, Stone_Shape, Stone_Color, Stone_Clarity, "
+       + "Stone_M1, Stone_M2, Stone_M3, Stone_Depth, Stone_Table, Stone_Girdle, Stone_Culet, Stone_Cut, Stone_Polish, "
+       + "Stone_Symmetry, Stone_Fluorescence, Stone_Lab, Stone_Certificate, Stone_Cost_P_Discount, Stone_Cost_Price_$_ct, "
+       + "Stone_T_Cost_Price, Stone_Sale_P_Discount, Stone_Sale_Price_$_ct, Stone_T_Sale_Price, Stone_Image, Stone_Status) ";
+    command = prefix + sb.ToString();
+    return command;
+}
 
     //--------------------------------------------------------------------
     // Read from the DB into a table - ActiveStones

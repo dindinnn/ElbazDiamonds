@@ -240,6 +240,7 @@ public class Stone
     public int insert(Stone S)
     {
         DBServices dbs = new DBServices();
+        
         int numAffected = dbs.insert_Stone(S);
         return numAffected;
     }

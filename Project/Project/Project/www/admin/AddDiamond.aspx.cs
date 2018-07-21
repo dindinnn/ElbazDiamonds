@@ -55,32 +55,33 @@ public partial class www_AddDiamond : System.Web.UI.Page
         //יצירת יהלום חדש
         try
         {
-             S = new Stone(Name_TB.Value.ToString(), //שם האבן
-             Convert.ToDouble(Weight_TB.Value.ToString()), //משקל האבן
-             DDL_Shape_Id.SelectedValue, //צורת האבן
-             DDL_Color_Id.SelectedValue, //צבע האבן
-             DDL_Clarity_Id.SelectedValue, //צלילות האבן
-             Convert.ToDouble(M1_TB.Value.ToString()), //מידה 1 של האבן
-             Convert.ToDouble(M2_TB.Value.ToString()), //מידה 2 של האבן
-             Convert.ToDouble(M3_TB.Value.ToString()), //מידה 3 של האבן
-             Convert.ToDouble(Depth_TB.Value.ToString()), //עומק של האבן
-             Convert.ToDouble(Table_TB.Value.ToString()), //שטח האבן
-             DDL_Girdle_Id.SelectedValue, //היקף האבן
-             DDL_Culet_Id.SelectedValue, //עוקץ של האבן
-             DDL_Cut_Id.SelectedValue, //חיתוך של האבן
-             DDL_Polish_Id.SelectedValue, //ליטוש של האבן
-             DDL_Symmetry_Id.SelectedValue, //סימטריה של האבן
-             DDL_Fluorescence_Id.SelectedValue, //פלורסנטיות של האבן
-             DDL_Lab_Id.SelectedValue, //המעבדה של התעודה
-             Convert.ToInt64(Certificate_TB.Value.ToString()), //מספר תעודה של האבן
-             Convert.ToDouble(Cost_P_Discount_TB.Value.ToString()), //אחוז ההנחה באחוזים של מחיר הקניה מהמחירון
-             Convert.ToDouble(Cost_Price_CT_TB.Value.ToString()), //מחיר קניה לקראט
-             Convert.ToDouble(T_Cost_Price_TB.Value.ToString()), //מחיר קניה סהכ
-             Convert.ToDouble(Sale_P_Discount_TB.Value.ToString()), //אחוז ההנחה באחוזים של מחיר המכירה מהמחירון 
-             Convert.ToDouble(Sale_Price_CT_TB.Value.ToString()), //מחיר מכירה לקראט
-             Convert.ToDouble(T_Sale_Price_TB.Value.ToString()), //מחיר מכירה סהכ
-             "/img/diamondsImages/" + fileName, //נתיב תמונה
-             Status_RBL.SelectedValue); //סטטוס האבן          
+            S = new Stone(Name_TB.Value.ToString(), //שם האבן
+            Convert.ToDouble(Weight_TB.Value.ToString()), //משקל האבן
+            //DDL_Shape_Id.SelectedValue, 
+            (DDL_Shape_Id.SelectedIndex + 1).ToString(),//צורת האבן
+            (DDL_Color_Id.SelectedIndex + 1).ToString(), //צבע האבן
+            (DDL_Clarity_Id.SelectedIndex + 1).ToString(), //צלילות האבן
+            Convert.ToDouble(M1_TB.Value.ToString()), //מידה 1 של האבן
+            Convert.ToDouble(M2_TB.Value.ToString()), //מידה 2 של האבן
+            Convert.ToDouble(M3_TB.Value.ToString()), //מידה 3 של האבן
+            Convert.ToDouble(Depth_TB.Value.ToString()), //עומק של האבן
+            Convert.ToDouble(Table_TB.Value.ToString()), //שטח האבן
+            (DDL_Girdle_Id.SelectedIndex + 1).ToString(), //היקף האבן
+            (DDL_Culet_Id.SelectedIndex + 1).ToString(), //עוקץ של האבן
+            (DDL_Cut_Id.SelectedIndex + 1).ToString(), //חיתוך של האבן
+            (DDL_Polish_Id.SelectedIndex + 1).ToString(), //ליטוש של האבן
+            (DDL_Symmetry_Id.SelectedIndex + 1).ToString(), //סימטריה של האבן
+            (DDL_Fluorescence_Id.SelectedIndex + 1).ToString(), //פלורסנטיות של האבן
+            (DDL_Lab_Id.SelectedIndex + 1).ToString(), //המעבדה של התעודה
+            Convert.ToInt64(Certificate_TB.Value.ToString()), //מספר תעודה של האבן
+            Convert.ToDouble(Cost_P_Discount_TB.Value.ToString()), //אחוז ההנחה באחוזים של מחיר הקניה מהמחירון
+            Convert.ToDouble(Cost_Price_CT_TB.Value.ToString()), //מחיר קניה לקראט
+            Convert.ToDouble(T_Cost_Price_TB.Value.ToString()), //מחיר קניה סהכ
+            Convert.ToDouble(Sale_P_Discount_TB.Value.ToString()), //אחוז ההנחה באחוזים של מחיר המכירה מהמחירון 
+            Convert.ToDouble(Sale_Price_CT_TB.Value.ToString()), //מחיר מכירה לקראט
+            Convert.ToDouble(T_Sale_Price_TB.Value.ToString()), //מחיר מכירה סהכ
+            "/img/diamondsImages/" + fileName, //נתיב תמונה
+            (Status_RBL.SelectedIndex + 1).ToString()); //סטטוס האבן          
         }
         catch (Exception ex)
         {
