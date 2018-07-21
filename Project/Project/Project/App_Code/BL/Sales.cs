@@ -68,7 +68,7 @@
 
 //    public int insertsale()
 //    {
-//        DBservices dbs = new DBservices();
+//        DBServices dbs = new DBServices();
 //        return dbs.insertsale(this);
 
 //    }

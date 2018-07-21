@@ -1,136 +1,135 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+
+
 /// <summary>
 /// Summary description for Stone
 /// </summary>
 public class Stone
 {
-    protected int id;
+    #region variables
     protected string name;
-    protected int weight;
-    protected int shape;
-    protected int color;
-    protected int clarity;
-    protected int m1;
-    protected int m2;
-    protected int m3;
-    protected int depth;
-    protected int table;
-    protected int girdle;
-    protected int culet;
-    protected int cut;
-    protected int polish;
-    protected int symmetry;
-    protected int fluorescence;
-    protected int lab;
-    protected int certificate;
-    protected int cost_p_discount;
+    protected double weight;
+    protected string shape;
+    protected string color;
+    protected string clarity;
+    protected double m1;
+    protected double m2;
+    protected double m3;
+    protected double depth;
+    protected double table;
+    protected string girdle;
+    protected string culet;
+    protected string cut;
+    protected string polish;
+    protected string symmetry;
+    protected string fluorescence;
+    protected string lab;
+    protected long certificate;
+    protected double cost_p_discount;
     protected double cost_price_ct;
     protected double t_cost_price;
-    protected int sale_discount;
+    protected double sale_p_discount;
     protected double sale_price_ct;
     protected double t_sale_price;
     protected string imagePath;
-    protected int status;
+    protected string status;
+    #endregion
 
+    #region Properties 
     //Properties:
-    public int Id
-    {
-        get { return id; }
-        set { id = value; }
-    }
     public string Name
     {
         get { return name; }
         set { name = value; }
     }
-    public int Weight
+    public double Weight
     {
         get { return weight; }
         set { weight = value; }
     }
-    public int Shape
+    public string Shape
     {
         get { return shape; }
         set { shape = value; }
     }
-    public int Color
+    public string Color
     {
         get { return color; }
         set { color = value; }
     }
-    public int Clarity
+    public string Clarity
     {
         get { return clarity; }
         set { clarity = value; }
     }
-    public int M1
+    public double M1
     {
         get { return m1; }
         set { m1 = value; }
     }
-    public int M2
+    public double M2
     {
         get { return m2; }
         set { m2 = value; }
     }
-    public int M3
+    public double M3
     {
         get { return m3; }
         set { m3 = value; }
     }
-    public int Depth
+    public double Depth
     {
         get { return depth; }
         set { depth = value; }
     }
-    public int Table
+    public double Table
     {
         get { return table; }
         set { table = value; }
     }
-    public int Girdle
+    public string Girdle
     {
         get { return girdle; }
         set { girdle = value; }
     }
-    public int Culet
+    public string Culet
     {
         get { return culet; }
         set { culet = value; }
     }
-    public int Cut
+    public string Cut
     {
         get { return cut; }
         set { cut = value; }
     }
-    public int Polish
+    public string Polish
     {
         get { return polish; }
         set { polish = value; }
     }
-    public int Symmetry
+    public string Symmetry
     {
         get { return symmetry; }
         set { symmetry = value; }
     }
-    public int Fluorescence
+    public string Fluorescence
     {
         get { return fluorescence; }
         set { fluorescence = value; }
     }
-    public int Lab
+    public string Lab
     {
         get { return lab; }
         set { lab = value; }
     }
-    public int Certificate
+    public long Certificate
     {
         get { return certificate; }
         set { certificate = value; }
     }
-    public int Cost_P_Discount
+    public double Cost_P_Discount
     {
         get { return cost_p_discount; }
         set { cost_p_discount = value; }
@@ -144,11 +143,11 @@ public class Stone
     {
         get { return t_cost_price; }
         set { t_cost_price = value; }
-    }  
-    public int Sale_Discount
+    }
+    public double Sale_P_Discount
     {
-        get { return sale_discount; }
-        set { sale_discount = value; }
+        get { return sale_p_discount; }
+        set { sale_p_discount = value; }
     }
     public double Sale_Price_CT
     {
@@ -165,12 +164,14 @@ public class Stone
         get { return imagePath; }
         set { imagePath = value; }
     }
-    public int Status
+    public string Status
     {
         get { return status; }
         set { status = value; }
     }
+    #endregion
 
+    #region constructors 
     public Stone()
     {
         //
@@ -178,9 +179,34 @@ public class Stone
         //
     }
 
-    public Stone(int _id, string _name, int _weight, int _shape, int _color, int _clarity, int _m1, int _m2, int _m3, int _depth, int _table, int _girdle, int _culet, int _cut, int _polish, int _symmetry, int _fluorescence, int _lab, int _certificate, int _cost_P_Discount, double _cost_Price_CT, double _t_Cost_Price, int _sale_Discount, double _sale_Price_CT, double _t_Sale_Price, string _imagePath, int _status)
+    public Stone(
+        string _name,
+        double _weight,
+        string _shape,
+        string _color,
+        string _clarity,
+        double _m1,
+        double _m2,
+        double _m3,
+        double _depth,
+        double _table,
+        string _girdle,
+        string _culet,
+        string _cut,
+        string _polish,
+        string _symmetry,
+        string _fluorescence,
+        string _lab,
+        long _certificate,
+        double _cost_P_Discount,
+        double _cost_Price_CT,
+        double _t_Cost_Price,
+        double _sale_P_Discount,
+        double _sale_Price_CT,
+        double _t_Sale_Price,
+        string _imagePath,
+        string _status)
     {
-        Id = _id;
         Name = _name;
         Weight = _weight;
         Shape = _shape;
@@ -202,25 +228,26 @@ public class Stone
         Cost_P_Discount = _cost_P_Discount;
         Cost_Price_CT = _cost_Price_CT;
         T_Cost_Price = _t_Cost_Price;
-        Sale_Discount = _sale_Discount;
+        Sale_P_Discount = _sale_P_Discount;
         Sale_Price_CT = _sale_Price_CT;
         T_Sale_Price = _t_Sale_Price;
         ImagePath = _imagePath;
         Status = _status;
     }
+    #endregion
 
-    //public string insert(string name)
-    //{
-    //    /*DBservices dbs = new DBservices();
-    //    int numAffected = dbs.insert_Stone(P);
-    //    return numAffected;*/
-    //    return name; 
-    //}
+    #region methods
+    public int insert(Stone S)
+    {
+        DBServices dbs = new DBServices();
+        int numAffected = dbs.insert_Stone(S);
+        return numAffected;
+    }
 
     //public List<Stone> readStoneDS()
     //{
     //    int i = 0;
-    //    DBservices dbs = new DBservices();
+    //    DBServices dbs = new DBServices();
     //    dbs = dbs.ReadFromDataBase_ActiveStones("DBConnectionString", "Stone");
     //    List<Stone> Stones = new List<Stone>();
     //    foreach (DataRow dr in dbs.dt.Rows)
@@ -264,18 +291,18 @@ public class Stone
     //public int amountCheck(Stone p)
     //{
 
-    //    DBservices dbs = new DBservices();
+    //    DBServices dbs = new DBServices();
     //    return dbs.amountCheck(p.title);
 
     //}
 
     //public int after_sale_amount(int amount)
     //{
-    //    DBservices dbs = new DBservices();
+    //    DBServices dbs = new DBServices();
     //    return dbs.after_sale_amount(this, amount);
     //}
 
-   
+    #endregion
 }
 
 

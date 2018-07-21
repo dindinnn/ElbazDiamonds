@@ -9,7 +9,7 @@
 ///// </summary>
 //public class Category
 //{
-//    DBservices dbs = new DBservices();
+//    DBServices dbs = new DBServices();
 //    public Category()
 //    {
 //        //
@@ -41,7 +41,7 @@
 //    public bool Category_Check(string Shape_Name)
 //    {
 
-//        DBservices dbs = new DBservices();
+//        DBServices dbs = new DBServices();
 //        bool Category_exists = dbs.Category_Check("DBConnectionString", Shape_Name);
 //        return Category_exists;
 
@@ -50,7 +50,7 @@
 //    public int insert(string Shape_Name)
 //    {
 
-//        DBservices dbs = new DBservices();
+//        DBServices dbs = new DBServices();
 //        int numAffected = dbs.insert_category(Shape_Name);
 //        return numAffected;
 
@@ -58,7 +58,7 @@
 
 //    public List<string> readCategoryDS()
 //    {
-//        DBservices dbs = new DBservices();
+//        DBServices dbs = new DBServices();
 //        dbs = dbs.ReadFromDataBase("DBConnectionString", "Category");
 //        List<string> categories = new List<string>();
 //        foreach (DataRow dr in dbs.dt.Rows)
@@ -72,7 +72,7 @@
 
 //    public List<Category> readCategoryDS_Customer()
 //    {
-//        DBservices dbs = new DBservices();
+//        DBServices dbs = new DBServices();
 //        dbs = dbs.ReadFromDataBase("DBConnectionString", "Category");
 //        List<Category> categories = new List<Category>();
 //        foreach (DataRow dr in dbs.dt.Rows)

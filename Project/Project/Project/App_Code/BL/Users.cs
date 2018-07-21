@@ -52,7 +52,7 @@ public class Users
 
     //public bool userAdminConformation(string username, string password)
     //{
-    //    DBservices dbs = new DBservices();
+    //    DBServices dbs = new DBServices();
     //    return dbs.userAdminConformation("DBConnectionString", "Admin", "User_Name", username, password);
 
     //}
