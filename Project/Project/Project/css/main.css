@@ -2400,7 +2400,7 @@ body {
 */
 input.num-product {
     -moz-appearance: textfield;
-    appearance: none;
+    -appearance: none;
     -webkit-appearance: none;
 }
 
@@ -2410,10 +2410,7 @@ input.num-product {
         margin: 0;
     }
 
-/* ul list Search Diamnond
-///////////////////////////////////////////////////////////
-*/
-ul.search-diamonds-by-shape {
+ul list Search Diamnond /////////////////////////////////////////////////////////// ul.search-diamonds-by-shape {
     list-style-type: none;
 }
 
@@ -2421,16 +2418,18 @@ li.search-diamonds-by-shape {
     display: inline-block;
 }
 
-input[type="checkbox"].search-diamonds-by-shape {
+input[type="checkbox"][id^="cb"].search-diamonds-by-shape {
     display: none;
 }
 
+
+
 label.search-diamonds-by-shape {
     border: 1px solid #fff;
-    padding: 10px;
+    padding: 9px;
     display: block;
     position: relative;
-    margin: 10px;
+    margin: 9px;
     cursor: pointer;
 }
 
@@ -2460,8 +2459,8 @@ label.search-diamonds-by-shape :hover {
 
 
 label img.search-diamonds-by-shape {
-    height: 70px;
-    width: 70px;
+    height: 67px;
+    width: 67px;
     transition-duration: 0.2s;
     transform-origin: 50% 50%;
 }
@@ -2478,7 +2477,7 @@ label img.search-diamonds-by-shape {
 
 :checked + label img.search-diamonds-by-shape {
     transform: scale(0.9);
-    box-shadow: 0 0 5px #333;
+    box-shadow: 0 0 4px #333;
     z-index: -1;
 }
 
@@ -2486,5 +2485,96 @@ label img.search-diamonds-by-shape {
     background-color: #73AD21;
     color: #FFFFFF;
     border: 1px solid green;
-   font-family: "Lobster", serif;
+    font-family: "Lobster", serif;
+}
+
+/*ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+input[type="checkbox"][id^="cb"] {
+  display: none;
+}
+
+label {
+  border: 1px solid #fff;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+}
+
+label:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid grey;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+label img {
+  height: 100px;
+  width: 100px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+:checked + label {
+  border-color: #ddd;
+}
+
+:checked + label:before {
+  content: "✓";
+  background-color: grey;
+  transform: scale(1);
+}
+
+:checked + label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: -1;
+}*/
+
+
+.filter-label {
+    margin-bottom: 10px;
+    color: rgba(100,100,100,.5);
+    font-size: 14px;
+    margin-left: 0px;
+    letter-spacing: 3px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 85%;
+    margin: 0 0 10px;
+}
+
+.input-round-border {
+    background: white;
+    border-width: 1px;
+    box-shadow: 0px 0px 0px 1px rgb(180,180,180);
+    -moz-box-shadow: 0px 0px 0px 1px rgb(180,180,180);
+    -webkit-box-shadow: 0px 0px 0px 1px rgb(180,180,180);
+    height: 34px;
+    border-radius: 4px;
+    font-family: Montserrat-Regular;
+    font-size: 15px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-color: black;
 }
