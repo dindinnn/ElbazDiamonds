@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Add Diamond" Language="C#" MasterPageFile="~/css/MasterPage_Admin.master" AutoEventWireup="true" CodeFile="AddDiamond.aspx.cs" Inherits="www_AddDiamond" %>
+﻿<%@ Page Title="Add Diamond" Language="C#" MasterPageFile="~/css/MasterPage_Admin.master" AutoEventWireup="true"
+    CodeFile="AddDiamond.aspx.cs" Inherits="www_AddDiamond" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
@@ -6,8 +7,8 @@
             height: 24px;
         }
 
-        .auto-style3 {
-            height: 45px;
+        .auto-style4 {
+            height: 25px;
         }
     </style>
 </asp:Content>
@@ -22,7 +23,8 @@
                 <input id="Name_TB" type="text" runat="server" causesvalidation="False" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="Name_VLD" ControlToValidate="Name_TB" runat="server" ErrorMessage="Please enter a stone name"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Name_VLD" ControlToValidate="Name_TB" runat="server"
+                    ErrorMessage="Please enter a stone name" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -33,35 +35,46 @@
                 <input id="Weight_TB" type="text" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="Weight_VLD" ControlToValidate="Weight_TB" runat="server" ErrorMessage="Please enter stone weight"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Weight_VLD" ControlToValidate="Weight_TB" runat="server"
+                    ErrorMessage="Please enter stone weight" ValidationGroup="addDiamondValidationGroup,rapaportValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
+       
 
         <%-- SHAPE --%>
         <tr>
-            <td class="auto-style3">Shape:</td>
-            <td class="auto-style3">
-                <asp:DropDownList ID="DDL_Shape_Id" runat="server" DataSourceID="SqlDataSource1" DataTextField="Shape_Name" DataValueField="ID">
+            <td>Shape:</td>
+            <td>
+                <asp:DropDownList ID="DDL_Shape_Id" runat="server" DataSourceID="SqlDataSource1"
+                    DataTextField="Shape_Name" DataValueField="ID" AppendDataBoundItems="True">
+                    <asp:ListItem Text="select the shape" Value="0"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT Shape_Name, ID FROM Shape"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                    SelectCommand="SELECT Shape_Name, ID FROM Shape"></asp:SqlDataSource>
             </td>
-            <td class="auto-style3">
+            <td>
                 <asp:RequiredFieldValidator ID="DDL_Shape_Id_VLD" runat="server" ControlToValidate="DDL_Shape_Id"
-                    ErrorMessage="Please select the shape of the stone" InitialValue="select the shape"></asp:RequiredFieldValidator>
+                    ErrorMessage="Please select the shape of the stone" InitialValue="0"
+                    ValidationGroup="addDiamondValidationGroup,rapaportValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
-
-        <%-- COLOR --%>
+        <%--OnClientClick="Page_ClientValidate('addDiamondValidationGroup'); Page_ClientValidate('rapaportValidationGroup'); return false;"--%>
+       
+         <%-- COLOR --%>
         <tr>
             <td>Color:</td>
             <td>
-                <asp:DropDownList ID="DDL_Color_Id" runat="server" DataSourceID="SqlDataSource2" DataTextField="Color_Name" DataValueField="ID">
+                <asp:DropDownList ID="DDL_Color_Id" runat="server" DataSourceID="SqlDataSource2"
+                    DataTextField="Color_Name" DataValueField="ID" AppendDataBoundItems="True">
+                    <asp:ListItem Text="select the color" Value="0"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT [Color_Name], [ID] FROM [Color]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                    SelectCommand="SELECT [Color_Name], [ID] FROM [Color]"></asp:SqlDataSource>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="DDL_Color_Id_VLD" runat="server" ControlToValidate="DDL_Color_Id"
-                    ErrorMessage="Please select the color of the stone" InitialValue="select the color"></asp:RequiredFieldValidator>
+                    ErrorMessage="Please select the color of the stone" InitialValue="0"
+                    ValidationGroup="addDiamondValidationGroup,rapaportValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -69,13 +82,17 @@
         <tr>
             <td>Clarity:</td>
             <td>
-                <asp:DropDownList ID="DDL_Clarity_Id" runat="server" DataSourceID="SqlDataSource3" DataTextField="Clarity_Name" DataValueField="ID">
+                <asp:DropDownList ID="DDL_Clarity_Id" runat="server" DataSourceID="SqlDataSource3"
+                    DataTextField="Clarity_Name" DataValueField="ID" AppendDataBoundItems="True">
+                    <asp:ListItem Text="select the clarity" Value="0"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT [Clarity_Name], [ID] FROM [Clarity]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                    SelectCommand="SELECT [Clarity_Name], [ID] FROM [Clarity]"></asp:SqlDataSource>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="DDL_Clarity_Id_VLD" runat="server" ControlToValidate="DDL_Clarity_Id"
-                    ErrorMessage="Please select the clarity of the stone" InitialValue="select the clarity"></asp:RequiredFieldValidator>
+                    ErrorMessage="Please select the clarity of the stone" InitialValue="0"
+                    ValidationGroup="addDiamondValidationGroup,rapaportValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -86,18 +103,20 @@
                 <input id="M1_TB" type="text" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="M1_VLD" ControlToValidate="M1_TB" runat="server" ErrorMessage="Please select the M1 of the stone"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="M1_VLD" ControlToValidate="M1_TB" runat="server"
+                    ErrorMessage="Please select the M1 of the stone" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
         <%-- M2 --%>
         <tr>
-            <td class="auto-style1">M2:</td>
-            <td class="auto-style1">
+            <td>M2:</td>
+            <td>
                 <input id="M2_TB" type="text" runat="server" />
             </td>
-            <td class="auto-style1">
-                <asp:RequiredFieldValidator ID="M2_VLD" ControlToValidate="M2_TB" runat="server" ErrorMessage="Please select the M2 of the stone"></asp:RequiredFieldValidator>
+            <td>
+                <asp:RequiredFieldValidator ID="M2_VLD" ControlToValidate="M2_TB" runat="server"
+                    ErrorMessage="Please select the M2 of the stone" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -108,7 +127,8 @@
                 <input id="M3_TB" type="text" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="M3_VLD" ControlToValidate="M3_TB" runat="server" ErrorMessage="Please select the M3 of the stone"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="M3_VLD" ControlToValidate="M3_TB" runat="server"
+                    ErrorMessage="Please select the M3 of the stone" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -119,7 +139,8 @@
                 <input id="Depth_TB" type="text" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="Depth_VLD" ControlToValidate="Depth_TB" runat="server" ErrorMessage="Please enter the depth of the stone"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Depth_VLD" ControlToValidate="Depth_TB" runat="server"
+                    ErrorMessage="Please enter the depth of the stone" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -130,7 +151,8 @@
                 <input id="Table_TB" type="text" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="Table_VLD" ControlToValidate="Table_TB" runat="server" ErrorMessage="Please enter the table of the stone"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Table_VLD" ControlToValidate="Table_TB" runat="server"
+                    ErrorMessage="Please enter the table of the stone" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -138,13 +160,17 @@
         <tr>
             <td>Girdle:</td>
             <td>
-                <asp:DropDownList ID="DDL_Girdle_Id" runat="server" DataSourceID="SqlDataSource4" DataTextField="Girdle_Name" DataValueField="ID">
+                <asp:DropDownList ID="DDL_Girdle_Id" runat="server" DataSourceID="SqlDataSource4"
+                    DataTextField="Girdle_Name" DataValueField="ID" AppendDataBoundItems="True">
+                    <asp:ListItem Text="select the girdle" Value="0"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT [Girdle_Name], [ID] FROM [Girdle]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                    SelectCommand="SELECT [Girdle_Name], [ID] FROM [Girdle]"></asp:SqlDataSource>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="DDL_Girdle_Id_VLD" runat="server" ControlToValidate="DDL_Girdle_Id"
-                    ErrorMessage="Please select the girdle of the stone" InitialValue="select the girdle"></asp:RequiredFieldValidator>
+                    ErrorMessage="Please select the girdle of the stone" InitialValue="0"
+                    ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -152,13 +178,17 @@
         <tr>
             <td>Culet:</td>
             <td>
-                <asp:DropDownList ID="DDL_Culet_Id" runat="server" DataSourceID="SqlDataSource5" DataTextField="Culet_Name" DataValueField="ID">
+                <asp:DropDownList ID="DDL_Culet_Id" runat="server" DataSourceID="SqlDataSource5"
+                    DataTextField="Culet_Name" DataValueField="ID" AppendDataBoundItems="True">
+                    <asp:ListItem Text="select the culet" Value="0"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT [Culet_Name], [ID] FROM [Culet]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                    SelectCommand="SELECT [Culet_Name], [ID] FROM [Culet]"></asp:SqlDataSource>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="DDL_Culet_Id_VLD" runat="server" ControlToValidate="DDL_Culet_Id"
-                    ErrorMessage="Please select the culet of the stone" InitialValue="select the culet"></asp:RequiredFieldValidator>
+                    ErrorMessage="Please select the culet of the stone" InitialValue="0"
+                    ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -166,13 +196,17 @@
         <tr>
             <td>Cut:</td>
             <td>
-                <asp:DropDownList ID="DDL_Cut_Id" runat="server" DataSourceID="SqlDataSource6" DataTextField="Cut_Name" DataValueField="ID">
+                <asp:DropDownList ID="DDL_Cut_Id" runat="server" DataSourceID="SqlDataSource6"
+                    DataTextField="Cut_Name" DataValueField="ID" AppendDataBoundItems="True">
+                    <asp:ListItem Text="select the cut" Value="0"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT [Cut_Name], [ID] FROM [Cut]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                    SelectCommand="SELECT [Cut_Name], [ID] FROM [Cut]"></asp:SqlDataSource>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="DDL_Cut_Id_VLD" runat="server" ControlToValidate="DDL_Cut_Id"
-                    ErrorMessage="Please select the cut grade of the stone" InitialValue="select the cut"></asp:RequiredFieldValidator>
+                    ErrorMessage="Please select the cut grade of the stone" InitialValue="0"
+                    ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -180,13 +214,17 @@
         <tr>
             <td>Polish:</td>
             <td>
-                <asp:DropDownList ID="DDL_Polish_Id" runat="server" DataSourceID="SqlDataSource7" DataTextField="Polish_Name" DataValueField="ID">
+                <asp:DropDownList ID="DDL_Polish_Id" runat="server" DataSourceID="SqlDataSource7"
+                    DataTextField="Polish_Name" DataValueField="ID" AppendDataBoundItems="True">
+                    <asp:ListItem Text="select the polish" Value="0"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT [Polish_Name], [ID] FROM [Polish]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                    SelectCommand="SELECT [Polish_Name], [ID] FROM [Polish]"></asp:SqlDataSource>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="DDL_Polish_Id_VLD" runat="server" ControlToValidate="DDL_Polish_Id"
-                    ErrorMessage="Please select the polish of the stone" InitialValue="select the polish"></asp:RequiredFieldValidator>
+                    ErrorMessage="Please select the polish of the stone" InitialValue="0"
+                    ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -194,13 +232,17 @@
         <tr>
             <td>Symmetry:</td>
             <td>
-                <asp:DropDownList ID="DDL_Symmetry_Id" runat="server" DataSourceID="SqlDataSource8" DataTextField="Symmetry_Name" DataValueField="ID">
+                <asp:DropDownList ID="DDL_Symmetry_Id" runat="server" DataSourceID="SqlDataSource8"
+                    DataTextField="Symmetry_Name" DataValueField="ID" AppendDataBoundItems="True">
+                    <asp:ListItem Text="select the symmetry" Value="0"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT [Symmetry_Name], [ID] FROM [Symmetry]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                    SelectCommand="SELECT [Symmetry_Name], [ID] FROM [Symmetry]"></asp:SqlDataSource>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="DDL_Symmetry_Id_VLD" runat="server" ControlToValidate="DDL_Symmetry_Id"
-                    ErrorMessage="Please select the symmetry of the stone" InitialValue="select the symmetry"></asp:RequiredFieldValidator>
+                    ErrorMessage="Please select the symmetry of the stone" InitialValue="0"
+                    ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -208,13 +250,17 @@
         <tr>
             <td>Fluorescence:</td>
             <td>
-                <asp:DropDownList ID="DDL_Fluorescence_Id" runat="server" DataSourceID="SqlDataSource9" DataTextField="Fluorescence_Name" DataValueField="ID">
+                <asp:DropDownList ID="DDL_Fluorescence_Id" runat="server" DataSourceID="SqlDataSource9"
+                    DataTextField="Fluorescence_Name" DataValueField="ID" AppendDataBoundItems="True">
+                    <asp:ListItem Text="select the fluorescence" Value="0"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource9" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT [Fluorescence_Name], [ID] FROM [Fluorescence]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource9" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                    SelectCommand="SELECT [Fluorescence_Name], [ID] FROM [Fluorescence]"></asp:SqlDataSource>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="DDL_Fluorescence_Id_VLD" runat="server" ControlToValidate="DDL_Fluorescence_Id"
-                    ErrorMessage="Please select the fluorescence of the stone" InitialValue="select the fluorescence"></asp:RequiredFieldValidator>
+                    ErrorMessage="Please select the fluorescence of the stone" InitialValue="0"
+                    ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -222,13 +268,17 @@
         <tr>
             <td>Lab:</td>
             <td>
-                <asp:DropDownList ID="DDL_Lab_Id" runat="server" DataSourceID="SqlDataSource10" DataTextField="Lab_Name" DataValueField="ID">
+                <asp:DropDownList ID="DDL_Lab_Id" runat="server" DataSourceID="SqlDataSource10"
+                    DataTextField="Lab_Name" DataValueField="ID" AppendDataBoundItems="True">
+                    <asp:ListItem Text="select the lab" Value="0"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:SqlDataSource ID="SqlDataSource10" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT [Lab_Name], [ID] FROM [Lab]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource10" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                    SelectCommand="SELECT [Lab_Name], [ID] FROM [Lab]"></asp:SqlDataSource>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="DDL_Lab_Id_VLD" runat="server" ControlToValidate="DDL_Lab_Id"
-                    ErrorMessage="Please select the lab of the stone" InitialValue="select the lab"></asp:RequiredFieldValidator>
+                    ErrorMessage="Please select the lab of the stone" InitialValue="0"
+                    ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -239,7 +289,8 @@
                 <input id="Certificate_TB" type="text" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="Certificate_VLD" ControlToValidate="Certificate_TB" runat="server" ErrorMessage="Please enter a stone certificate"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Certificate_VLD" ControlToValidate="Certificate_TB" runat="server"
+                    ErrorMessage="Please enter a stone certificate" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -250,7 +301,8 @@
                 <input id="Cost_P_Discount_TB" type="text" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="Cost_P_Discount_VLD" ControlToValidate="Cost_P_Discount_TB" runat="server" ErrorMessage="Please enter a stone cost p discount"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Cost_P_Discount_VLD" ControlToValidate="Cost_P_Discount_TB" runat="server"
+                    ErrorMessage="Please enter a stone cost p discount" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -261,7 +313,8 @@
                 <input id="Cost_Price_CT_TB" type="text" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="Cost_Price_CT_VLD" ControlToValidate="Cost_Price_CT_TB" runat="server" ErrorMessage="Please enter a stone cost price $ ct"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Cost_Price_CT_VLD" ControlToValidate="Cost_Price_CT_TB" runat="server"
+                    ErrorMessage="Please enter a stone cost price $ ct" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -272,7 +325,8 @@
                 <input id="T_Cost_Price_TB" type="text" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="T_Cost_Price_VLD" ControlToValidate="T_Cost_Price_TB" runat="server" ErrorMessage="Please enter a stone t. cost price"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="T_Cost_Price_VLD" ControlToValidate="T_Cost_Price_TB" runat="server"
+                    ErrorMessage="Please enter a stone t. cost price" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -283,7 +337,8 @@
                 <input id="Sale_P_Discount_TB" type="text" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="Sale_P_Discount_VLD" ControlToValidate="Sale_P_Discount_TB" runat="server" ErrorMessage="Please enter a stone sale % discount"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Sale_P_Discount_VLD" ControlToValidate="Sale_P_Discount_TB" runat="server"
+                    ErrorMessage="Please enter a stone sale % discount" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -294,7 +349,8 @@
                 <input id="Sale_Price_CT_TB" type="text" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="Sale_Price_CT_VLD" ControlToValidate="Sale_Price_CT_TB" runat="server" ErrorMessage="Please enter a stone sale price $ /ct"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Sale_Price_CT_VLD" ControlToValidate="Sale_Price_CT_TB" runat="server"
+                    ErrorMessage="Please enter a stone sale price $ /ct" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -305,7 +361,8 @@
                 <input id="T_Sale_Price_TB" type="text" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="T_Sale_Price_VLD" ControlToValidate="Sale_Price_ct_TB" runat="server" ErrorMessage="Please enter a stone t. sale price"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="T_Sale_Price_VLD" ControlToValidate="Sale_Price_ct_TB" runat="server"
+                    ErrorMessage="Please enter a stone t. sale price" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -313,10 +370,11 @@
         <tr>
             <td>Image:</td>
             <td>
-                <asp:FileUpload ID="File_Load" runat="server"/>
+                <asp:FileUpload ID="File_Load" runat="server" />
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="File_Load_VLD" ControlToValidate="File_Load" runat="server" ErrorMessage="Please upload the stone image"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="File_Load_VLD" ControlToValidate="File_Load" runat="server"
+                    ErrorMessage="Please upload the stone image" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -324,21 +382,25 @@
         <tr>
             <td>Status:</td>
             <td>
-                <asp:RadioButtonList ID="Status_RBL" runat="server" DataSourceID="SqlDataSource11" DataTextField="Status_Name" DataValueField="ID">
+                <asp:RadioButtonList ID="Status_RBL" runat="server" DataSourceID="SqlDataSource11"
+                    DataTextField="Status_Name" DataValueField="ID">
                 </asp:RadioButtonList>
-                <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT [Status_Name], [ID] FROM [Status]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
+                    SelectCommand="SELECT [Status_Name], [ID] FROM [Status]"></asp:SqlDataSource>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="Status_VLD" ControlToValidate="Status_RBL" runat="server" ErrorMessage="Please enter a stone status"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Status_VLD" ControlToValidate="Status_RBL" runat="server"
+                    ErrorMessage="Please select a stone status" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>
 
     <div style="float: left; margin-left: 40%">
-        <asp:Button ID="btnAddDiamond" runat="server" Text="add diamond" OnClick="btnAddDiamond_Click" />
+        <asp:Button ID="btnAddDiamond" runat="server" Text="add diamond" OnClick="btnAddDiamond_Click"
+            ValidationGroup="addDiamondValidationGroup" />
     </div>
     <div>
-        <%-- username --%>
+        <%-- USERNAME --%>
         <table>
             <tr>
                 <td>username:</td>
@@ -346,27 +408,30 @@
                     <input id="username_TB" type="text" runat="server" />
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="username_TB" runat="server" ErrorMessage="Please enter the username"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="username_TB" runat="server"
+                        ErrorMessage="Please enter the username" ValidationGroup="rapaportValidationGroup"></asp:RequiredFieldValidator>
                 </td>
             </tr>
-            <%-- password --%>
+            <%-- PASSWORD --%>
             <tr>
                 <td>password:</td>
                 <td>
                     <input id="password_TB" type="text" runat="server" />
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="password_TB" runat="server" ErrorMessage="Please enter the password"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="password_TB" runat="server"
+                        ErrorMessage="Please enter the password" ValidationGroup="rapaportValidationGroup"></asp:RequiredFieldValidator>
                 </td>
             </tr>
         </table>
     </div>
     <div style="float: left; margin-left: 40%">
-        <asp:Button ID="btnGetInfoFromRapaport" runat="server" Text="get info from Rapaport" OnClick="btnGetInfoFromRapaport_Click" />
+        <asp:Button ID="btnGetInfoFromRapaport" runat="server" Text="get info from Rapaport" OnClick="btnGetInfoFromRapaport_Click"
+            ValidationGroup="rapaportValidationGroup" />
     </div>
     <asp:Label ID="lblCaratPriceTitle" runat="server" Text="Carat Price:"></asp:Label>
     <asp:Label ID="lblCaratPrice" runat="server" Text=""></asp:Label>
-        <asp:Label ID="lblCaratPriceChange" runat="server" Text=""></asp:Label>
+    <asp:Label ID="lblCaratPriceChange" runat="server" Text=""></asp:Label>
     <div>
         <asp:Label ID="Label_Messages" runat="server" Text=""></asp:Label>
     </div>

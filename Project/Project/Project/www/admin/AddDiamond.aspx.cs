@@ -180,7 +180,7 @@ public partial class www_AddDiamond : System.Web.UI.Page
         }
         else
         {
-            //what hapans in error
+            //what happens in error
             lblCaratPrice.Text = "Rapaport site returned an error: " + rapaportResponse.Response.Header.Error_message;
         }
     }

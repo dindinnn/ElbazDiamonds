@@ -206,46 +206,44 @@ private string BuildInsertCommand_Stone(Stone S)
     //    da.Update(dt);
     //}
 
-    ////---------------------------------------------------------------------------------
-    //// userConformation
-    ////---------------------------------------------------------------------------------
-    //public bool userAdminConformation(string conString, string tableName, string fieldName, string username, string password)
-    //{
+    //---------------------------------------------------------------------------------
+    // userConformation
+    //---------------------------------------------------------------------------------
+    public bool userAdminConformation(string conString, string tableName, string fieldName, string username, string password)
+    {
 
-    //    SqlConnection con = null;
+        SqlConnection con = null;
 
-    //    try
-    //    {
-    //        con = connect(conString); // create a connection to the database using the connection String defined in the web config file
+        try
+        {
+            con = connect(conString); // create a connection to the database using the connection String defined in the web config file
 
-    //        String selectSTR = "Select * from Admin where User_Name='" + username + "'And User_Password ='" + password + "'";
+            String selectSTR = "Select * from Admin where User_Name='" + username + "' and User_Password = '" + password + "'";
 
-    //        SqlCommand cmd = new SqlCommand(selectSTR, con);
+            SqlCommand cmd = new SqlCommand(selectSTR, con);
 
-    //        // get a reader
-    //        SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection); // CommandBehavior.CloseConnection: the connection will be closed after reading has reached the end
+            // get a reader
+            SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection); // CommandBehavior.CloseConnection: the connection will be closed after reading has reached the end
 
-    //        if (dr.Read())
-    //        {
-    //            return true;
-    //        }
-    //        else return false;                   
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        // write to log          
-    //        return false;
-    //    }
-    //    finally
-    //    {
-    //        if (con != null)
-    //        {
-    //            con.Close();
-    //        }
-
-    //    }
-
-    //}
+            if (dr.Read())
+            {
+                return true;
+            }
+            else return false;
+        }
+        catch (Exception ex)
+        {
+            // write to log          
+            return false;
+        }
+        finally
+        {
+            if (con != null)
+            {
+                con.Close();
+            }
+        }
+    }
 
 
     ////--------------------------------------------------------------------------------------------------

@@ -8,35 +8,24 @@ using System.Web;
 /// </summary>
 public class Users
 {
-    public Users()
-    {
-        //
-        // TODO: Add constructor logic here
-        //
-    }
-
-    public Users(string _user_name, string _password)
-    {
-        UserName = _user_name;
-        Password = _password;
-    }
-
-    protected string userName;
+    #region variables
+    protected string username;
     protected string password;
+    #endregion
 
+    #region Properties 
     public string UserName
     {
         get
         {
-            return userName;
+            return username;
         }
 
         set
         {
-            userName = value;
+            username = value;
         }
     }
-
     public string Password
     {
         get
@@ -49,11 +38,26 @@ public class Users
             password = value;
         }
     }
+    #endregion
 
-    //public bool userAdminConformation(string username, string password)
-    //{
-    //    DBServices dbs = new DBServices();
-    //    return dbs.userAdminConformation("DBConnectionString", "Admin", "User_Name", username, password);
+    #region constructors 
+    public Users()
+    {
+        //
+        // TODO: Add constructor logic here
+        //
+    }
 
-    //}
+    public Users(string _user_name, string _password)
+    {
+        UserName = _user_name;
+        Password = _password;
+    }
+    #endregion
+
+    public bool userAdminConformation(string username, string password)
+    {
+        DBServices dbs = new DBServices();
+        return dbs.userAdminConformation("DBConnectionString", "Admin", "User_Name", username, password);
+    }
 }
