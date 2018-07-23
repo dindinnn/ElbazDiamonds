@@ -6,6 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" runat="Server">
     <!-- Title Page -->
+
     <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(../../../img/heading-pages-02.jpg);">
         <h2 class="l-text2 t-center">Women
         </h2>
@@ -18,7 +19,7 @@
     <section class="bgwhite p-t-55 p-b-65">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-md-8 col-lg-12 p-b-50">
+                <div class="col-xs-4 col-sm-6 col-md-8 col-lg-12 p-b-50">
                     <!--  -->
                     <div class="flex-sb-m flex-w p-b-35">
                         <div class="flex-w">
@@ -27,7 +28,7 @@
 
                             <ul class="search-diamonds-by-shape">
                                 <li class="search-diamonds-by-shape">
-                                    <input type="checkbox" id="RB" class="search-diamonds-by-shape" runat="server" />
+                                    <input type="checkbox" id="RB" class="search-diamonds-by-shape" runat="server" checked />
                                     <label class="search-diamonds-by-shape" for="RB" data-toggle="tooltip" title="Round">
                                         <img src="../../img/Customer/RB.jpg" class=" search-diamonds-by-shape" />
                                     </label>
@@ -79,16 +80,26 @@
                                 </li>
                             </ul>
 
-                            <!-- SEARCH-DIAMOND-BY-SAHPE-UL -->
+                            <!-- SEARCH-DIAMOND-BY-WEIGHT -->
 
-                            <h4 class="m-text14 p-b-7">weight
-                            </h4>
-                            <div class="wra-filter-bar">
+                            <div class="col-sm-6 col-lg-2 filter-row-half" style="margin-bottom: 20px;">
+                                <div class="filter-label">WEIGHT</div>
+                                <span class="input-background">
+                                    <input style="width: 40%; text-align: center;" class="input-round-border input-left s-text4 size4 " min="0.10" max="4.00" id="caratsmin" value="0.20" type="number" runat="server">
+                                    <span style="margin-left: 8px;">to</span>
+                                    <input style="width: 40%; text-align: center;" class="input-round-border input-right s-text4 size4" min="0.10" max="4.00" id="caratsmax" value="10.00" type="number" runat="server">
+                                </span>
                             </div>
 
-
-
-
+                            <!-- SEARCH-DIAMOND-BY-PRICE -->
+                            <div class="col-sm-6 col-lg-2 filter-row-half" style="margin-bottom: 20px;">
+                                <div class="filter-label">PRICE</div>
+                                <span class="input-background">
+                                    <input style="width: 40%; text-align: center;" class="input-round-border input-left s-text4 size4 " min="0.10" max="4.00" id="Number1" value="0.20" type="number" runat="server">
+                                    <span style="margin-left: 8px;">to</span>
+                                    <input style="width: 40%; text-align: center;" class="input-round-border input-right s-text4 size4" min="0.10" max="4.00" id="Number2" value="10.00" type="number" runat="server">
+                                </span>
+                            </div>
 
 
                         </div>
