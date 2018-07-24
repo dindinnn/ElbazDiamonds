@@ -15,7 +15,7 @@ public partial class www_AddDiamond : System.Web.UI.Page
     {
         if (Session["User"] == null)
         {
-            Response.Redirect("HomePageAdmin.aspx");
+            Response.Redirect("LoginAdmin.aspx");
         }
         if (Session["UploadedFile"] == null && File_Load.HasFile)
             Session["UploadedFile"] = File_Load;

@@ -52,7 +52,6 @@ public int insert_Stone(Stone S)
     }
 
         String cStr = BuildInsertCommand_Stone(S); // helper method to build the insert string
-  //      String cStr = "INSERT INTO [dbo].[Stone] (Stone_Name) Values ('abc')";
 
     cmd = CreateCommand(cStr, con); // create the command
 
@@ -246,112 +245,105 @@ private string BuildInsertCommand_Stone(Stone S)
     }
 
 
-    ////--------------------------------------------------------------------------------------------------
-    //// This method insert a Category 
-    ////--------------------------------------------------------------------------------------------------
-    //public int insert_category(string categoory_name)
-    //{
+    //--------------------------------------------------------------------------------------------------
+    // This method insert a Customer 
+    //--------------------------------------------------------------------------------------------------
+    public int insert_Customer(Customers c)
+    {
 
-    //    SqlConnection con;
-    //    SqlCommand cmd;
+        SqlConnection con;
+        SqlCommand cmd;
 
-    //    try
-    //    {
-    //        con = connect("DBConnectionString"); // create the connection
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        // write to log
-    //        throw (ex);
-    //    }
+        try
+        {
+            con = connect("DBConnectionString"); // create the connection
+        }
+        catch (Exception ex)
+        {
+            // write to log
+            throw (ex);
+        }
 
-    //    String cStr = BuildInsertCommand_category(categoory_name);      // helper method to build the insert string
+        String cStr = BuildInsertCommand_Customer(c);      // helper method to build the insert string
+        cmd = CreateCommand(cStr, con);             // create the command
 
-    //    cmd = CreateCommand(cStr, con);             // create the command
+        try
+        {
+            int numEffected = cmd.ExecuteNonQuery(); // execute the command
+            return numEffected;
+        }
+        catch (Exception ex)
+        {
+            return 0;
+            // write to log
+            throw (ex);
+        }
 
-    //    try
-    //    {
-    //        int numEffected = cmd.ExecuteNonQuery(); // execute the command
-    //        return numEffected;
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        return 0;
-    //        // write to log
-    //        throw (ex);
-    //    }
+        finally
+        {
+            if (con != null)
+            {
+                // close the db connection
+                con.Close();
+            }
+        }
 
-    //    finally
-    //    {
-    //        if (con != null)
-    //        {
-    //            // close the db connection
-    //            con.Close();
-    //        }
-    //    }
+    }
+    //--------------------------------------------------------------------
+    // Build the Insert command String of new category
+    //--------------------------------------------------------------------
+    private string BuildInsertCommand_Customer(Customers c)
+    {
+        String command;
 
-    //}
-    ////--------------------------------------------------------------------
-    //// Build the Insert command String of new category
-    ////--------------------------------------------------------------------
-    //private string BuildInsertCommand_category(string Shape_Name)
-    //{
-    //    String command;
+        StringBuilder sb = new StringBuilder();
+        // use a string builder to create the dynamic string
+        sb.AppendFormat("Values('{0}', '{1}' , '{2}' , '{3}' , '{4}' , '{5}' , '{6}' , '{7}' , '{8}' , '{9}' "
+            + ")", c.Username, c.Password, c.FirstName, c.LastName, c.CompanyName, c.Phone, c.Address, c.City, c.Country, c.Email);
+        String prefix = "INSERT INTO [dbo].[Customer] " + "(User_Name, User_Password, First_Name, Last_Name, Company_Name, Phone, Address, City, Country, Email) ";
+        command = prefix + sb.ToString();
+        return command;
+    }
 
-    //    StringBuilder sb = new StringBuilder();
-    //    // use a string builder to create the dynamic string
-    //    sb.AppendFormat("Values('{0}' )", Shape_Name.ToString());
-    //    String prefix = "INSERT INTO[dbo].[Category] " + "(Shape_Name ) ";
-    //    command = prefix + sb.ToString();
-    //    return command;
-    //}
+    //---------------------------------------------------------------------------------
+    // IsCustomerExist
+    //---------------------------------------------------------------------------------
+    public bool IsCustomerExist(string conString, string username)
+    {
+        SqlConnection con = null;
+        try
+        {
+            con = connect(conString); // create a connection to the database using the connection String defined in the web config file
+            String selectSTR = "Select * from Customer where User_Name= '" + username + "'";
+            SqlCommand cmd = new SqlCommand(selectSTR, con);
+            // get a reader
+            SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection); // CommandBehavior.CloseConnection: the connection will be closed after reading has reached the end
+            //int usertype;
+            if (dr.Read())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
-    ////---------------------------------------------------------------------------------
-    //// Category_Check
-    ////---------------------------------------------------------------------------------
-    //public bool Category_Check(string conString, string Shape_Name)
-    //{
-
-    //    SqlConnection con = null;
-    //    try
-    //    {
-    //        con = connect(conString); // create a connection to the database using the connection String defined in the web config file
-
-    //        String selectSTR = "Select * from Category where Shape_Name='" + Shape_Name + "'";
-
-
-    //        SqlCommand cmd = new SqlCommand(selectSTR, con);
-
-    //        // get a reader
-    //        SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection); // CommandBehavior.CloseConnection: the connection will be closed after reading has reached the end
-    //        //int usertype;
-
-    //        if (dr.Read())
-    //        {
-    //            return false;
-    //        }
-    //        else
-    //        {
-    //            return true;
-    //        }
+        }
+        catch (Exception ex)
+        {
+            // write to log
+            throw (ex);
+        }
+        finally
+        {
+            if (con != null)
+            {
+                con.Close();
+            }
+        }
+    }
 
 
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        // write to log
-    //        throw (ex);
-    //    }
-    //    finally
-    //    {
-    //        if (con != null)
-    //        {
-    //            con.Close();
-    //        }
-
-    //    }
-
-    //}
     ////---------------------------------------------------------------------------------
     //// Amount_Check
     ////---------------------------------------------------------------------------------
