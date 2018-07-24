@@ -12,37 +12,37 @@ public partial class LoginAdmin : System.Web.UI.Page
 
     }
 
-    //Users adminUser = new Users();
+    Users adminUser = new Users();
     protected void submitAdmin_BTN_Click(object sender, EventArgs e)
     {
-        //string userName = Username_TB.Value.ToString();
-        //string password = Password_TB.Value.ToString();
-        //adminUser.UserName = userName;
-        //adminUser.Password = password;
-        //bool confirm = adminUser.userAdminConformation(userName, password);
-        //Session["User"] = adminUser;
-        //if (SavePasswordCookie_CB.Checked)
-        //{
-        //    Create_cookie();
-        //}
-        //if (confirm)
-        //{
-        //    if (SavePasswordCookie_CB.Checked)
-        //    {
-        //        Create_cookie();
-        //    }
-        Response.Redirect("HomePageAdmin.aspx");
-        //}
-        //else
-        //{
-        //    WrongusernameorpasswordLBL.Visible = true;
-        //}
-
+        string username = Username_TB.Value;
+        string password = Password_TB.Value;
+        adminUser.Username = username;
+        adminUser.Password = password;
+        bool confirm = adminUser.userAdminConformation(username, password);
+        Session["User"] = adminUser;
+        if (SavePasswordCookie_CB.Checked)
+        {
+            Create_cookie();
+        }
+        if (confirm)
+        {
+            if (SavePasswordCookie_CB.Checked)
+            {
+                Create_cookie();
+            }
+            Response.Redirect("HomePageAdmin.aspx");
+        }
+        else
+        {
+            WrongusernameorpasswordLBL.Visible = true;
+        }
     }
-    //protected void Create_cookie()
-    //{
-    //    Response.Cookies["User_Password"].Value = adminUser.Password.ToString();
-    //    Response.Cookies["User_Password"].Expires = DateTime.Now.AddDays(20);
-    //}
+
+    protected void Create_cookie()
+    {
+        Response.Cookies["User_Password"].Value = adminUser.Password.ToString();
+        Response.Cookies["User_Password"].Expires = DateTime.Now.AddDays(20);
+    }
 
 }

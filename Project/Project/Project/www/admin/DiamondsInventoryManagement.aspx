@@ -1,47 +1,25 @@
-﻿<%@ Page Title="Diamonds Inventory Management" Language="C#" MasterPageFile="~/css/MasterPage_Admin.master" AutoEventWireup="true" CodeFile="DiamondsInventoryManagement.aspx.cs" Inherits="www_diamondsInventoryManagement" %>
+﻿<%@ Page Title="Diamonds Inventory Management" Language="C#" MasterPageFile="~/css/MasterPage_Admin.master" 
+    AutoEventWireup="true" CodeFile="DiamondsInventoryManagement.aspx.cs" Inherits="www_diamondsInventoryManagement" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<%--    <asp:SqlDataSource ID="SqlDataSource1" runat="server"
-        ConnectionString="<%$ ConnectionStrings:DBConnectionString %>"
-        DeleteCommand="DELETE FROM [Stone] WHERE [ID] = @original_ID"
-        InsertCommand="INSERT INTO [Stone] ([Stone_Name], [Shape_Name], [Image], [Price], [Amount], [Status]) VALUES (@Stone_Name, @Shape_Name, @Image, @Price, @Amount, @Status)" OldValuesParameterFormatString="original_{0}"
-        SelectCommand="SELECT * FROM [Stone]"
-        UpdateCommand="UPDATE [Stone] SET [Amount] = @Amount, [Status] = @Status WHERE [ID] = @original_ID">
-        <DeleteParameters>
-            <asp:Parameter Name="original_ID" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="Stone_Name" Type="String" />
-            <asp:Parameter Name="Shape_Name" Type="String" />
-            <asp:Parameter Name="Image" Type="String" />
-            <asp:Parameter Name="Price" Type="Int32" />
-            <asp:Parameter Name="Amount" Type="Int32" />
-            <asp:Parameter Name="Status" Type="Boolean" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="Stone_Name" Type="String" />
-            <asp:Parameter Name="Shape_Name" Type="String" />
-            <asp:Parameter Name="Image" Type="String" />
-            <asp:Parameter Name="Price" Type="Int32" />
-            <asp:Parameter Name="Amount" Type="Int32" />
-            <asp:Parameter Name="Status" Type="Boolean" />
-            <asp:Parameter Name="original_ID" Type="Int32" />
-        </UpdateParameters>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+        ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" OldValuesParameterFormatString="original_{0}"
+        SelectCommand="SELECT [Stone_Name], [Stone_Weight], [Stone_Image], [Shape_Name], [Color_Name], [Clarity_Name], [Polish_Name] FROM [View_DiamondsInventoryManagement]">
     </asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" Height="272px" Width="575px">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" 
+        BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" Height="272px" Width="575px">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
-            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
-            <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
-            <asp:BoundField DataField="Stone_Name" HeaderText="Stone_Name" InsertVisible="True" SortExpression="Stone_Name" ReadOnly="True" />
-            <asp:BoundField DataField="Shape_Name" HeaderText="Shape_Name" SortExpression="Shape_Name" InsertVisible="True" ReadOnly="True" />
-            <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" InsertVisible="True" ReadOnly="True" />
-            <asp:BoundField DataField="Amount" HeaderText="Amount" SortExpression="Amount" InsertVisible="True"  />
-            <asp:CheckBoxField DataField="Status" HeaderText="Status" SortExpression="Status" InsertVisible="True"  />
-            <asp:ImageField DataImageUrlField="Image" HeaderText="image">
-            </asp:ImageField>
+            <asp:CommandField ShowSelectButton="True" />
+            <asp:BoundField DataField="Stone_Name" HeaderText="Name" SortExpression="Stone_Name" />
+            <asp:BoundField DataField="Stone_Weight" HeaderText="Weight" SortExpression="Stone_Weight" InsertVisible="True" />
+            <asp:ImageField DataImageUrlField="Stone_Image" HeaderText="Image" InsertVisible="True" ></asp:ImageField>
+            <asp:BoundField DataField="Shape_Name" HeaderText="Name" SortExpression="Shape_Name" />
+            <asp:BoundField DataField="Color_Name" HeaderText="Name" SortExpression="Color_Name" />
+            <asp:BoundField DataField="Clarity_Name" HeaderText="Name" SortExpression="Clarity_Name" />
+            <asp:BoundField DataField="Polish_Name" HeaderText="Name" SortExpression="Polish_Name" />
         </Columns>
         <FooterStyle BackColor="#CCCC99" />
         <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
@@ -52,5 +30,5 @@
         <SortedAscendingHeaderStyle BackColor="#848384" />
         <SortedDescendingCellStyle BackColor="#EAEAD3" />
         <SortedDescendingHeaderStyle BackColor="#575357" />
-    </asp:GridView>--%>
+    </asp:GridView>
 </asp:Content>

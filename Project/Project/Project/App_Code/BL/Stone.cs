@@ -38,7 +38,6 @@ public class Stone
     #endregion
 
     #region Properties 
-    //Properties:
     public string Name
     {
         get { return name; }

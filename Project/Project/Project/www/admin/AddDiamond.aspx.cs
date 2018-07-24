@@ -13,16 +13,16 @@ public partial class www_AddDiamond : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (Session["User"] == null)
-        //{
-        //    Response.Redirect("HomePageAdmin.aspx");
-        //}
-        //if (Session["UploadedFile"] == null && File_Load.HasFile)
-        //    Session["UploadedFile"] = File_Load;
-        //else if (Session["UploadedFile"] != null && (!File_Load.HasFile))
-        //    File_Load = (FileUpload)Session["UploadedFile"];
-        //else if (File_Load.HasFile)
-        //    Session["UploadedFile"] = File_Load;
+        if (Session["User"] == null)
+        {
+            Response.Redirect("HomePageAdmin.aspx");
+        }
+        if (Session["UploadedFile"] == null && File_Load.HasFile)
+            Session["UploadedFile"] = File_Load;
+        else if (Session["UploadedFile"] != null && (!File_Load.HasFile))
+            File_Load = (FileUpload)Session["UploadedFile"];
+        else if (File_Load.HasFile)
+            Session["UploadedFile"] = File_Load;
     }
 
     protected void btnAddDiamond_Click(object sender, EventArgs e)
@@ -180,7 +180,7 @@ public partial class www_AddDiamond : System.Web.UI.Page
         }
         else
         {
-            //what hapans in error
+            //what happens in error
             lblCaratPrice.Text = "Rapaport site returned an error: " + rapaportResponse.Response.Header.Error_message;
         }
     }
