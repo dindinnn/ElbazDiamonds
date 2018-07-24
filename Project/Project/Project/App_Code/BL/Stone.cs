@@ -244,44 +244,48 @@ public class Stone
         return numAffected;
     }
 
-    //public List<Stone> readStoneDS()
-    //{
-    //    int i = 0;
-    //    DBServices dbs = new DBServices();
-    //    dbs = dbs.ReadFromDataBase_ActiveStones("DBConnectionString", "Stone");
-    //    List<Stone> Stones = new List<Stone>();
-    //    foreach (DataRow dr in dbs.dt.Rows)
-    //    {
-    //        Stone p = new Stone();
-    //        p.id = i++;
-    //        p.Title = (string)dr["Stone_name"];
-    //        p.name = (string)dr["Shape_name"];
-    //        p.ImagePath = (string)dr["Image"];
-    //        p.Price = double.Parse(dr["Price"].ToString());
-    //        p.Amount = int.Parse(dr["Amount"].ToString());
-    //        p.Status = bool.Parse(dr["Status"].ToString());
-    //        Stones.Add(p);
-    //    }
-    //   //חיבור מה db ומהספק החיצונ
+    public List<Stone> readStoneDS()
+    {
+        int i = 0;
+        DBServices dbs = new DBServices();
+        dbs = dbs.ReadFromDataBase_ActiveStones("DBConnectionString", "Stone");
+        List<Stone> Stones = new List<Stone>();
+        foreach (DataRow dr in dbs.dt.Rows)
+        {
+            Stone p = new Stone();
+            p.id = i++;
+            p.Title = (string)dr["Stone_name"];
+            p.name = (string)dr["Shape_name"];
+            p.ImagePath = (string)dr["Image"];
+            p.Price = double.Parse(dr["Price"].ToString());
+            p.Amount = int.Parse(dr["Amount"].ToString());
+            p.Status = bool.Parse(dr["Status"].ToString());
+            Stones.Add(p);
 
-    //    sepplierProxy.ExternalSupplier proxy = new sepplierProxy.ExternalSupplier();
-    //    sepplierProxy.Stone[] StoneArr = proxy.getStones();
 
-    //    foreach (var item in StoneArr )
-    //    {
-    //        Stone p = new Stone();
-    //        p.id = i++;
-    //        p.Title = item.Title;
-    //        p.name = item.name;
-    //        p.ImagePath = item.ImagePath;
-    //        p.Price = item.Price;
-    //        p.Amount = item.Amount;
-    //        p.Status = item.Status;
-    //        Stones.Add(p);
-    //    }
 
-    //    return Stones;
-    //}
+
+        }
+        //חיבור מה db ומהספק החיצונ
+
+        sepplierProxy.ExternalSupplier proxy = new sepplierProxy.ExternalSupplier();
+        sepplierProxy.Stone[] StoneArr = proxy.getStones();
+
+        foreach (var item in StoneArr)
+        {
+            Stone p = new Stone();
+            p.id = i++;
+            p.Title = item.Title;
+            p.name = item.name;
+            p.ImagePath = item.ImagePath;
+            p.Price = item.Price;
+            p.Amount = item.Amount;
+            p.Status = item.Status;
+            Stones.Add(p);
+        }
+
+        return Stones;
+    }
 
     //public void discountStone(double discount)
     //{
