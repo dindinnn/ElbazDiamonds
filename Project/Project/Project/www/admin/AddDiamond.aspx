@@ -13,8 +13,8 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <h1>Insert a new stone into the system</h1>
-    <table style="width: 100%;">
+    <h1>Add a new stone into the system</h1>
+    <table style="width: 90%;">
 
         <%-- NAME --%>
         <tr>
@@ -36,10 +36,13 @@
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="Weight_VLD" ControlToValidate="Weight_TB" runat="server"
-                    ErrorMessage="Please enter stone weight" ValidationGroup="addDiamondValidationGroup,rapaportValidationGroup"></asp:RequiredFieldValidator>
+                    ErrorMessage="Please enter stone weight" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
+
+                <asp:RequiredFieldValidator ID="Weight_VLD_2" ControlToValidate="Weight_TB" runat="server"
+                    ErrorMessage="Please enter stone weight" ValidationGroup="rapaportValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
-       
+
 
         <%-- SHAPE --%>
         <tr>
@@ -55,12 +58,15 @@
             <td>
                 <asp:RequiredFieldValidator ID="DDL_Shape_Id_VLD" runat="server" ControlToValidate="DDL_Shape_Id"
                     ErrorMessage="Please select the shape of the stone" InitialValue="0"
-                    ValidationGroup="addDiamondValidationGroup,rapaportValidationGroup"></asp:RequiredFieldValidator>
+                    ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
+
+                <asp:RequiredFieldValidator ID="DDL_Shape_Id_VLD_2" runat="server" ControlToValidate="DDL_Shape_Id"
+                    ErrorMessage="Please select the shape of the stone" InitialValue="0"
+                    ValidationGroup="rapaportValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
-        <%--OnClientClick="Page_ClientValidate('addDiamondValidationGroup'); Page_ClientValidate('rapaportValidationGroup'); return false;"--%>
-       
-         <%-- COLOR --%>
+
+        <%-- COLOR --%>
         <tr>
             <td>Color:</td>
             <td>
@@ -74,7 +80,11 @@
             <td>
                 <asp:RequiredFieldValidator ID="DDL_Color_Id_VLD" runat="server" ControlToValidate="DDL_Color_Id"
                     ErrorMessage="Please select the color of the stone" InitialValue="0"
-                    ValidationGroup="addDiamondValidationGroup,rapaportValidationGroup"></asp:RequiredFieldValidator>
+                    ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
+
+                <asp:RequiredFieldValidator ID="DDL_Color_Id_VLD_2" runat="server" ControlToValidate="DDL_Color_Id"
+                    ErrorMessage="Please select the color of the stone" InitialValue="0"
+                    ValidationGroup="rapaportValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -92,7 +102,11 @@
             <td>
                 <asp:RequiredFieldValidator ID="DDL_Clarity_Id_VLD" runat="server" ControlToValidate="DDL_Clarity_Id"
                     ErrorMessage="Please select the clarity of the stone" InitialValue="0"
-                    ValidationGroup="addDiamondValidationGroup,rapaportValidationGroup"></asp:RequiredFieldValidator>
+                    ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
+
+                <asp:RequiredFieldValidator ID="DDL_Clarity_Id_VLD_2" runat="server" ControlToValidate="DDL_Clarity_Id"
+                    ErrorMessage="Please select the clarity of the stone" InitialValue="0"
+                    ValidationGroup="rapaportValidationGroup"></asp:RequiredFieldValidator>
             </td>
         </tr>
 
@@ -399,6 +413,9 @@
         <asp:Button ID="btnAddDiamond" runat="server" Text="add diamond" OnClick="btnAddDiamond_Click"
             ValidationGroup="addDiamondValidationGroup" />
     </div>
+        <div>
+        <asp:Label ID="Label_Messages" runat="server" Text=""></asp:Label>
+    </div>
     <div>
         <%-- USERNAME --%>
         <table>
@@ -432,7 +449,4 @@
     <asp:Label ID="lblCaratPriceTitle" runat="server" Text="Carat Price:"></asp:Label>
     <asp:Label ID="lblCaratPrice" runat="server" Text=""></asp:Label>
     <asp:Label ID="lblCaratPriceChange" runat="server" Text=""></asp:Label>
-    <div>
-        <asp:Label ID="Label_Messages" runat="server" Text=""></asp:Label>
-    </div>
 </asp:Content>

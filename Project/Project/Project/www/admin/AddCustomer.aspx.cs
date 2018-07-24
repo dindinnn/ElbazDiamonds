@@ -11,4 +11,9 @@ public partial class www_AddCustomer : System.Web.UI.Page
     {
 
     }
+
+    protected void btnAddCustomer_Click(object sender, EventArgs e)
+    {
+
+    }
 }

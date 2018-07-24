@@ -4,16 +4,20 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for Users
+/// Summary description for Customers
 /// </summary>
-public class Users
+public class Customers
 {
     #region variables
     private string username;
     private string password;
     private string firstName;
     private string lastName;
+    private string companyName;
     private string phone;
+    private string country;
+    private string city;
+    private string address;
     private string email;
     #endregion
 
@@ -66,6 +70,18 @@ public class Users
             lastName = value;
         }
     }
+    public string CompanyName
+    {
+        get
+        {
+            return companyName;
+        }
+
+        set
+        {
+            companyName = value;
+        }
+    }
     public string Phone
     {
         get
@@ -76,6 +92,42 @@ public class Users
         set
         {
             phone = value;
+        }
+    }
+    public string Country
+    {
+        get
+        {
+            return country;
+        }
+
+        set
+        {
+            country = value;
+        }
+    }
+    public string City
+    {
+        get
+        {
+            return city;
+        }
+
+        set
+        {
+            city = value;
+        }
+    }
+    public string Address
+    {
+        get
+        {
+            return address;
+        }
+
+        set
+        {
+            address = value;
         }
     }
     public string Email
@@ -93,26 +145,30 @@ public class Users
     #endregion
 
     #region constructors 
-    public Users()
+    public Customers()
     {
         //
         // TODO: Add constructor logic here
         //
     }
-    public Users(string username, string password, string firstName, string lastName, string phone, string email)
+    public Customers(string username, string password, string firstName, string lastName, string companyName, string phone, string country, string city, string address, string email)
     {
         this.username = username;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.companyName = companyName;
         this.phone = phone;
+        this.country = country;
+        this.city = city;
+        this.address = address;
         this.email = email;
     }
     #endregion
 
-    public bool userAdminConformation(string username, string password)
-    {
-        DBServices dbs = new DBServices();
-        return dbs.userAdminConformation("DBConnectionString", "Admin", "User_Name", username, password);
-    }
+    //public bool userCustomerConformation(string username, string password)
+    //{
+    //    DBServices dbs = new DBServices();
+    //    return dbs.userAdminConformation("DBConnectionString", "Admin", "User_Name", username, password);
+    //}
 }

@@ -17,7 +17,7 @@ public partial class LoginAdmin : System.Web.UI.Page
     {
         string username = Username_TB.Value;
         string password = Password_TB.Value;
-        adminUser.UserName = username;
+        adminUser.Username = username;
         adminUser.Password = password;
         bool confirm = adminUser.userAdminConformation(username, password);
         Session["User"] = adminUser;
