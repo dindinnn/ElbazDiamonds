@@ -11,7 +11,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+        
     }
 
     
