@@ -400,6 +400,7 @@
                     </div>
 
                     <!-- Product -->
+                    <asp:PlaceHolder ID="ph" runat="server" ></asp:PlaceHolder>
                     <div class="row">
                         <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
                             <!-- Block2 -->
