@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <title>Search diamonds by ID</title>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <link href="movies.css" rel="stylesheet" />
+        <script src="../js/ajaxCalls.js"></script>
+        <script src="../js/stones.js"></script>
+
+        <style>
+            #proInfo img {
+                max-height: 100px;
+                max-width: 100px;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <div data-role="page" data-theme="a" data-content-theme="a" data-position="fixed" id="home">
+
+            <!-- /header -->
+            <div data-role="header" data-theme="b">
+                <h1>
+                    Welcome
+                </h1>
+            </div>
+            <!-- /content -->
+            <div data-role="content">
+                <ul data-role="listview" data-filter-reveal="true" data-filter="true"
+                    style="display:block" data-inset="true" id="CategoryList" data-divider-theme="e"></ul>
+            </div>
+            <!-- /footer -->
+            <div data-role="footer" data-position="fixed">
+                <sapn id="footimg">
+                    <img src="images/logo.png" alt="image" />
+                </sapn>
+            </div>
+        </div>
+
+
+        <div data-role="page" data-theme="a" data-position="fixed" id="productsPage">
+
+            <!-- /header -->
+            <div data-role="header" data-theme="b">
+                <a href="#home" class="ui-shadow-icon ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-back ui-btn-icon-left" data-transition="slide" data-direction="reverse">Back</a>
+                <h1> Products List </h1>
+            </div>
+
+            <!-- /content -->
+            <div data-role="content">
+                <ul data-role="listview" data-filter="true" data-inset="true" id="ProductList"></ul>
+            </div>
+
+            <!-- /footer -->
+            <div data-role="footer" data-position="fixed">
+                <sapn id="footimg">
+                    <img src="images/logo.png" alt="image" />
+                </sapn>
+            </div>
+        </div>
+
+
+        <div data-role="page" id="productInfoPage">
+
+            <!-- /header -->
+            <div data-role="header" data-theme="b">
+                <a data-rel="back" data-icon="back" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext"></a>
+                <h1> Product View </h1>
+            </div>
+
+            <!-- /content -->
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" id="fullProductList"></ul>
+                <div data-role="collapsibleset" data-theme="a" data-content-theme="a" id="collapse">
+                </div>
+            </div>
+
+            <!-- /footer -->
+            <div data-role="footer" data-position="fixed">
+                <sapn id="footimg">
+                    <img src="images/logo.png" alt="image" />
+                </sapn>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
