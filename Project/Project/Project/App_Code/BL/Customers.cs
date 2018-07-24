@@ -171,4 +171,20 @@ public class Customers
     //    DBServices dbs = new DBServices();
     //    return dbs.userAdminConformation("DBConnectionString", "Admin", "User_Name", username, password);
     //}
+
+    public static bool isCustomerExist(string username)
+    {
+
+        DBServices dbs = new DBServices();
+        bool Customer_exists = dbs.IsCustomerExist("DBConnectionString", username);
+        return Customer_exists;
+    }
+
+    public int insert()
+    {
+        DBServices dbs = new DBServices();
+        int numAffected = dbs.insert_Customer(this);
+        return numAffected;
+
+    }
 }
