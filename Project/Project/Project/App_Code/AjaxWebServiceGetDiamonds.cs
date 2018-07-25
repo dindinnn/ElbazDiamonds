@@ -22,19 +22,35 @@ public class AjaxWebServiceGetDiamonds : System.Web.Services.WebService
         //InitializeComponent(); 
     }
 
-    //קבלת האבנים הקיימות במלאי
+    //קבלת כל האבנים הקיימות במלאי
     [WebMethod]
     [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 
-    public string getStonesByName(string name)
+    public string getAllStones()
     {
-        string stoneName = name;
         Stone s = new Stone();
-        List<Stone> ls = s.getStonesByName(categoryId);
-
+        List<Stone> ls = s.getAllStones();
         JavaScriptSerializer js = new JavaScriptSerializer();
         // serialize to string
-        string jsonStringCategory = js.Serialize(ls);
-        return jsonStringCategory;
+        string jsonStringStone = js.Serialize(ls);
+        //string jsonString = "{\"hi\":\"hello\"}";
+        //return jsonString;
+        return jsonStringStone;
     }
+
+    //קבלת האבנים לפי שם
+    //[WebMethod]
+    //[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+
+    //public string getStonesByName(string name)
+    //{
+    //    string stoneName = name;
+    //    Stone s = new Stone();
+    //    List<Stone> ls = s.getStonesByName(categoryId);
+
+    //    JavaScriptSerializer js = new JavaScriptSerializer();
+    //    // serialize to string
+    //    string jsonStringCategory = js.Serialize(ls);
+    //    return jsonStringCategory;
+    //}
 }

@@ -2,22 +2,23 @@
 ProductInfo = new Object();
 
 $(document).on('pagebeforeshow', '#home', function () {
-    $("#CategoryList").empty();
-    getCategory(renderCategory);
+    $("#StonesList").empty();
+    getAllStones(renderStones);
 });
 
 
-//function renderCategory(results) {
-//    //this is the callBackFunc 
-//    dynamicli_Category = "";
-//    resutls = $.parseJSON(results.d);      
-//    $.each(resutls, function (i, category) {
-//        dynamicli_Category = "<li> <a href='#' id='" + category.Id + "'> <h3>" + category.Name + "</h3></li>"
-//        $("#CategoryList").append(dynamicli_Category);
-//        $("#CategoryList").listview('refresh');
-//    });
-//    $("#CategoryList").listview('refresh');
-//}
+function renderStones(results) {
+    //this is the callBackFunc 
+    alert('xx'); alert(results); alert('yy');
+    dynamic_Stone = "";
+    resutls = $.parseJSON(results.d);      
+    $.each(resutls, function (i, stone) {
+        dynamic_Stone = "<li> <a href='#' id='" + stone.Name + "'> <h3>" + stone.Name + "</h3></li>"
+        $("#StonesList").append(dynamic_Stone);
+        $("#StonesList").listview('refresh');
+    });
+    $("#StonesList").listview('refresh');
+}
 
 //$(document).on('vclick', '#CategoryList li a', function () {
 //    CategoryInfo.id = parseInt($(this).attr('id'));

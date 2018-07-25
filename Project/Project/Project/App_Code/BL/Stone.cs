@@ -244,70 +244,105 @@ public class Stone
         return numAffected;
     }
 
-    public List<Stone> readStoneDS()
+    public List<Stone> getAllStones()
     {
-        int i = 0;
         DBServices dbs = new DBServices();
-        dbs = dbs.ReadFromDataBase_ActiveStones("DBConnectionString", "Stone");
-        List<Stone> Stones = new List<Stone>();
+        dbs = dbs.ReadFromDataBase("DBConnectionString", "Stone");
+        List<Stone> stones = new List<Stone>();
         foreach (DataRow dr in dbs.dt.Rows)
         {
-            Stone p = new Stone();
-            p.id = i++;
-            p.Title = (string)dr["Stone_name"];
-            p.name = (string)dr["Shape_name"];
-            p.ImagePath = (string)dr["Image"];
-            p.Price = double.Parse(dr["Price"].ToString());
-            p.Amount = int.Parse(dr["Amount"].ToString());
-            p.Status = bool.Parse(dr["Status"].ToString());
-            Stones.Add(p);
-
-
-
-
+            Stone s = new Stone();
+            s.Name = (string)dr["Stone_Name"];
+            s.Weight = (double)dr["Stone_Weight"];
+            //s.Shape = (string)dr["Stone_Shape"];
+            //s.Color = (string)dr["Stone_Color"];
+            //s.Clarity = (string)dr["Stone_Clarity"];
+            s.m1 = (double)dr["Stone_M1"];
+            s.M2 = (double)dr["Stone_M1"];
+            s.M3 = (double)dr["Stone_M2"];
+            //s.Depth = (double)dr["Stone_Depth"];
+            //s.Table = (double)dr["Stone_Table"];
+            //s.Girdle = (string)dr["Stone_Girdle"];
+            //s.Culet = (string)dr["Stone_Culet"];
+            //s.Cut = (string)dr["Stone_Cut"];
+            //s.Polish = (string)dr["Stone_Polish"];
+            //s.Symmetry = (string)dr["Stone_Symmetry"];
+            //s.Fluorescence = (string)dr["Stone_Fluorescence"];
+            //s.Lab = (string)dr["Stone_Lab"];
+            //s.Certificate = (long)dr["Stone_Certificate"];
+            s.Cost_P_Discount = (double)dr["Stone_Cost_P_Discount"];
+            s.Cost_Price_CT = (double)dr["Stone_Cost_Price_$_ct"];
+            s.T_Cost_Price = (double)dr["Stone_T_Cost_Price"];
+            s.Sale_P_Discount = (double)dr["Stone_Sale_P_Discount"];
+            s.Sale_Price_CT = (double)dr["Stone_Sale_Price_$_ct"];
+            s.T_Sale_Price = (double)dr["Stone_T_Sale_Price"];
+            s.ImagePath = (string)dr["Stone_Image"];
+            //s.Status = (string)dr["Stone_Status"];
+            stones.Add(s);
         }
-        //חיבור מה db ומהספק החיצונ
-
-        sepplierProxy.ExternalSupplier proxy = new sepplierProxy.ExternalSupplier();
-        sepplierProxy.Stone[] StoneArr = proxy.getStones();
-
-        foreach (var item in StoneArr)
-        {
-            Stone p = new Stone();
-            p.id = i++;
-            p.Title = item.Title;
-            p.name = item.name;
-            p.ImagePath = item.ImagePath;
-            p.Price = item.Price;
-            p.Amount = item.Amount;
-            p.Status = item.Status;
-            Stones.Add(p);
-        }
-
-        return Stones;
+        return stones;
     }
 
-    //public void discountStone(double discount)
+    //public Stone getStonesByName(string stoneName)
     //{
-    //    Price *= discount;
-    //}
+    //    DBservices dbs = new DBservices();
+    //    dbs = dbs.ReadFromDataBase("productDBConnectionString", "Category");
+    //    List<Category> categories = new List<Category>();
+    //    foreach (DataRow dr in dbs.dt.Rows)
+    //    {
+    //        Category c = new Category();
+    //        c.categoryId = (int)dr["ID"];
+    //        c.Name = (string)dr["Category_Name"];
+    //        categories.Add(c);
+    //    }
 
-    //public int amountCheck(Stone p)
-    //{
+    //    return categories;
 
-    //    DBServices dbs = new DBServices();
-    //    return dbs.amountCheck(p.title);
+     
 
-    //}
 
-    //public int after_sale_amount(int amount)
-    //{
-    //    DBServices dbs = new DBServices();
-    //    return dbs.after_sale_amount(this, amount);
-    //}
+        //חיבור מה db ומהספק החיצונ
 
-    #endregion
-}
+        //    sepplierProxy.ExternalSupplier proxy = new sepplierProxy.ExternalSupplier();
+        //    sepplierProxy.Stone[] StoneArr = proxy.getStones();
+
+        //    foreach (var item in StoneArr)
+        //    {
+        //        Stone p = new Stone();
+        //        p.id = i++;
+        //        p.Title = item.Title;
+        //        p.name = item.name;
+        //        p.ImagePath = item.ImagePath;
+        //        p.Price = item.Price;
+        //        p.Amount = item.Amount;
+        //        p.Status = item.Status;
+        //        Stones.Add(p);
+        //    }
+
+        //    return Stones;
+        //}
+
+        //public void discountStone(double discount)
+        //{
+        //    Price *= discount;
+        //}
+
+        //public int amountCheck(Stone p)
+        //{
+
+        //    DBServices dbs = new DBServices();
+        //    return dbs.amountCheck(p.title);
+
+        //}
+
+        //public int after_sale_amount(int amount)
+        //{
+        //    DBServices dbs = new DBServices();
+        //    return dbs.after_sale_amount(this, amount);
+        //}
+
+        #endregion
+    }
 
 
 
