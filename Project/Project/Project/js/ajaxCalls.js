@@ -1,10 +1,11 @@
-﻿function getAllStones(renderStones) {
+﻿function getAllStonesViews(renderStones) {
     $.ajax({
-        url: 'AjaxWebServiceGetDiamonds.asmx/getAllStones',
+        url: 'AjaxWebServiceGetDiamonds.asmx/getAllStonesViews',
         type: 'POST',
         dataType: "json",
         contentType: 'application/json; charset = utf-8',
         success: function (results) {
+            alert('xx');
             renderStones(results);
         },
         error: function (request, error) {
@@ -12,7 +13,6 @@
         }
     });
 }
-
 
 //function getStonesByName(CategoryInfo, renderProducts) {
 

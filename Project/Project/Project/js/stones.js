@@ -3,22 +3,28 @@ ProductInfo = new Object();
 
 $(document).on('pagebeforeshow', '#home', function () {
     $("#StonesList").empty();
-    getAllStones(renderStones);
+    getAllStonesViews(renderStones);
 });
+//???
+//$(document).ready(function () {
+//    $("#StonesList").empty();
+//    getAllStones(renderStones);
+//});
 
-
-function renderStones(results) {
-    //this is the callBackFunc 
-    alert('xx'); alert(results); alert('yy');
-    dynamic_Stone = "";
-    resutls = $.parseJSON(results.d);      
-    $.each(resutls, function (i, stone) {
-        dynamic_Stone = "<li> <a href='#' id='" + stone.Name + "'> <h3>" + stone.Name + "</h3></li>"
-        $("#StonesList").append(dynamic_Stone);
-        $("#StonesList").listview('refresh');
-    });
-    $("#StonesList").listview('refresh');
-}
+        function renderStones(results) {
+            //this is the callBackFunc 
+            alert(results.d);
+            dynamic_Stone = "";
+            resutls = $.parseJSON(results.d);
+            $.each(resutls, function (i, stoneView) {
+                dynamic_Stone = "<li> <a href='#' " +"<h3>" + "stone name= " + stoneView.Name + "</h3>" + 
+                "<img src='" + stoneView.ImagePath + "'/>" + "<h4>" + "stone weight= " + stoneView.Weight + "</h4>" +
+                "<h4>" + "stone status= " + stoneView.status + "</h4>" + "</a></li>";
+                $("#StonesList").append(dynamic_Stone);
+                $("#StonesList").listview('refresh');
+            });
+            $("#StonesList").listview('refresh');
+        }
 
 //$(document).on('vclick', '#CategoryList li a', function () {
 //    CategoryInfo.id = parseInt($(this).attr('id'));

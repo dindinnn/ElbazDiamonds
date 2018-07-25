@@ -26,13 +26,13 @@ public class AjaxWebServiceGetDiamonds : System.Web.Services.WebService
     [WebMethod]
     [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
 
-    public string getAllStones()
+    public string getAllStonesViews()
     {
-        Stone s = new Stone();
-        List<Stone> ls = s.getAllStones();
+        StoneView sv = new StoneView();
+        List<StoneView> lsv = sv.getAllStonesViews();
         JavaScriptSerializer js = new JavaScriptSerializer();
         // serialize to string
-        string jsonStringStone = js.Serialize(ls);
+        string jsonStringStone = js.Serialize(lsv);
         //string jsonString = "{\"hi\":\"hello\"}";
         //return jsonString;
         return jsonStringStone;

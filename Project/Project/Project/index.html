@@ -8,6 +8,8 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+    <script src="../js/ajaxCalls.js"></script>
+    <script src="../js/stones.js"></script>
 
     <style>
         #proInfo img {
@@ -15,44 +17,8 @@
             max-width: 100px;
         }
     </style>
-    <script type="text/javascript">
-        function getAllStones(renderStones) {
-            $.ajax({
-                url: 'AjaxWebServiceGetDiamonds.asmx/getAllStones',
-                type: 'POST',
-                dataType: "json",
-                contentType: 'application/json; charset = utf-8',
-                success: function (results) {
-                    alert('xx');
-                    renderStones(results);
-                },
-                error: function (request, error) {
-                    alert('Network error has occurred please try again!');
-                }
-            });
-        }
-
-
-        function renderStones(results) {
-            //this is the callBackFunc 
-            alert(results.d);
-            dynamic_Stone = "";
-            resutls = $.parseJSON(results.d);
-            $.each(resutls, function (i, stone) {
-                dynamic_Stone = "<li> <a href='#' stone name='" + stone.Name + "'>" + "<h3>" + stone.Weight + "</h3>" + "</li>";
-                $("#StonesList").append(dynamic_Stone);
-                $("#StonesList").listview('refresh');
-            });
-            $("#StonesList").listview('refresh');
-        }
-
-
-        $(document).ready(function () {
-            $("#StonesList").empty();
-            getAllStones(renderStones);
-        });
-        //"<li> <a href='#' id='" + stone.Name + "'>" + "<h3> weight=" + stone.Weight + "</h3>" + "</li>"
-    </script>
+    <!--<script type="text/javascript">
+    </script>-->
 </head>
 
 
