@@ -6,24 +6,24 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
+
 public partial class www_SearchDiamonds : System.Web.UI.Page
 {
-    
-  
-        Stone s = new Stone();
-        List<Stone> list_stones;
+    public List<Stone> list_stones = new List<Stone>();
+    Stone s = new Stone();
 
     //Category c = new Category();
     //List<Category> list_C;
     //double percent;
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+
+
         //if (Session["User"] == null)
         //{
         //    Response.Redirect("Login.aspx");
         //}
-        //addproducts();
+        addproducts();
     }
     protected void addproducts()
     {
@@ -35,11 +35,35 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
         foreach (var item in list_stones)//ריצה על כל אבן
         {
-            HtmlGenericControl New_Product = new HtmlGenericControl("div");
-            HtmlGenericControl p1 = new HtmlGenericControl("p");
-            HtmlGenericControl h5 = new HtmlGenericControl("h5");
 
-            New_Product.Attributes["Class"] = "P_Class";
+            #region create  HtmlGenericControl
+
+            HtmlGenericControl New_stone_div1 = new HtmlGenericControl("div");
+            HtmlGenericControl New_stone_div2 = new HtmlGenericControl("div");
+            HtmlGenericControl New_stone_div3 = new HtmlGenericControl("div");
+            HtmlImage img_for_stone = new HtmlImage();
+            HtmlGenericControl New_stone_div4 = new HtmlGenericControl("div");
+            HtmlGenericControl New_stone_div5_AddToCart = new HtmlGenericControl("div");
+            HtmlButton BTN_AddToCart = new HtmlButton();
+            HtmlGenericControl New_stone_div6_Price = new HtmlGenericControl("div");
+            HtmlGenericControl New_stone_span_Price = new HtmlGenericControl("span");
+            HtmlGenericControl a_stone = new HtmlGenericControl("a");
+
+            #endregion
+
+            #region class for  HtmlGenericControl
+
+            New_stone_div1.Attributes["Class"] = "col-sm-12 col-md-6 col-lg-4 p-b-50";
+            New_stone_div2.Attributes["Class"] = "block2";
+            New_stone_div3.Attributes["Class"] = "block2-img wrap-pic-w of-hidden pos-relative block2-labelnew";
+            New_stone_div4.Attributes["Class"] = "block2 - overlay trans - 0 - 4";
+            New_stone_div5_AddToCart.Attributes["Class"] = "block2-btn-addcart w-size1 trans-0-4";
+            BTN_AddToCart.Attributes["Class"] = "flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4";
+            a_stone.Attributes["Class"] = "block2-name dis-block s-text3 p-b-5";    
+            New_stone_div6_Price.Attributes["Class"] = "block2-txt p-t-20";
+            New_stone_span_Price.Attributes["Class"] = "block2-price m-text6 p-r-5";
+
+            #endregion
 
             //foreach (var C in list_C)
             //{
@@ -49,29 +73,51 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
             //    }
             //}
 
-            Image img = new Image();
-            img.ImageUrl = item.ImagePath;//הוספת תמונה
+            img_for_stone.Src = item.ImagePath;//הוספת תמונה
+            img_for_stone.Alt = "IMG-PRODUCT";
 
-            h5.InnerHtml = item.;//שם המוצר
+            New_stone_span_Price.InnerHtml = item.Sale_Price_CT.ToString();// sale ct
 
-            p1.InnerHtml += "Product Price: " + item.Price.ToString() + "</br> ";//מחיר
+            a_stone.InnerHtml = item.Name;// name
 
-            p1.InnerHtml += "Product Invetory: " + item.Amount.ToString() + "</br> ";//מלאי
+            BTN_AddToCart.InnerHtml = "Add to Cart";
 
-            CheckBox Check_Box = new CheckBox();
-            Check_Box.ID = "Check_Box" + item.Id.ToString();
-            if (item.Amount == 0)//אם ריק אל תאפשר ללחוץ
-            {
-                Check_Box.Enabled = false;
-            }
+
+            ////CheckBox Check_Box = new CheckBox();
+            //Check_Box.ID = "Check_Box" + item.Id.ToString();
+            //if (item.Amount == 0)//אם ריק אל תאפשר ללחוץ
+            //{
+            //    Check_Box.Enabled = false;
+            //}
 
 
             //הוספה
-            New_Product.Controls.Add(img);
-            New_Product.Controls.Add(h5);
-            New_Product.Controls.Add(p1);
-            New_Product.Controls.Add(Check_Box);
-            ph.Controls.Add(New_Product);
+
+            New_stone_div5_AddToCart.Controls.Add(BTN_AddToCart);
+            New_stone_div4.Controls.Add(New_stone_div5_AddToCart);
+            New_stone_div3.Controls.Add(img_for_stone);
+            New_stone_div3.Controls.Add(New_stone_div4);
+
+            New_stone_div6_Price.Controls.Add(a_stone);
+            New_stone_div6_Price.Controls.Add(New_stone_span_Price);
+
+            New_stone_div2.Controls.Add(New_stone_div3);
+            New_stone_div2.Controls.Add(New_stone_div6_Price);
+
+            New_stone_div1.Controls.Add(New_stone_div2);
+
+            stones_div_table.Controls.Add(New_stone_div1);
+
+
+
+
+
+
+
+
+          
+
+
 
         }
 
