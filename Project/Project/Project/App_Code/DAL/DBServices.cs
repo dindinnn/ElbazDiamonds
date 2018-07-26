@@ -191,7 +191,7 @@ private string BuildInsertCommand_Stone(Stone S)
     //--------------------------------------------------------------------
     // Read from the DB into a table
     //--------------------------------------------------------------------
-    public DBServices ReadFromView(string conString, string viewName)
+    public DBServices ReadFromDbView(string conString, string viewName)
     {
         DBServices dbS = new DBServices(); // create a helper class
         SqlConnection con = null;

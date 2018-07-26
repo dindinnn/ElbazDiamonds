@@ -239,7 +239,7 @@ public class StoneView
     public List<StoneView> getAllStonesViews()
     {
         DBServices dbs = new DBServices();
-        dbs = dbs.ReadFromView("DBConnectionString", "View_DDL");
+        dbs = dbs.ReadFromDbView("DBConnectionString", "View_DDL");
         List<StoneView> stones = new List<StoneView>();
         foreach (DataRow dr in dbs.dt.Rows)
         {

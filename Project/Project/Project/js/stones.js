@@ -1,92 +1,35 @@
-﻿CategoryInfo = new Object();
-ProductInfo = new Object();
+﻿StoneInfo = new Object();
+//ProductInfo = new Object();
 
 $(document).on('pagebeforeshow', '#home', function () {
     $("#StonesList").empty();
     getAllStonesViews(renderStones);
 });
-//???
-//$(document).ready(function () {
-//    $("#StonesList").empty();
-//    getAllStones(renderStones);
-//});
 
-        function renderStones(results) {
-            //this is the callBackFunc 
-            alert(results.d);
-            dynamic_Stone = "";
-            resutls = $.parseJSON(results.d);
-            $.each(resutls, function (i, stoneView) {
-                dynamic_Stone = "<li> <a href='#' " +"<h3>" + "stone name= " + stoneView.Name + "</h3>" + 
-                "<img src='" + stoneView.ImagePath + "'/>" + "<h4>" + "stone weight= " + stoneView.Weight + "</h4>" +
-                "<h4>" + "stone status= " + stoneView.status + "</h4>" + "</a></li>";
-                $("#StonesList").append(dynamic_Stone);
-                $("#StonesList").listview('refresh');
-            });
-            $("#StonesList").listview('refresh');
-        }
-
-//$(document).on('vclick', '#CategoryList li a', function () {
-//    CategoryInfo.id = parseInt($(this).attr('id'));
-//    getStonesByName(CategoryInfo, renderProducts);
-//    $.mobile.changePage("#productsPage", { transition: "slide", changeHase: false });          
-//});
-
-
-
-//caregory dynamiclly added function
-function renderCategory(results) {
+function renderStones(results) {
     //this is the callBackFunc 
-    results = $.parseJSON(results.d);
-
-    $("#CategoryList").empty();
-    $.each(results, function (i, row) {
-        dynamiclly = "<li> <a href='#' id='" + row.CategoryId + "'> <h3>" + row.Name + "</h3></li>";
-        $('#CategoryList').append(dynamiclly);
-        $('#CategoryList').listview('refresh');
+    alert(results.d);
+    dynamic_Stone = "";
+    resutls = $.parseJSON(results.d);
+    $.each(resutls, function (i, stoneView) {
+        dynamic_Stone = "<li> <a href='#' id='" + stoneView.Name + "'/>" + "<h3>" + "stone name= " + stoneView.Name + "</h3>" +
+        "<img src='" + stoneView.ImagePath + "'/>" + "<h4>" + "stone weight= " + stoneView.Weight + "</h4>" +
+        "<h4>" + "stone status= " + stoneView.status + "</h4>" + "</li>";
+        $("#StonesList").append(dynamic_Stone);
+        $("#StonesList").listview('refresh');
     });
-
+    $("#StonesList").listview('refresh');
 }
 
-////on-click event on category move to selected category products page
-$(document).on('vclick', '#CategoryList li a', function () {
-    CategoryInfo.id = $(this).attr("id");
-    getStonesByName(CategoryInfo.id, renderProducts);
-    $.mobile.changePage("#productsPage", { transition: "slide", changeHash: false });
-});
 
 
-
-function renderProducts(results) {
-    //this is the callBackFunc 
-    results = $.parseJSON(results.d);
-
-    $("#ProductList").empty();
-    dynamicli_Product = "";
-    $.each(results, function (i, row) {
-        var dynamicli_Product = "<li> <a id='" + row.Id + "' >";
-        if (row.ImagePath == null) {
-            dynamicli_Product += "<img src='images/no-img.jpg'/>";
-        } else {
-            dynamicli_Product += "<img src='" + row.ImagePath + "'/>";
-        }
-        dynamicli_Product += "<h3>" + row.Title + " </h3>";
-        dynamicli_Product += "<h4>Price: " + row.Price + " </h4>";
-        dynamicli_Product += "<h4>Left In Stock:  " + row.Amount + "  </h4></a></li>";
-        $("#ProductList").append(dynamicli_Product);
-        $("#ProductList").listview('refresh');
-
-    });
-    $("#ProductList").listview('refresh');
-
-}
-
-$(document).on('vclick', '#ProductList li a', function () {
-    ProductInfo.id = parseInt($(this).attr('id'));
+$(document).on('vclick', '#StonesList li a', function () {
+    alert("in vclick");
+    StoneInfo.id = parseInt($(this).attr('id'));
+    alert(StoneInfo.id);
     getProduct(ProductInfo, renderFullProduct);
     $.mobile.changePage("#productInfoPage", { transition: "slide", changeHase: false });
 });
-
 
 function renderFullProduct(results) {
     //this is the callBackFunc 
