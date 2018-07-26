@@ -236,7 +236,7 @@ public class StoneView
     }
     #endregion
 
-    public List<StoneView> getAllStonesViews()
+    static public List<StoneView> getAllStonesViews()
     {
         DBServices dbs = new DBServices();
         dbs = dbs.ReadFromDbView("DBConnectionString", "View_DDL");
@@ -273,5 +273,31 @@ public class StoneView
             stones.Add(sv);
         }
         return stones;
+    }
+
+    static public StoneView getStoneDetails(string name)
+    {
+        DBServices dbs = new DBServices();
+        dbs = dbs.ReadFromDbView("DBConnectionString", "View_DDL", name);
+        StoneView sv = new StoneView();
+        //foreach (DataRow dr in dbs.dt.Rows)
+        //{
+        DataRow dr = dbs.dt.Rows[0];
+            sv.Name = (string)dr["Stone_Name"];
+            sv.Weight = (double)dr["Stone_Weight"];
+            sv.Shape = (string)dr["Shape_Name"];
+            sv.Color = (string)dr["Color_Name"];
+            sv.Clarity = (string)dr["Clarity_Name"];           
+            sv.Cut = (string)dr["Cut_Name"];
+            sv.Polish = (string)dr["Polish_Name"];
+            sv.Symmetry = (string)dr["Symmetry_Name"];          
+            sv.Cost_P_Discount = (double)dr["Stone_Cost_P_Discount"];
+            sv.T_Cost_Price = (double)dr["Stone_T_Cost_Price"];
+            sv.Sale_P_Discount = (double)dr["Stone_Sale_P_Discount"];
+            sv.T_Sale_Price = (double)dr["Stone_T_Sale_Price"];
+            sv.ImagePath = (string)dr["Stone_Image"];
+            sv.Status = (string)dr["Status_Name"];
+        //}
+        return sv;
     }
 }

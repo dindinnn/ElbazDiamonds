@@ -28,8 +28,8 @@ public class AjaxWebServiceGetDiamonds : System.Web.Services.WebService
 
     public string getAllStonesViews()
     {
-        StoneView sv = new StoneView();
-        List<StoneView> lsv = sv.getAllStonesViews();
+
+        List<StoneView> lsv = StoneView.getAllStonesViews();
         JavaScriptSerializer js = new JavaScriptSerializer();
         // serialize to string
         string jsonStringStone = js.Serialize(lsv);
@@ -39,20 +39,16 @@ public class AjaxWebServiceGetDiamonds : System.Web.Services.WebService
     }
 
 
-    ////קבלת כל הפרטים עבור האבן
-    //[WebMethod]
-    //[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-    //public string getProduct(string id)
-    //{
-
-    //    int productId = Convert.ToInt32(id);
-    //    Product p = new Product();
-    //    Product p1 = p.getProduct(productId);
-
-    //    JavaScriptSerializer js = new JavaScriptSerializer();
-    //    // serialize to string
-    //    string jsonStringCategory = js.Serialize(p1);
-    //    return jsonStringCategory;
-    //}
+    //קבלת כל הפרטים עבור האבן
+    [WebMethod]
+    [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+    public string getStoneDetails(string id)
+    {
+        StoneView sv = StoneView.getStoneDetails(id);
+        JavaScriptSerializer js = new JavaScriptSerializer();
+        // serialize to string
+        string jsonStringStoneView = js.Serialize(sv);
+        return jsonStringStoneView;
+    }
 
 }

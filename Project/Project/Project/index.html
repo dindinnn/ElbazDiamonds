@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-    <script src="../js/ajaxCalls.js"></script>
-    <script src="../js/stones.js"></script>
+    <script src="js/ajaxCalls.js"></script>
+    <script src="js/stones.js"></script>
 
     <style>
         #proInfo img {
@@ -22,6 +21,7 @@
 </head>
 
 <body>
+    <!-- שלב 1 -->
     <div data-role="page" data-theme="a" data-content-theme="a" data-position="fixed" id="home">
         <!-- /header -->
         <div data-role="header" data-theme="b">
@@ -43,7 +43,8 @@
         </div>
     </div>
 
-    <div data-role="page" id="productInfoPage">
+    <!-- שלב 2 -->
+    <div data-role="page" id="StoneInfoPage">
         <!-- /header -->
         <div data-role="header" data-theme="b">
             <a data-rel="back" data-icon="back" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext"></a>
@@ -52,7 +53,7 @@
 
         <!-- /content -->
         <div data-role="content">
-            <ul data-role="listview" data-inset="true" id="fullProductList"></ul>
+            <ul data-role="listview" data-inset="true" id="fullStoneList"></ul>
             <div data-role="collapsibleset" data-theme="a" data-content-theme="a" id="collapse">
             </div>
         </div>

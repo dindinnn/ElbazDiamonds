@@ -14,19 +14,20 @@
     });
 }
 
-function getStoneDetails(ProductInfo, renderFullProduct) {
+function getStoneDetails(StoneInfo, renderStoneDetails) {
 
     // serialize the object to JSON string
-    var dataString = JSON.stringify(ProductInfo);
-
+    var dataString = JSON.stringify(StoneInfo);
+    alert("data string = " + dataString);
     $.ajax({
-        url: 'ajaxWebService.asmx/getProduct',
+        url: 'AjaxWebServiceGetDiamonds.asmx/getStoneDetails',
         data: dataString,
         type: 'POST',
         dataType: "json",
         contentType: 'application/json; charset = utf-8',
         success: function (results) {
-            renderFullProduct(results);
+            alert("results:" + results.data)
+            renderStoneDetails(results);
         },
         error: function (request, error) {
             alert('Network error has occurred please try again!');
