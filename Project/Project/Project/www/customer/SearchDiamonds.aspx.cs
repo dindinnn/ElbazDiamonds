@@ -32,7 +32,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
     protected void addproducts()
     {
         stones_div_table.Visible = true;
-        list_stones = s.getAllStonesViews();
+        list_stones = s.getAllStonesViewsForaspx();
 
         foreach (var item in list_stones)//ריצה על כל אבן
         {
@@ -105,7 +105,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
     protected void addproducts_after_filter()
     {
         stones_div_table.Visible = true;
-        list_stones = s.getAllStonesViews();
+        list_stones = s.getAllStonesViewsForaspx();
 
         foreach (var item in list_stones)//ריצה על כל אבן
         {
