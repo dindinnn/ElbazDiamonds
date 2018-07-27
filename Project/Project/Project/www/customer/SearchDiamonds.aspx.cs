@@ -147,7 +147,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
             //    }
             //}
 
-            img_for_stone.Src = "/" +item.ImagePath;
+            img_for_stone.Src = "/" + item.ImagePath;
 
             img_for_stone.Alt = "IMG-PRODUCT";
 
@@ -179,29 +179,45 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
 
         List<string> list_shapes = new List<string>();
-
+        double weightMin;
+        double weightMax;
+        double priceMin;
+        double priceMax;
 
         //Shape
         foreach (var item in list_stones)
         {
             //string shape_CB;
-            CheckBox Check_Box = (CheckBox)SAHPE.FindControl("ShapeCB_" + item.Shape.ToString());
-            if (Check_Box.Checked)
+            HtmlInputCheckBox chk = (HtmlInputCheckBox)SAHPE.FindControl("ShapeCB_" + item.Shape.ToString());
+            if (chk.Checked == true)
             {
+                string v = chk.Value;
                 list_shapes.Add(item.Shape.ToString());
             }
+            
+            //Weight
+
+            HtmlInputGenericControl weightMin_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
+            weightMin = Convert.ToDouble(weightMin_control.Value.ToString());
+
+            HtmlInputGenericControl weightMax_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
+            weightMax= Convert.ToDouble(weightMin_control.Value.ToString());
+
+            //Price         
+
+            HtmlInputGenericControl priceMin_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
+            priceMin = Convert.ToDouble(weightMin_control.Value.ToString());
+
+            HtmlInputGenericControl priceMax_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
+            priceMax = Convert.ToDouble(weightMin_control.Value.ToString());
+
+
+
+           
+
 
         }
 
-        //Weight
-
-        double weightMin = Convert.ToDouble(Request.Form["weightMin"].ToString());
-        double weightMax = Convert.ToDouble(Request.Form["weightMax"].ToString());
-
-        //Price
-
-        double priceMin = Convert.ToDouble(Request.Form["priceMin"].ToString());
-        double priceMax = Convert.ToDouble(Request.Form["priceMax"].ToString());
 
 
 
