@@ -1,11 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/css/MasterPage_Customer.master" AutoEventWireup="true" CodeFile="SearchDiamonds.aspx.cs" Inherits="www_SearchDiamonds" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/css/MasterPage_Customer.master" AutoEventWireup="true" CodeFile="SearchDiamonds.aspx.cs" Inherits="www_SearchDiamonds" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="Server">
+    Search Diamond
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" runat="Server">
     <!-- Title Page -->
+
 
     <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(../../../img/heading-pages-02.jpg);">
         <h2 class="l-text2 t-center">Women
@@ -23,83 +25,88 @@
                     <!--  -->
                     <div class="flex-sb-m flex-w p-b-35">
                         <div class="flex-w">
-
                             <!-- SEARCH-DIAMOND-BY-SAHPE-UL -->
-                            <ul class="search-diamonds-by-shape">
-                                <li class="search-diamonds-by-shape">
-                                    <input type="checkbox" id="RB" class="search-diamonds-by-shape" runat="server" checked />
-                                    <label class="search-diamonds-by-shape" for="RB" data-toggle="tooltip" title="Round">
-                                        <img src="../../img/Customer/RB.jpg" class=" search-diamonds-by-shape" />
-                                    </label>
-                                </li>
-                                <li class="search-diamonds-by-shape">
-                                    <input type="checkbox" id="ASH" class="search-diamonds-by-shape" runat="server" />
-                                    <label class="search-diamonds-by-shape" for="ASH" data-toggle="tooltip" title="asscher">
-                                        <img src="../../img/Customer/ASH.jpg" class=" search-diamonds-by-shape" /></label>
-                                </li>
-                                <li class="search-diamonds-by-shape">
-                                    <input type="checkbox" id="CU" class="search-diamonds-by-shape" runat="server" />
-                                    <label for="CU" class="search-diamonds-by-shape" data-toggle="tooltip" title="cushion">
-                                        <img src="../../img/Customer/CU.jpg" class=" search-diamonds-by-shape" /></label>
-                                </li>
-                                <li class="search-diamonds-by-shape">
-                                    <input type="checkbox" id="EM" class="search-diamonds-by-shape" runat="server" />
-                                    <label for="EM" class="search-diamonds-by-shape" data-toggle="tooltip" title="emerald">
-                                        <img src="../../img/Customer/EM.jpg" class=" search-diamonds-by-shape" /></label>
-                                </li>
-                                <li class="search-diamonds-by-shape">
-                                    <input type="checkbox" id="HS" class="search-diamonds-by-shape" runat="server" />
-                                    <label for="HS" class="search-diamonds-by-shape" data-toggle="tooltip" title="heart">
-                                        <img src="../../img/Customer/HS.jpg" class=" search-diamonds-by-shape" /></label>
-                                </li>
-                                <li class="search-diamonds-by-shape">
-                                    <input type="checkbox" id="MQ" class="search-diamonds-by-shape" runat="server" />
-                                    <label for="MQ" class="search-diamonds-by-shape" data-toggle="tooltip" title="marquise">
-                                        <img src="../../img/Customer/MQ.jpg" class=" search-diamonds-by-shape" /></label>
-                                </li>
-                                <li class="search-diamonds-by-shape">
-                                    <input type="checkbox" id="OV" class="search-diamonds-by-shape" runat="server" />
-                                    <label for="OV" class="search-diamonds-by-shape" data-toggle="tooltip" title="oval">
-                                        <img src="../../img/Customer/OV.jpg" class=" search-diamonds-by-shape" /></label>
-                                </li>
-                                <li class="search-diamonds-by-shape">
-                                    <input type="checkbox" id="PR" class="search-diamonds-by-shape" runat="server" />
-                                    <label for="PR" class="search-diamonds-by-shape" data-toggle="tooltip" title="princess">
-                                        <img src="../../img/Customer/PR.jpg" class=" search-diamonds-by-shape" /></label>
-                                </li>
-                                <li class="search-diamonds-by-shape">
-                                    <input type="checkbox" id="RAD" class="search-diamonds-by-shape" runat="server" />
-                                    <label for="RAD" class="search-diamonds-by-shape" data-toggle="tooltip" title="radiant">
-                                        <img src="../../img/Customer/RAD.jpg" class=" search-diamonds-by-shape" /></label>
-                                </li>
-                                <li class="search-diamonds-by-shape">
-                                    <input type="checkbox" id="PS" class="search-diamonds-by-shape" runat="server" />
-                                    <label for="PS" class="search-diamonds-by-shape" data-toggle="tooltip" title="pear">
-                                        <img src="../../img/Customer/PS.jpg" class=" search-diamonds-by-shape" /></label>
-                                </li>
-                            </ul>
+                            <asp:PlaceHolder ID="SAHPE" runat="server">
+
+                                <ul class="search-diamonds-by-shape">
+                                    <li class="search-diamonds-by-shape">
+                                        <input type="checkbox" id="ShapeCB_round" text="RB" value="RB" class="search-diamonds-by-shape" runat="server" />
+                                        <label class="search-diamonds-by-shape" for="RB" data-toggle="tooltip" title="Round">
+                                            <img src="../../img/Customer/RB.jpg" class=" search-diamonds-by-shape" />
+                                        </label>
+                                    </li>
+                                    <li class="search-diamonds-by-shape">
+                                        <input type="checkbox" id="ASH" class="search-diamonds-by-shape" runat="server" />
+                                        <label class="search-diamonds-by-shape" for="ASH" data-toggle="tooltip" title="asscher">
+                                            <img src="../../img/Customer/ASH.jpg" class=" search-diamonds-by-shape" /></label>
+                                    </li>
+                                    <li class="search-diamonds-by-shape">
+                                        <input type="checkbox" id="CU" class="search-diamonds-by-shape" runat="server" />
+                                        <label for="CU" class="search-diamonds-by-shape" data-toggle="tooltip" title="cushion">
+                                            <img src="../../img/Customer/CU.jpg" class=" search-diamonds-by-shape" /></label>
+                                    </li>
+                                    <li class="search-diamonds-by-shape">
+                                        <input type="checkbox" id="EM" class="search-diamonds-by-shape" runat="server" />
+                                        <label for="EM" class="search-diamonds-by-shape" data-toggle="tooltip" title="emerald">
+                                            <img src="../../img/Customer/EM.jpg" class=" search-diamonds-by-shape" /></label>
+                                    </li>
+                                    <li class="search-diamonds-by-shape">
+                                        <input type="checkbox" id="HS" class="search-diamonds-by-shape" runat="server" />
+                                        <label for="HS" class="search-diamonds-by-shape" data-toggle="tooltip" title="heart">
+                                            <img src="../../img/Customer/HS.jpg" class=" search-diamonds-by-shape" /></label>
+                                    </li>
+                                    <li class="search-diamonds-by-shape">
+                                        <input type="checkbox" id="MQ" class="search-diamonds-by-shape" runat="server" />
+                                        <label for="MQ" class="search-diamonds-by-shape" data-toggle="tooltip" title="marquise">
+                                            <img src="../../img/Customer/MQ.jpg" class=" search-diamonds-by-shape" /></label>
+                                    </li>
+                                    <li class="search-diamonds-by-shape">
+                                        <input type="checkbox" id="OV" class="search-diamonds-by-shape" runat="server" />
+                                        <label for="OV" class="search-diamonds-by-shape" data-toggle="tooltip" title="oval">
+                                            <img src="../../img/Customer/OV.jpg" class=" search-diamonds-by-shape" /></label>
+                                    </li>
+                                    <li class="search-diamonds-by-shape">
+                                        <input type="checkbox" id="PR" class="search-diamonds-by-shape" runat="server" />
+                                        <label for="PR" class="search-diamonds-by-shape" data-toggle="tooltip" title="princess">
+                                            <img src="../../img/Customer/PR.jpg" class=" search-diamonds-by-shape" /></label>
+                                    </li>
+                                    <li class="search-diamonds-by-shape">
+                                        <input type="checkbox" id="RAD" class="search-diamonds-by-shape" runat="server" />
+                                        <label for="RAD" class="search-diamonds-by-shape" data-toggle="tooltip" title="radiant">
+                                            <img src="../../img/Customer/RAD.jpg" class=" search-diamonds-by-shape" /></label>
+                                    </li>
+                                    <li class="search-diamonds-by-shape">
+                                        <input type="checkbox" id="PS" class="search-diamonds-by-shape" runat="server" />
+                                        <label for="PS" class="search-diamonds-by-shape" data-toggle="tooltip" title="pear">
+                                            <img src="../../img/Customer/PS.jpg" class=" search-diamonds-by-shape" /></label>
+                                    </li>
+                                </ul>
+                            </asp:PlaceHolder>
 
                             <!-- SEARCH-DIAMOND-BY-WEIGHT -->
-                            <div class="col-sm-6 col-lg-6 filter-row-half" style="margin-bottom: 20px;">
-                                <div class="filter-label">WEIGHT</div>
-                                <span class="input-background">
-                                    <input style="width: 40%; text-align: center;" class="input-round-border input-left s-text4 size5 " min="0.10" max="4.00" id="caratsmin" value="0.10" type="number" runat="server">
-                                    <span style="margin-left: 8px; margin-right: 8px">to</span>
-                                    <input style="width: 40%; text-align: center;" class="input-round-border input-right s-text4 size5" min="1" max="10" id="caratsmax" value="10.00" type="number" runat="server">
-                                </span>
-                            </div>
+                            <asp:PlaceHolder ID="WEIGHT" runat="server">
+                                <div class="col-sm-6 col-lg-6 filter-row-half" style="margin-bottom: 20px;">
+                                    <div class="filter-label">WEIGHT</div>
+                                    <span class="input-background">
+                                        <input style="width: 40%; text-align: center; color: black" class="input-round-border input-left s-text4 size5 " min="0.10" max="4.00" name="weightMin" type="number" runat="server">
+                                        <span style="margin-left: 8px; margin-right: 8px">to</span>
+                                        <input style="width: 40%; text-align: center; color: black" class="input-round-border input-right s-text4 size5" min="1" max="10" name="weightTMax" type="number" runat="server">
+                                    </span>
+                                &nbsp;</div>
+                            </asp:PlaceHolder>
 
                             <!-- SEARCH-DIAMOND-BY-PRICE -->
                             <div class="col-xs-6 col-sm-6 col-lg-6 filter-row-half" style="margin-bottom: 20px;">
                                 <div class="filter-label">PRICE</div>
                                 <span class="input-background">
-                                    <input style="width: 40%; text-align: center;" class="input-round-border input-left s-text4 size5 " min="$1" max="$1,000,000" id="Number1" value="$1" type="number" runat="server">
+                                    <input style="width: 40%; text-align: center; color: black" class="input-round-border input-left s-text4 size5 " min="$1" max="$1,000,000" name="priceMin" type="number" runat="server">
                                     <span style="margin-left: 8px; margin-right: 8px">to</span>
-                                    <input style="width: 40%; text-align: center;" class="input-round-border input-right s-text4 size5" min="$1" max="$1,000,000" id="Number2" value="$1,000,000" type="number" runat="server">
+                                    <input style="width: 40%; text-align: center; color: black" class="input-round-border input-left s-text4 size5 " min="$1" max="$1,000,000" name="PriceMax" type="number" runat="server">
                                 </span>
                             </div>
 
                             <!-- SEARCH-DIAMOND-BY-CLARITY -->
+                            <asp:PlaceHolder ID="CLARITY" runat="server">
                             <div class="col-xs-6 col-sm-6 col-lg-12 " style="margin-bottom: 20px; padding: 0;">
                                 <div class="filter-label">CLARITY</div>
                                 <div class="checkbox  " style="float: left; margin-top: -0.5%;">
@@ -159,6 +166,7 @@
                                     </label>
                                 </div>
                             </div>
+                                </asp:PlaceHolder>
 
                             <!-- SEARCH-DIAMOND-BY-COLOR -->
                             <div class="col-xs-6 col-sm-6 col-lg-12 " style="margin-bottom: 20px; padding: 0;">
@@ -392,19 +400,16 @@
                             </div>
 
                             <!-- SEARCH-BUTTON -->
-                            <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-5">
-                                FIND ME A DIAMOND!
-                            </button>
 
+                            <asp:Button ID="Button_find_diamonds" runat="server" Text="FIND ME A DIAMOND!" OnClick="Button_find_diamonds_Click" />
                         </div>
                     </div>
-                    
-                  
+
+
 
                     <!-- Product -->
-                 
-                    <div class="row" id="stones_div_table" runat="server">
 
+                    <div class="row" id="stones_div_table" runat="server">
                     </div>
 
 

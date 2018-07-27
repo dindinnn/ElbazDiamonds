@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>
@@ -61,7 +60,7 @@
 </head>
 
 <body class="animsition">
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" >
         <!-- Header -->
         <header class="header1">
             <!-- Header desktop -->
