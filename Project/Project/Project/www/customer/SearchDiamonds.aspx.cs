@@ -27,8 +27,6 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
 
     }
-
-
     protected void addproducts()
     {
         stones_div_table.Visible = true;
@@ -101,7 +99,6 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
 
     }
-
     protected void addproducts_after_filter()
     {
         stones_div_table.Visible = true;
@@ -179,31 +176,43 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
 
         List<string> list_shapes = new List<string>();
+        List<string> list_clarity = new List<string>();
+        List<string> list_color = new List<string>();
+        List<string> list_cut = new List<string>();
+        List<string> list_polish = new List<string>();
+        List<string> list_symmetry = new List<string>();
+        List<string> list_lab = new List<string>();
         double weightMin;
         double weightMax;
         double priceMin;
         double priceMax;
+        string name;
 
-        //Shape
+
         foreach (var item in list_stones)
         {
-            //string shape_CB;
+
+            #region Shape
             HtmlInputCheckBox chk = (HtmlInputCheckBox)SAHPE.FindControl("ShapeCB_" + item.Shape.ToString());
             if (chk.Checked == true)
             {
                 string v = chk.Value;
                 list_shapes.Add(item.Shape.ToString());
             }
-            
-            //Weight
+
+            #endregion
+
+            #region Weight
 
             HtmlInputGenericControl weightMin_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
             weightMin = Convert.ToDouble(weightMin_control.Value.ToString());
 
             HtmlInputGenericControl weightMax_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
-            weightMax= Convert.ToDouble(weightMin_control.Value.ToString());
+            weightMax = Convert.ToDouble(weightMin_control.Value.ToString());
 
-            //Price         
+            #endregion
+
+            #region Price       
 
             HtmlInputGenericControl priceMin_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
             priceMin = Convert.ToDouble(weightMin_control.Value.ToString());
@@ -211,10 +220,75 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
             HtmlInputGenericControl priceMax_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
             priceMax = Convert.ToDouble(weightMin_control.Value.ToString());
 
+            #endregion
+
+            #region CLARITY
+            HtmlInputCheckBox chk_CLARITY = (HtmlInputCheckBox)CLARITY.FindControl("ShapeCB_" + item.Clarity.ToString());
+            if (chk.Checked == true)
+            {
+                string v = chk_CLARITY.Value;
+                list_clarity.Add(item.Clarity.ToString());
+            }
+
+            #endregion
+
+            #region COLOR
+            HtmlInputCheckBox chk_COLOR = (HtmlInputCheckBox)COLOR.FindControl("ShapeCB_" + item.Color.ToString());
+            if (chk.Checked == true)
+            {
+                string v = chk_COLOR.Value;
+                list_color.Add(item.Color.ToString());
+            }
 
 
-           
+            #endregion
 
+            #region CUT
+            HtmlInputCheckBox chk_CUT = (HtmlInputCheckBox)CUT.FindControl("ShapeCB_" + item.Cut.ToString());
+            if (chk.Checked == true)
+            {
+                string v = chk_CUT.Value;
+                list_cut.Add(item.Cut.ToString());
+            }
+
+            #endregion
+
+            #region POLISH
+            HtmlInputCheckBox chk_POLISH = (HtmlInputCheckBox)POLISH.FindControl("ShapeCB_" + item.Polish.ToString());
+            if (chk.Checked == true)
+            {
+                string v = chk_POLISH.Value;
+                list_shapes.Add(item.Shape.ToString());
+            }
+
+            #endregion
+
+            #region SYMMETRY
+            HtmlInputCheckBox chk_SYMMETRY = (HtmlInputCheckBox)SYMMETRY.FindControl("ShapeCB_" + item.Symmetry.ToString());
+            if (chk.Checked == true)
+            {
+                string v = chk_SYMMETRY.Value;
+                list_symmetry.Add(item.Shape.ToString());
+            }
+
+            #endregion
+
+            #region LAB
+            HtmlInputCheckBox chk_LAB = (HtmlInputCheckBox)LAB.FindControl("ShapeCB_" + item.Lab.ToString());
+            if (chk.Checked == true)
+            {
+                string v = chk_LAB.Value;
+                list_lab.Add(item.Shape.ToString());
+            }
+
+            #endregion
+
+            #region Name
+
+            HtmlInputText txt_name = (HtmlInputText)NAME.FindControl("Search_By_ID".ToString());
+            name = txt_name.Value;
+
+            #endregion
 
         }
 
@@ -234,6 +308,14 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
     }
 
+    protected void Check_Value_Price(object sender, EventArgs e)
+    {
+
+
+
+
+
+    }
 
 
 

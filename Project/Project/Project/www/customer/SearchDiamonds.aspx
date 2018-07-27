@@ -87,11 +87,12 @@
                                 <div class="col-sm-6 col-lg-6 filter-row-half" style="margin-bottom: 20px;">
                                     <div class="filter-label">WEIGHT</div>
                                     <span class="input-background">
-                                        <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="0" class="input-round-border input-left s-text4 size5 " min="0" max="10" id="weightMin" name="weightMin" type="number" runat="server">
+                                        <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="0" class="input-round-border input-left s-text4 size5 " min="0" max="10" id="weightMin" name="weightMin" type="number" runat="server" >
                                         <span style="margin-left: 8px; margin-right: 8px">to</span>
                                         <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="10" class="input-round-border input-right s-text4 size5" min="0" max="10" id="weightTMax" name="weightTMax" type="number" runat="server">
                                     </span>
-                                &nbsp;</div>
+                                    &nbsp;
+                                </div>
                             </asp:PlaceHolder>
 
                             <!-- SEARCH-DIAMOND-BY-PRICE -->
@@ -100,303 +101,315 @@
                                 <span class="input-background">
                                     <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="$0" class="input-round-border input-left s-text4 size5 " min="1" max="1,000,000" id="priceMin" name="priceMin" type="number" runat="server">
                                     <span style="margin-left: 8px; margin-right: 8px">to</span>
-                                    <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="$1,000,000"  class="input-round-border input-left s-text4 size5 " min="1" max="1,000,000" id="PriceMax" name="PriceMax" type="number" runat="server">
+                                    <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="$1,000,000" class="input-round-border input-left s-text4 size5 " min="1" max="1,000,000" id="PriceMax" name="PriceMax" type="number" runat="server">
                                 </span>
                             </div>
 
                             <!-- SEARCH-DIAMOND-BY-CLARITY -->
-                            <asp:PlaceHolder ID="CLARITY" runat="server">
-                            <div class="col-xs-6 col-sm-6 col-lg-12 " style="margin-bottom: 20px; padding: 0;">
-                                <div class="filter-label">CLARITY</div>
-                                <div class="checkbox  " style="float: left; margin-top: -0.5%;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="I3" runat="server" Text="I3" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
 
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="I2" runat="server" Text="I2" />
-                                    </label>
+                            <asp:PlaceHolder ID="CLARITY" runat="server">
+                                <div class="col-xs-6 col-sm-6 col-lg-12 " style="margin-bottom: 20px; padding: 0;">
+                                    <div class="filter-label">CLARITY</div>
+                                    <div class="checkbox  " style="float: left; margin-top: -0.5%;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="I3" runat="server" Text="I3" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="I2" runat="server" Text="I2" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="I1" runat="server" Text="I1" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="SI2" runat="server" Text="SI2" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="SI1" runat="server" Text="SI1" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="VS2" runat="server" Text="VS2" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="VS1" runat="server" Text="VS1" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="VVS2" runat="server" Text="VVS1" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="VVS1" runat="server" Text="VVS1" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="IF" runat="server" Text="IF" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="FL" runat="server" Text="FL" />
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="I1" runat="server" Text="I1" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="SI2" runat="server" Text="SI2" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="SI1" runat="server" Text="SI1" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="VS2" runat="server" Text="VS2" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="VS1" runat="server" Text="VS1" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="VVS2" runat="server" Text="VVS1" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="VVS1" runat="server" Text="VVS1" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="IF" runat="server" Text="IF" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="FL" runat="server" Text="FL" />
-                                    </label>
-                                </div>
-                            </div>
-                                </asp:PlaceHolder>
+                            </asp:PlaceHolder>
 
                             <!-- SEARCH-DIAMOND-BY-COLOR -->
-                            <div class="col-xs-6 col-sm-6 col-lg-12 " style="margin-bottom: 20px; padding: 0;">
-                                <div class="filter-label">COLOR</div>
-                                <div class="checkbox  " style="float: left; margin-top: -0.5%;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="D" runat="server" Text="D" />
-                                    </label>
+                            <asp:PlaceHolder runat="server" ID="COLOR">
+                                <div class="col-xs-6 col-sm-6 col-lg-12 " style="margin-bottom: 20px; padding: 0;">
+                                    <div class="filter-label">COLOR</div>
+                                    <div class="checkbox  " style="float: left; margin-top: -0.5%;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="D" runat="server" Text="D" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="E" runat="server" Text="E" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="F" runat="server" Text="F" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="G" runat="server" Text="G" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="H" runat="server" Text="H" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="I" runat="server" Text="I" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="J" runat="server" Text="J" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="K" runat="server" Text="K" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="L" runat="server" Text="L" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="M" runat="server" Text="M" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="N" runat="server" Text="N" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="O_P" runat="server" Text="O-P" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="Q_R" runat="server" Text="Q-R" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="S_T" runat="server" Text="S-T" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="U_V" runat="server" Text="U-V" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="W_X" runat="server" Text="W-X" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="Y_Z" runat="server" Text="Y-Z" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="Fancy" runat="server" Text="Fancy" />
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="E" runat="server" Text="E" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="F" runat="server" Text="F" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="G" runat="server" Text="G" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="H" runat="server" Text="H" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="I" runat="server" Text="I" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="J" runat="server" Text="J" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="K" runat="server" Text="K" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="L" runat="server" Text="L" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="M" runat="server" Text="M" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="N" runat="server" Text="N" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="O_P" runat="server" Text="O-P" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="Q_R" runat="server" Text="Q-R" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="S_T" runat="server" Text="S-T" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="U_V" runat="server" Text="U-V" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="W_X" runat="server" Text="W-X" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="Y_Z" runat="server" Text="Y-Z" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="Fancy" runat="server" Text="Fancy" />
-                                    </label>
-                                </div>
-                            </div>
+                            </asp:PlaceHolder>
 
                             <!-- SEARCH-DIAMOND-BY-CUT -->
-                            <div class="col-xs-6 col-sm-6 col-lg-2 " style="margin-bottom: 20px; padding: 0;">
-                                <div class="filter-label" style="margin-right: 90px;">CUT</div>
-                                <div class="checkbox  " style="float: left; margin-top: -0.5%;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="ID_Cut" runat="server" Text="ID" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
+                            <asp:PlaceHolder runat="server" ID="CUT">
+                                <div class="col-xs-6 col-sm-6 col-lg-2 " style="margin-bottom: 20px; padding: 0;">
+                                    <div class="filter-label" style="margin-right: 90px;">CUT</div>
+                                    <div class="checkbox  " style="float: left; margin-top: -0.5%;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="ID_Cut" runat="server" Text="ID" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
 
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="EX_Cut" runat="server" Text="EX" />
-                                    </label>
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="EX_Cut" runat="server" Text="EX" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="VG_Cut" runat="server" Text="VG" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="G_Cut" runat="server" Text="G" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="F_Cut" runat="server" Text="F" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="P_Cut" runat="server" Text="P" />
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="VG_Cut" runat="server" Text="VG" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="G_Cut" runat="server" Text="G" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="F_Cut" runat="server" Text="F" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="P_Cut" runat="server" Text="P" />
-                                    </label>
-                                </div>
-                            </div>
+                            </asp:PlaceHolder>
 
                             <!-- SEARCH-DIAMOND-BY-POLISH -->
-                            <div class="col-xs-2 col-sm-2 col-lg-2 " style="margin-bottom: 20px; padding: 0;">
-                                <div class="filter-label" style="margin-right: 90px;">POLISH</div>
-                                <div class="checkbox  " style="float: left; margin-top: -0.5%;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="ID_Polish" runat="server" Text="ID" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
+                            <asp:PlaceHolder runat="server" ID="POLISH">
+                                <div class="col-xs-2 col-sm-2 col-lg-2 " style="margin-bottom: 20px; padding: 0;">
+                                    <div class="filter-label" style="margin-right: 90px;">POLISH</div>
+                                    <div class="checkbox  " style="float: left; margin-top: -0.5%;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="ID_Polish" runat="server" Text="ID" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
 
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="EX_Polish" runat="server" Text="EX" />
-                                    </label>
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="EX_Polish" runat="server" Text="EX" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="VG_Polish" runat="server" Text="VG" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="G__Polish" runat="server" Text="G" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="F_Polish" runat="server" Text="F" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="P_Polish" runat="server" Text="P" />
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="VG_Polish" runat="server" Text="VG" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="G__Polish" runat="server" Text="G" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="F_Polish" runat="server" Text="F" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="P_Polish" runat="server" Text="P" />
-                                    </label>
-                                </div>
-                            </div>
+                            </asp:PlaceHolder>
 
                             <!-- SEARCH-DIAMOND-BY-SYMMETRY -->
-                            <div class="col-xs-6 col-sm-6 col-lg-2 " style="margin-bottom: 20px; padding: 0;">
-                                <div class="filter-label" style="margin-right: 90px;">SYMMETRY</div>
-                                <div class="checkbox  " style="float: left; margin-top: -0.5%;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="ID_Symmetry" runat="server" Text="ID" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
+                            <asp:PlaceHolder runat="server" ID="SYMMETRY">
+                                <div class="col-xs-6 col-sm-6 col-lg-2 " style="margin-bottom: 20px; padding: 0;">
+                                    <div class="filter-label" style="margin-right: 90px;">SYMMETRY</div>
+                                    <div class="checkbox  " style="float: left; margin-top: -0.5%;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="ID_Symmetry" runat="server" Text="ID" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
 
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="EX_Symmetry" runat="server" Text="EX" />
-                                    </label>
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="EX_Symmetry" runat="server" Text="EX" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="VG_Symmetry" runat="server" Text="VG" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="G_Symmetry" runat="server" Text="G" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="F_Symmetry" runat="server" Text="F" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="P_Symmetry" runat="server" Text="P" />
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="VG_Symmetry" runat="server" Text="VG" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="G_Symmetry" runat="server" Text="G" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="F_Symmetry" runat="server" Text="F" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="P_Symmetry" runat="server" Text="P" />
-                                    </label>
-                                </div>
-                            </div>
+                            </asp:PlaceHolder>
 
                             <!-- SEARCH-DIAMOND-BY-LAB -->
-                            <div class="col-xs-6 col-sm-6 col-lg-2 " style="margin-bottom: 20px; padding: 0;">
-                                <div class="filter-label" style="margin-right: 90px;">LAB</div>
-                                <div class="checkbox  " style="float: left; margin-top: -0.5%;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="GIA" runat="server" Text="GIA" />
-                                    </label>
-                                </div>
-                                <div class="checkbox " style="float: left;">
+                            <asp:PlaceHolder runat="server" ID="LAB">
+                                <div class="col-xs-6 col-sm-6 col-lg-2 " style="margin-bottom: 20px; padding: 0;">
+                                    <div class="filter-label" style="margin-right: 90px;">LAB</div>
+                                    <div class="checkbox  " style="float: left; margin-top: -0.5%;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="GIA" runat="server" Text="GIA" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
 
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="IGI" runat="server" Text="IGI" />
-                                    </label>
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="IGI" runat="server" Text="IGI" />
+                                        </label>
+                                    </div>
+                                    <div class="checkbox " style="float: left;">
+                                        <label class="btn btn-default">
+                                            <asp:CheckBox ID="HRD" runat="server" Text="HRD" />
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="checkbox " style="float: left;">
-                                    <label class="btn btn-default">
-                                        <asp:CheckBox ID="HRD" runat="server" Text="HRD" />
-                                    </label>
-                                </div>
-
-                            </div>
+                            </asp:PlaceHolder>
 
                             <!-- SEARCH-DIAMOND-BY-NAME -->
-                            <div class="search-product pos-relative bo4 of-hidden" style="height: 50px">
-                                <input class="s-text7 size6 p-l-23 p-r-50" type="text"
-                                    id="Search_By_ID" name="search-product" placeholder="SEARCH BY NAME" runat="server">
-                            </div>
+                            <asp:PlaceHolder runat="server" ID="NAME">
+                                <div class="search-product pos-relative bo4 of-hidden" style="height: 50px">
+                                    <input class="s-text7 size6 p-l-23 p-r-50" type="text"
+                                        id="Search_By_ID" name="search-product" placeholder="SEARCH BY NAME" runat="server">
+                                </div>
+                            </asp:PlaceHolder>
 
                             <!-- SEARCH-BUTTON -->
 
