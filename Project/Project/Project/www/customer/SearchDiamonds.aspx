@@ -29,7 +29,7 @@
                             <asp:PlaceHolder ID="SAHPE" runat="server">
                                 <ul class="search-diamonds-by-shape">
                                     <li class="search-diamonds-by-shape">
-                                        <input type="checkbox" id="ShapeCB_round" text="RB" value="RB" class="search-diamonds-by-shape" runat="server" />
+                                        <input type="checkbox" id="ShapeCB_round" text="RB" value="round" class="search-diamonds-by-shape" runat="server" />
                                         <label class="search-diamonds-by-shape" for="RB" data-toggle="tooltip" title="Round">
                                             <img src="../../img/Customer/RB.jpg" class=" search-diamonds-by-shape" />
                                         </label>
@@ -87,9 +87,9 @@
                                 <div class="col-sm-6 col-lg-6 filter-row-half" style="margin-bottom: 20px;">
                                     <div class="filter-label">WEIGHT</div>
                                     <span class="input-background">
-                                        <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="0" class="input-round-border input-left s-text4 size5 " min="0" max="10" id="weightMin" name="weightMin" type="number" runat="server" >
+                                        <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="0" class="input-round-border input-left s-text4 size5 " min="0.1" max="10" id="weightMin" name="weightMin" type="number" runat="server">
                                         <span style="margin-left: 8px; margin-right: 8px">to</span>
-                                        <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="10" class="input-round-border input-right s-text4 size5" min="0" max="10" id="weightTMax" name="weightTMax" type="number" runat="server">
+                                        <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="10" class="input-round-border input-right s-text4 size5" min="0.1" max="10" id="weightTMax" name="weightTMax" type="number" runat="server">
                                     </span>
                                     &nbsp;
                                 </div>
@@ -112,58 +112,58 @@
                                     <div class="filter-label">CLARITY</div>
                                     <div class="checkbox  " style="float: left; margin-top: -0.5%;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="I3" runat="server" Text="I3" />
+                                            <asp:CheckBox ID="ClarityCB_I3" runat="server" Text="I3"  />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
 
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="I2" runat="server" Text="I2" />
+                                            <asp:CheckBox ID="ClarityCB_I2" runat="server" Text="I2" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="I1" runat="server" Text="I1" />
+                                            <asp:CheckBox ID="ClarityCB_I1" runat="server" Text="I1" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="SI2" runat="server" Text="SI2" />
+                                            <asp:CheckBox ID="ClarityCB_SI2" runat="server" Text="SI2" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="SI1" runat="server" Text="SI1" />
+                                            <asp:CheckBox ID="ClarityCB_SI1" runat="server" Text="SI1" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="VS2" runat="server" Text="VS2" />
+                                            <asp:CheckBox ID="ClarityCB_VS2" runat="server" Text="VS2" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="VS1" runat="server" Text="VS1" />
+                                            <asp:CheckBox ID="ClarityCB_VS1" runat="server" Text="VS1" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="VVS2" runat="server" Text="VVS1" />
+                                            <asp:CheckBox ID="ClarityCB_VVS2" runat="server" Text="VVS1" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="VVS1" runat="server" Text="VVS1" />
+                                            <asp:CheckBox ID="ClarityCB_VVS1" runat="server" Text="VVS1" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="IF" runat="server" Text="IF" />
+                                            <asp:CheckBox ID="ClarityCB_IF" runat="server" Text="IF" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="FL" runat="server" Text="FL" />
+                                            <asp:CheckBox ID="ClarityCB_FL" runat="server" Text="FL" />
                                         </label>
                                     </div>
                                 </div>
@@ -175,92 +175,92 @@
                                     <div class="filter-label">COLOR</div>
                                     <div class="checkbox  " style="float: left; margin-top: -0.5%;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="D" runat="server" Text="D" />
+                                            <asp:CheckBox ID="ColorCB_D" runat="server" Text="D" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="E" runat="server" Text="E" />
+                                            <asp:CheckBox ID="ColorCB_E" runat="server" Text="E" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="F" runat="server" Text="F" />
+                                            <asp:CheckBox ID="ColorCB_F" runat="server" Text="F" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="G" runat="server" Text="G" />
+                                            <asp:CheckBox ID="ColorCB_G" runat="server" Text="G" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="H" runat="server" Text="H" />
+                                            <asp:CheckBox ID="ColorCB_H" runat="server" Text="H" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="I" runat="server" Text="I" />
+                                            <asp:CheckBox ID="ColorCB_I" runat="server" Text="I" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="J" runat="server" Text="J" />
+                                            <asp:CheckBox ID="ColorCB_J" runat="server" Text="J" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="K" runat="server" Text="K" />
+                                            <asp:CheckBox ID="ColorCB_K" runat="server" Text="K" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="L" runat="server" Text="L" />
+                                            <asp:CheckBox ID="ColorCB_L" runat="server" Text="L" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="M" runat="server" Text="M" />
+                                            <asp:CheckBox ID="ColorCB_M" runat="server" Text="M" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="N" runat="server" Text="N" />
+                                            <asp:CheckBox ID="ColorCB_N" runat="server" Text="N" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="O_P" runat="server" Text="O-P" />
+                                            <asp:CheckBox ID="ColorCB_O_P" runat="server" Text="O-P" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="Q_R" runat="server" Text="Q-R" />
+                                            <asp:CheckBox ID="ColorCB_Q_R" runat="server" Text="Q-R" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="S_T" runat="server" Text="S-T" />
+                                            <asp:CheckBox ID="ColorCB_S_T" runat="server" Text="S-T" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="U_V" runat="server" Text="U-V" />
+                                            <asp:CheckBox ID="ColorCB_U_V" runat="server" Text="U-V" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="W_X" runat="server" Text="W-X" />
+                                            <asp:CheckBox ID="ColorCB_W_X" runat="server" Text="W-X" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="Y_Z" runat="server" Text="Y-Z" />
+                                            <asp:CheckBox ID="ColorCB_Y_Z" runat="server" Text="Y-Z" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="Fancy" runat="server" Text="Fancy" />
+                                            <asp:CheckBox ID="ColorCB_Fancy" runat="server" Text="Fancy" />
                                         </label>
                                     </div>
                                 </div>
@@ -272,33 +272,33 @@
                                     <div class="filter-label" style="margin-right: 90px;">CUT</div>
                                     <div class="checkbox  " style="float: left; margin-top: -0.5%;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="ID_Cut" runat="server" Text="ID" />
+                                            <asp:CheckBox ID="CutCB_ID" runat="server" Text="ID" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
 
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="EX_Cut" runat="server" Text="EX" />
+                                            <asp:CheckBox ID="CutCB_EX" runat="server" Text="EX" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="VG_Cut" runat="server" Text="VG" />
+                                            <asp:CheckBox ID="CutCB_VG" runat="server" Text="VG" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="G_Cut" runat="server" Text="G" />
+                                            <asp:CheckBox ID="CutCB_G" runat="server" Text="G" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="F_Cut" runat="server" Text="F" />
+                                            <asp:CheckBox ID="CutCB_F" runat="server" Text="F" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="P_Cut" runat="server" Text="P" />
+                                            <asp:CheckBox ID="CutCB_P" runat="server" Text="P" />
                                         </label>
                                     </div>
                                 </div>
@@ -310,33 +310,33 @@
                                     <div class="filter-label" style="margin-right: 90px;">POLISH</div>
                                     <div class="checkbox  " style="float: left; margin-top: -0.5%;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="ID_Polish" runat="server" Text="ID" />
+                                            <asp:CheckBox ID="PolishCB_ID" runat="server" Text="ID" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
 
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="EX_Polish" runat="server" Text="EX" />
+                                            <asp:CheckBox ID="PolishCB_EX" runat="server" Text="EX" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="VG_Polish" runat="server" Text="VG" />
+                                            <asp:CheckBox ID="PolishCB_VG" runat="server" Text="VG" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="G__Polish" runat="server" Text="G" />
+                                            <asp:CheckBox ID="PolishCB_G" runat="server" Text="G" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="F_Polish" runat="server" Text="F" />
+                                            <asp:CheckBox ID="PolishCB_F" runat="server" Text="F" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="P_Polish" runat="server" Text="P" />
+                                            <asp:CheckBox ID="PolishCB_P" runat="server" Text="P" />
                                         </label>
                                     </div>
                                 </div>
@@ -348,33 +348,33 @@
                                     <div class="filter-label" style="margin-right: 90px;">SYMMETRY</div>
                                     <div class="checkbox  " style="float: left; margin-top: -0.5%;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="ID_Symmetry" runat="server" Text="ID" />
+                                            <asp:CheckBox ID="SymmetryCB_ID" runat="server" Text="ID" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
 
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="EX_Symmetry" runat="server" Text="EX" />
+                                            <asp:CheckBox ID="SymmetryCB_EX" runat="server" Text="EX" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="VG_Symmetry" runat="server" Text="VG" />
+                                            <asp:CheckBox ID="SymmetryCB_VG" runat="server" Text="VG" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="G_Symmetry" runat="server" Text="G" />
+                                            <asp:CheckBox ID="SymmetryCB_G" runat="server" Text="G" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="F_Symmetry" runat="server" Text="F" />
+                                            <asp:CheckBox ID="SymmetryCB_F" runat="server" Text="F" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="P_Symmetry" runat="server" Text="P" />
+                                            <asp:CheckBox ID="SymmetryCB_P" runat="server" Text="P" />
                                         </label>
                                     </div>
                                 </div>
@@ -386,18 +386,18 @@
                                     <div class="filter-label" style="margin-right: 90px;">LAB</div>
                                     <div class="checkbox  " style="float: left; margin-top: -0.5%;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="GIA" runat="server" Text="GIA" />
+                                            <asp:CheckBox ID="LabCB_GIA" runat="server" Text="GIA" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
 
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="IGI" runat="server" Text="IGI" />
+                                            <asp:CheckBox ID="LabCB_IGI" runat="server" Text="IGI" />
                                         </label>
                                     </div>
                                     <div class="checkbox " style="float: left;">
                                         <label class="btn btn-default">
-                                            <asp:CheckBox ID="HRD" runat="server" Text="HRD" />
+                                            <asp:CheckBox ID="LabCB_HRD" runat="server" Text="HRD" />
                                         </label>
                                     </div>
                                 </div>
@@ -440,7 +440,6 @@
 
     <!-- Container Selection -->
     <div id="dropDownSelect1">
-        <h4>HII</h4>
     </div>
     <div id="dropDownSelect2"></div>
 
