@@ -21,7 +21,7 @@
     <script src="Scripts/jquery-1.9.0.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/jquery-1.10.2.js"></script>
-
+    <script src="../../js/ajaxCalls.js"></script>
     <!--===============================================================================================-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--===============================================================================================-->
@@ -69,7 +69,7 @@
 
 <body class="animsition">
     <form id="form1" runat="server">
-        
+
         <!-- Header -->
         <header class="header1">
             <!-- Header desktop -->
@@ -194,6 +194,7 @@
                     <div>
                         <p class="s-text7 w-size27">
                             Any questions? Let us know in our office at 12th floor, Yahalom Building ,  abotinsky 3, Ramat Gan, Israel.
+                       
                         </p>
                         <div class="flex-m p-t-30">
                             <a href="https://www.facebook.com/Elbaz-Diamonds-LTD-501823439846434/" target="_blank"></a>
@@ -299,6 +300,7 @@
                             <!-- Button -->
                             <button class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
                                 Subscribe
+                           
                             </button>
                         </div>
 
@@ -313,6 +315,7 @@
             <div class="t-center p-l-15 p-r-15">
                 <div class="t-center s-text8 p-t-20">
                     Copyright © 2018 All rights reserved to DGT - Gil Elbaz,  Dina Gurshomov, Tzipi Fridman
+               
                 </div>
             </div>
         </footer>
@@ -412,9 +415,14 @@
         <!--===============================================================================================-->
         <script type="text/javascript" src="../../vendor/sweetalert/sweetalert.min.js"></script>
         <script type="text/javascript">
+
+
+
             $('.block2-btn-addcart').each(function () {
                 var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-                $(this).on('click', function () {               
+                $(this).on('click', function () {
+                    alert('addcartclick:  ' + nameProduct);
+                    addStoneToCart(nameProduct);
                     swal(this.name, "is added to cart !", "success");
                 });
             });

@@ -63,4 +63,23 @@ public class AjaxWebServiceGetDiamonds : System.Web.Services.WebService
         string jsonStringIsAdmin = js.Serialize(isAdmin);
         return jsonStringIsAdmin;
     }
+
+
+    //שליחת אבן לעגלה
+    [WebMethod(EnableSession= true)]     
+    [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+    public string addStoneToCart(string diamondName)
+    {
+        Order order = new Order();
+        Customer customerUser = (Customer)Session["User_Customer"];
+        order.CustomerName = customerUser.Username;
+        order.StoneName = diamondName;
+        order.OrderTime = DateTime.Now;
+        bool isok = order.addOrder();        
+        JavaScriptSerializer js = new JavaScriptSerializer();
+        // serialize to string
+        string jsonStringIsok = js.Serialize(isok);
+        return jsonStringIsok;
+    }
+    
 }

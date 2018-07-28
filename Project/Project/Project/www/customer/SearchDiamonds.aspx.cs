@@ -18,17 +18,19 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        //if (Session["User"] == null)
+        if (Session["User_Customer"] == null)
+        {
+            Response.Redirect("Login.aspx");
+        }
+        addproducts();
+
+        //if (!IsPostBack)
         //{
-        //    Response.Redirect("Login.aspx");
+        //    addproducts();
+        //    Button_find_diamonds.Attributes["Class"] = "flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-5";
         //}
 
-        if (!IsPostBack)
-        {
-            addproducts();
-        }
 
-        Button_find_diamonds.Attributes["Class"] = "flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-5";
     }
 
     public void btnClick(object sender, EventArgs e)
@@ -77,9 +79,9 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
             //BTN_AddToCart.ServerClick += new EventHandler(btnClick);
 
-            BTN_AddToCart.Attributes.Add("onclick", "alert('test'); return true; ");
+            //BTN_AddToCart.Attributes.Add("onclick", "alert('test'); return true; ");
 
-            BTN_AddToCart.Attributes.Add("runat", "server");
+            //BTN_AddToCart.Attributes.Add("runat", "server");
 
             BTN_AddToCart.Attributes.Add("name", item.Name);
 
@@ -91,7 +93,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
             New_stone_span_Price.InnerHtml = "Stone Weight: " + item.Weight.ToString();
 
-            a_stone.InnerHtml = "Stone Name: " + item.Name.ToString();
+            a_stone.InnerHtml =  item.Name.ToString();
 
             BTN_AddToCart.InnerHtml = "Add to Cart";
 
@@ -182,9 +184,9 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
         else
         {
-            list_stones = s.getAllStonesViews_byfilter(list_shapes, list_clarity, list_color,
-        list_cut, list_polish, list_symmetry, list_lab, weightMin,
-             weightMax, priceMin, priceMax);
+        //    list_stones = s.getAllStonesViews_byfilter(list_shapes, list_clarity, list_color,
+        //list_cut, list_polish, list_symmetry, list_lab, weightMin,
+        //     weightMax, priceMin, priceMax);
 
 
             foreach (var item in list_stones)//ריצה על כל אבן

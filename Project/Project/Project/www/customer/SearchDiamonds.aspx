@@ -8,7 +8,6 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" runat="Server">
     <!-- Title Page -->
 
-
     <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(../../../img/heading-pages-02.jpg);">
         <h2 class="l-text2 t-center">Women
         </h2>

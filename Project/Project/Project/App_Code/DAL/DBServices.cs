@@ -318,6 +318,22 @@ private string BuildInsertCommand_Stone(Stone S)
         return command;
     }
 
+    //--------------------------------------------------------------------
+    // Build the Insert command String of new order
+    //--------------------------------------------------------------------
+    private string BuildInsertCommand_Order(Order o)
+    {
+        String command;
+
+        StringBuilder sb = new StringBuilder();
+        // use a string builder to create the dynamic string
+        sb.AppendFormat("Values('{0}', '{1}' , '{2}' "
+            + ")", o.CustomerName, o.StoneName, o.OrderTime);
+        String prefix = "INSERT INTO [dbo].[Orders] " + "(Customer_Name, Stone_Name, Date_time) ";
+        command = prefix + sb.ToString();
+        return command;
+    }
+
     //---------------------------------------------------------------------------------
     // user Customer Conformation
     //---------------------------------------------------------------------------------
@@ -394,6 +410,63 @@ private string BuildInsertCommand_Stone(Stone S)
                 con.Close();
             }
         }
+    }
+
+    //--------------------------------------------------------------------------------------------------
+    // This method insert a order 
+    //--------------------------------------------------------------------------------------------------
+    public int insert_Order(Order o)
+    {
+
+        SqlConnection con;
+        SqlCommand cmd;
+
+        try
+        {
+            con = connect("DBConnectionString"); // create the connection
+        }
+        catch (Exception ex)
+        {
+            // write to log
+            throw (ex);
+        }
+
+
+        String CommandSTR =
+           "INSERT INTO [dbo].[Orders] " + "(Customer_Name, Stone_Name, Date_time) " +
+           "VALUES (@CUSTOMER_NAME, @STONE_NAME, @ORDER_DATE)";
+
+        cmd = new SqlCommand(); // create the command object
+        cmd.Connection = con;              // assign the connection to the command object
+        cmd.CommandText = CommandSTR;      // can be Select, Insert, Update, Delete 
+        cmd.Parameters.AddWithValue("@CUSTOMER_NAME",o.CustomerName);
+        cmd.Parameters.AddWithValue("@STONE_NAME", o.StoneName);
+        cmd.Parameters.AddWithValue("@ORDER_DATE", o.OrderTime);
+        cmd.CommandTimeout = 10;           // Time to wait for the execution' The default is 30 seconds
+        cmd.CommandType = System.Data.CommandType.Text; // the type of the command, can also be stored procedure
+        
+
+        try
+        {
+            int numEffected = cmd.ExecuteNonQuery(); // execute the command
+            return numEffected;
+        }
+        catch (Exception ex)
+        {
+            return 0;
+            // write to log
+            throw (ex);
+        }
+
+        finally
+        {
+            if (con != null)
+            {
+                // close the db connection
+                con.Close();
+            }
+        }
+
     }
 
     ////---------------------------------------------------------------------------------

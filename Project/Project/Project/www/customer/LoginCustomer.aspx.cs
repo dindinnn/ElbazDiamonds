@@ -21,7 +21,7 @@ public partial class www_customer_LoginCustomer : System.Web.UI.Page
         customerUser.Username = username;
         customerUser.Password = password;
         bool confirm = customerUser.userCustomerConformation(username, password);
-        Session["User"] = customerUser;
+        Session["User_Customer"] = customerUser;
         if (CustomerSavePasswordCookie_CB.Checked)
         {
             Create_cookie();
