@@ -7,14 +7,13 @@ $(document).on('pagebeforeshow', '#home', function () {
 
 function renderStones(results) {
     //this is the callBackFunc 
-    alert(results.d);
     dynamic_Stone = "";
+    console.log("render stone results.d= " + results.d);
     resutls = $.parseJSON(results.d);
     $.each(resutls, function (i, stoneView) {
-        alert("each:" + stoneView.Name);
-        dynamic_Stone = "<li> <a href='#' id='" + stoneView.Name + "'/>" + "<h3>" + "stone name= " + stoneView.Name + "</h3>" +
+        dynamic_Stone = "<li> <a href='#' id='" + stoneView.Name + "' <h3>" + "stone name= " + stoneView.Name + "</h3>" +
         "<img src='" + stoneView.ImagePath + "'/>" + "<h4>" + "stone weight= " + stoneView.Weight + "</h4>" +
-        "<h4>" + "stone status= " + stoneView.status + "</h4>" + "</li>";
+        "<h4>" + "stone status= " + stoneView.Status + "</h4>" + "</a>" + "</li>";
         $("#StonesList").append(dynamic_Stone);
         $("#StonesList").listview('refresh');
     });
@@ -24,17 +23,14 @@ function renderStones(results) {
 
 
 $(document).on('vclick', '#StonesList li a', function () {
-    alert("in vclick:" + $(this).attr('id'));
     //StoneInfo.id = parseInt($(this).attr('id'));
     StoneInfo.id = $(this).attr('id');
-    alert("stone name: " + StoneInfo.id);
     getStoneDetails(StoneInfo, renderStoneDetails);
     $.mobile.changePage("#StoneInfoPage", { transition: "slide", changeHase: false });
 });
 
 function renderStoneDetails(results) {
     //this is the callBackFunc 
-    alert(results.d);
     dynamic_FullStone = "";
     results = $.parseJSON(results.d);
     $("#fullStoneList").empty();

@@ -7,7 +7,6 @@ function adminLogin() {
     LoginInfo.userName = $('#user_name').val();
     LoginInfo.password = $('#password').val();
     var dataString = JSON.stringify(LoginInfo);
-    alert("data string admin = " + dataString);
     $.ajax({
         url: 'AjaxWebServiceGetDiamonds.asmx/isUserAdmin',
         data: dataString,
@@ -15,7 +14,6 @@ function adminLogin() {
         dataType: "json",
         contentType: 'application/json; charset = utf-8',
         success: function (results) {
-            alert("results adminlogin:" + results.d);
             if (results.d == "true") {
                 $.mobile.changePage("#home", { transition: "slide", changeHase: false });
             }
@@ -37,7 +35,6 @@ function getAllStonesViews(renderStones) {
         dataType: "json",
         contentType: 'application/json; charset = utf-8',
         success: function (results) {
-            alert('xx');
             renderStones(results);
         },
         error: function (request, error) {
@@ -49,7 +46,6 @@ function getAllStonesViews(renderStones) {
 function getStoneDetails(StoneInfo, renderStoneDetails) {
     // serialize the object to JSON string
     var dataString = JSON.stringify(StoneInfo);
-    alert("data string = " + dataString);
     $.ajax({
         url: 'AjaxWebServiceGetDiamonds.asmx/getStoneDetails',
         data: dataString,
@@ -57,7 +53,6 @@ function getStoneDetails(StoneInfo, renderStoneDetails) {
         dataType: "json",
         contentType: 'application/json; charset = utf-8',
         success: function (results) {
-            alert("results:" + results.data);
             renderStoneDetails(results);
         },
         error: function (request, error) {
