@@ -244,6 +244,13 @@ public class Stone
         return numAffected;
     }
 
+    public static bool isStoneExist(string stoneName)
+    {
+
+        DBServices dbs = new DBServices();
+        bool Stone_exists = dbs.IsStoneExist("DBConnectionString", stoneName);
+        return Stone_exists;
+    }
     //public List<Stone> getAllStones()
     //{
     //    DBServices dbs = new DBServices();
@@ -298,51 +305,51 @@ public class Stone
 
     //    return categories;
 
-     
 
 
-        //חיבור מה db ומהספק החיצונ
 
-        //    sepplierProxy.ExternalSupplier proxy = new sepplierProxy.ExternalSupplier();
-        //    sepplierProxy.Stone[] StoneArr = proxy.getStones();
+    //חיבור מה db ומהספק החיצונ
 
-        //    foreach (var item in StoneArr)
-        //    {
-        //        Stone p = new Stone();
-        //        p.id = i++;
-        //        p.Title = item.Title;
-        //        p.name = item.name;
-        //        p.ImagePath = item.ImagePath;
-        //        p.Price = item.Price;
-        //        p.Amount = item.Amount;
-        //        p.Status = item.Status;
-        //        Stones.Add(p);
-        //    }
+    //    sepplierProxy.ExternalSupplier proxy = new sepplierProxy.ExternalSupplier();
+    //    sepplierProxy.Stone[] StoneArr = proxy.getStones();
 
-        //    return Stones;
-        //}
+    //    foreach (var item in StoneArr)
+    //    {
+    //        Stone p = new Stone();
+    //        p.id = i++;
+    //        p.Title = item.Title;
+    //        p.name = item.name;
+    //        p.ImagePath = item.ImagePath;
+    //        p.Price = item.Price;
+    //        p.Amount = item.Amount;
+    //        p.Status = item.Status;
+    //        Stones.Add(p);
+    //    }
 
-        //public void discountStone(double discount)
-        //{
-        //    Price *= discount;
-        //}
+    //    return Stones;
+    //}
 
-        //public int amountCheck(Stone p)
-        //{
+    //public void discountStone(double discount)
+    //{
+    //    Price *= discount;
+    //}
 
-        //    DBServices dbs = new DBServices();
-        //    return dbs.amountCheck(p.title);
+    //public int amountCheck(Stone p)
+    //{
 
-        //}
+    //    DBServices dbs = new DBServices();
+    //    return dbs.amountCheck(p.title);
 
-        //public int after_sale_amount(int amount)
-        //{
-        //    DBServices dbs = new DBServices();
-        //    return dbs.after_sale_amount(this, amount);
-        //}
+    //}
 
-        #endregion
-    }
+    //public int after_sale_amount(int amount)
+    //{
+    //    DBServices dbs = new DBServices();
+    //    return dbs.after_sale_amount(this, amount);
+    //}
+
+    #endregion
+}
 
 
 

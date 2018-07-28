@@ -113,47 +113,6 @@ private string BuildInsertCommand_Stone(Stone S)
 }
 
     //--------------------------------------------------------------------
-    // Read from the DB into a table - ActiveStones
-    //--------------------------------------------------------------------
-    //public DBServices ReadFromDataBase_ActiveStones(string conString, string tableName)
-    //{
-
-    //    DBServices dbS = new DBServices(); // create a helper class
-    //    con = new SqlConnection();
-    //    try
-    //    {
-    //        con = dbS.connect(conString); // open the connection to the database/
-
-    //        String selectStr = "SELECT * FROM " + tableName + " where Status = 'True'"; // create the select that will be used by the adapter to select data from the DB
-
-    //        SqlDataAdapter da = new SqlDataAdapter(selectStr, con); // create the data adapter
-
-    //        DataSet ds = new DataSet(); // create a DataSet and give it a name (not mandatory) as defualt it will be the same name as the DB
-    //        da.Fill(ds);                        // Fill the datatable (in the dataset), using the Select command
-
-    //        DataTable dt = ds.Tables[0];
-
-    //        // add the datatable and the dataa adapter to the dbS helper class in order to be able to save it to a Session Object
-    //        dbS.dt = dt;
-    //        dbS.da = da;
-
-    //        return dbS;
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        // write to log
-    //        throw ex;
-    //    }
-    //    finally
-    //    {
-    //        if (con != null)
-    //        {
-    //            con.Close();
-    //        }
-    //    }
-    //}
-
-    //--------------------------------------------------------------------
     // Read from the DB into a table
     //--------------------------------------------------------------------
     public DBServices ReadFromDataBase(string conString, string tableName)
@@ -258,18 +217,9 @@ private string BuildInsertCommand_Stone(Stone S)
         }
     }
 
-    ////---------------------------------------------------------------------------------
-    //// update the dataset into the database
-    ////---------------------------------------------------------------------------------
-    //public void Update()
-    //{
-    //    // the command build will automatically create insert/update/delete commands according to the select command
-    //    SqlCommandBuilder builder = new SqlCommandBuilder(da);
-    //    da.Update(dt);
-    //}
-
+  
     //---------------------------------------------------------------------------------
-    // userConformation
+    // user Admin Conformation
     //---------------------------------------------------------------------------------
     public bool userAdminConformation(string conString, string tableName, string fieldName, string username, string password)
     {
@@ -311,7 +261,7 @@ private string BuildInsertCommand_Stone(Stone S)
     //--------------------------------------------------------------------------------------------------
     // This method insert a Customer 
     //--------------------------------------------------------------------------------------------------
-    public int insert_Customer(Customers c)
+    public int insert_Customer(Customer c)
     {
 
         SqlConnection con;
@@ -353,9 +303,9 @@ private string BuildInsertCommand_Stone(Stone S)
 
     }
     //--------------------------------------------------------------------
-    // Build the Insert command String of new category
+    // Build the Insert command String of new customer
     //--------------------------------------------------------------------
-    private string BuildInsertCommand_Customer(Customers c)
+    private string BuildInsertCommand_Customer(Customer c)
     {
         String command;
 
@@ -369,15 +319,55 @@ private string BuildInsertCommand_Stone(Stone S)
     }
 
     //---------------------------------------------------------------------------------
-    // IsCustomerExist
+    // user Customer Conformation
     //---------------------------------------------------------------------------------
-    public bool IsCustomerExist(string conString, string username)
+    public bool userCustomerConformation(string conString, string tableName, string fieldName, string username, string password)
+    {
+
+        SqlConnection con = null;
+
+        try
+        {
+            con = connect(conString); // create a connection to the database using the connection String defined in the web config file
+
+            String selectSTR = "Select * from Customer where User_Name='" + username + "' and User_Password = '" + password + "'";
+
+            SqlCommand cmd = new SqlCommand(selectSTR, con);
+
+            // get a reader
+            SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection); // CommandBehavior.CloseConnection: the connection will be closed after reading has reached the end
+
+            if (dr.Read())
+            {
+                return true;
+            }
+            else return false;
+        }
+        catch (Exception ex)
+        {
+            // write to log          
+            return false;
+        }
+        finally
+        {
+            if (con != null)
+            {
+                con.Close();
+            }
+        }
+    }
+
+
+    //---------------------------------------------------------------------------------
+    // IsStoneExist
+    //---------------------------------------------------------------------------------
+    public bool IsStoneExist(string conString, string stoneName)
     {
         SqlConnection con = null;
         try
         {
             con = connect(conString); // create a connection to the database using the connection String defined in the web config file
-            String selectSTR = "Select * from Customer where User_Name= '" + username + "'";
+            String selectSTR = "Select * from stone where Stone_Name= '" + stoneName + "'";
             SqlCommand cmd = new SqlCommand(selectSTR, con);
             // get a reader
             SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection); // CommandBehavior.CloseConnection: the connection will be closed after reading has reached the end
@@ -406,6 +396,57 @@ private string BuildInsertCommand_Stone(Stone S)
         }
     }
 
+    ////---------------------------------------------------------------------------------
+    //// update the dataset into the database
+    ////---------------------------------------------------------------------------------
+    //public void Update()
+    //{
+    //    // the command build will automatically create insert/update/delete commands according to the select command
+    //    SqlCommandBuilder builder = new SqlCommandBuilder(da);
+    //    da.Update(dt);
+    //}
+
+
+    //--------------------------------------------------------------------
+    // Read from the DB into a table - ActiveStones
+    //--------------------------------------------------------------------
+    //public DBServices ReadFromDataBase_ActiveStones(string conString, string tableName)
+    //{
+
+    //    DBServices dbS = new DBServices(); // create a helper class
+    //    con = new SqlConnection();
+    //    try
+    //    {
+    //        con = dbS.connect(conString); // open the connection to the database/
+
+    //        String selectStr = "SELECT * FROM " + tableName + " where Status = 'True'"; // create the select that will be used by the adapter to select data from the DB
+
+    //        SqlDataAdapter da = new SqlDataAdapter(selectStr, con); // create the data adapter
+
+    //        DataSet ds = new DataSet(); // create a DataSet and give it a name (not mandatory) as defualt it will be the same name as the DB
+    //        da.Fill(ds);                        // Fill the datatable (in the dataset), using the Select command
+
+    //        DataTable dt = ds.Tables[0];
+
+    //        // add the datatable and the dataa adapter to the dbS helper class in order to be able to save it to a Session Object
+    //        dbS.dt = dt;
+    //        dbS.da = da;
+
+    //        return dbS;
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        // write to log
+    //        throw ex;
+    //    }
+    //    finally
+    //    {
+    //        if (con != null)
+    //        {
+    //            con.Close();
+    //        }
+    //    }
+    //}
 
     ////---------------------------------------------------------------------------------
     //// Amount_Check

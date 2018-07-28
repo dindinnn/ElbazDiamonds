@@ -1,5 +1,4 @@
 ﻿StoneInfo = new Object();
-//ProductInfo = new Object();
 
 $(document).on('pagebeforeshow', '#home', function () {
     $("#StonesList").empty();

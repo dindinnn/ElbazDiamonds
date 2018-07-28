@@ -20,24 +20,26 @@ public partial class www_AddCustomer : System.Web.UI.Page
     {
         try
         {
+            Customer customerUser = new Customer();
             string newCustomerUsername = Username_TB.Text;
-
-            if (Customers.isCustomerExist(newCustomerUsername))
+            string newCustomerPassword = Password_TB.Text;
+            bool confirm = customerUser.userCustomerConformation(newCustomerUsername, newCustomerPassword);
+            if (confirm)
             {
-                Label_Messages.Text = "קיים לקוח בשם זהה, נסה שנית";
+                Label_Messages.Text = "קיים לקוח זהה, נסה שנית";
                 return;
             }
 
-            Customers c = new Customers(Username_TB.Text,
+           Customer c = new Customer(Username_TB.Text,
            Password_TB.Text,
            First_Name_TB.Text,
            Last_Name_TB.Text,
            Company_Name_TB.Text,
            Phone_TB.Text,
            Country_TB.Text,
-            City_TB.Text,
-        Addresse_TB.Text,
-        Email_TB.Text);
+           City_TB.Text,
+           Address_TB.Text,
+           Email_TB.Text);
 
             c.insert();
             Label_Messages.Text = "הלקוח הוסף בהצלחה";

@@ -51,4 +51,16 @@ public class AjaxWebServiceGetDiamonds : System.Web.Services.WebService
         return jsonStringStoneView;
     }
 
+    //בדיקת יוזר מנהל
+    [WebMethod]
+    [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+    public string isUserAdmin(string userName, string password)
+    {
+        Admin user = new Admin();
+        bool isAdmin = user.userAdminConformation(userName, password);
+        JavaScriptSerializer js = new JavaScriptSerializer();
+        // serialize to string
+        string jsonStringIsAdmin = js.Serialize(isAdmin);
+        return jsonStringIsAdmin;
+    }
 }

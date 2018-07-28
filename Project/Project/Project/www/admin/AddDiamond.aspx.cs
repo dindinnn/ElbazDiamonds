@@ -64,6 +64,14 @@ public partial class www_AddDiamond : System.Web.UI.Page
         //יצירת יהלום חדש
         try
         {
+            string newStoneName = Name_TB.Value;
+
+            if (Stone.isStoneExist(newStoneName))
+            {
+                Label_Messages.Text = "קיימת אבן בשם זהה, נסה שם אחר";
+                return;
+            }
+
             S = new Stone(Name_TB.Value, //שם האבן
             Convert.ToDouble(Weight_TB.Value), //משקל האבן
             DDL_Shape_Id.SelectedValue,//צורת האבן

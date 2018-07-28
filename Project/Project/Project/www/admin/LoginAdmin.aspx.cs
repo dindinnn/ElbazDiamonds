@@ -12,22 +12,23 @@ public partial class LoginAdmin : System.Web.UI.Page
 
     }
 
-    Users adminUser = new Users();
+    Admin adminUser = new Admin();
+
     protected void submitAdmin_BTN_Click(object sender, EventArgs e)
     {
-        string username = Username_TB.Value;
-        string password = Password_TB.Value;
+        string username = Admin_Username_TB.Value;
+        string password = Admin_Password_TB.Value;
         adminUser.Username = username;
         adminUser.Password = password;
         bool confirm = adminUser.userAdminConformation(username, password);
         Session["User"] = adminUser;
-        if (SavePasswordCookie_CB.Checked)
+        if (AdminSavePasswordCookie_CB.Checked)
         {
             Create_cookie();
         }
         if (confirm)
         {
-            if (SavePasswordCookie_CB.Checked)
+            if (AdminSavePasswordCookie_CB.Checked)
             {
                 Create_cookie();
             }

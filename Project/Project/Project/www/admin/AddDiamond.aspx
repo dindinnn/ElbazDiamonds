@@ -26,13 +26,14 @@
                 <asp:RequiredFieldValidator ID="Name_VLD" ControlToValidate="Name_TB" runat="server"
                     ErrorMessage="Please enter a stone name" ValidationGroup="addDiamondValidationGroup"></asp:RequiredFieldValidator>
             </td>
+            <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="CustomValidator"></asp:CustomValidator>
         </tr>
 
         <%-- WEIGHT --%>
         <tr>
             <td>Weight:</td>
             <td>
-                <input id="Weight_TB" type="text" runat="server" />
+                <input id="Weight_TB" type="number" runat="server" step="any"/>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="Weight_VLD" ControlToValidate="Weight_TB" runat="server"
@@ -114,7 +115,7 @@
         <tr>
             <td>M1:</td>
             <td>
-                <input id="M1_TB" type="text" runat="server" />
+                <input id="M1_TB" type="number" runat="server" step="any"/>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="M1_VLD" ControlToValidate="M1_TB" runat="server"
@@ -126,7 +127,7 @@
         <tr>
             <td>M2:</td>
             <td>
-                <input id="M2_TB" type="text" runat="server" />
+                <input id="M2_TB" type="number" runat="server" step="any"/>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="M2_VLD" ControlToValidate="M2_TB" runat="server"
@@ -138,7 +139,7 @@
         <tr>
             <td>M3:</td>
             <td>
-                <input id="M3_TB" type="text" runat="server" />
+                <input id="M3_TB" type="number" runat="server" step="any"/>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="M3_VLD" ControlToValidate="M3_TB" runat="server"
@@ -150,7 +151,7 @@
         <tr>
             <td>Depth:</td>
             <td>
-                <input id="Depth_TB" type="text" runat="server" />
+                <input id="Depth_TB" type="number" runat="server" step="any"/>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="Depth_VLD" ControlToValidate="Depth_TB" runat="server"
@@ -162,7 +163,7 @@
         <tr>
             <td>Table:</td>
             <td>
-                <input id="Table_TB" type="text" runat="server" />
+                <input id="Table_TB" type="number" runat="server" step="any"/>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="Table_VLD" ControlToValidate="Table_TB" runat="server"
@@ -300,7 +301,7 @@
         <tr>
             <td>Certificate:</td>
             <td>
-                <input id="Certificate_TB" type="text" runat="server" />
+                <input id="Certificate_TB" type="number" runat="server" />
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="Certificate_VLD" ControlToValidate="Certificate_TB" runat="server"
@@ -312,7 +313,7 @@
         <tr>
             <td>Cost P Discount:</td>
             <td>
-                <input id="Cost_P_Discount_TB" type="text" runat="server" />
+                <input id="Cost_P_Discount_TB" type="number" runat="server" step="any"/>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="Cost_P_Discount_VLD" ControlToValidate="Cost_P_Discount_TB" runat="server"
@@ -324,7 +325,7 @@
         <tr>
             <td>Cost Price $ CT:</td>
             <td>
-                <input id="Cost_Price_CT_TB" type="text" runat="server" />
+                <input id="Cost_Price_CT_TB" type="number" runat="server" step="any"/>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="Cost_Price_CT_VLD" ControlToValidate="Cost_Price_CT_TB" runat="server"
@@ -336,7 +337,7 @@
         <tr>
             <td>T. Cost Price:</td>
             <td>
-                <input id="T_Cost_Price_TB" type="text" runat="server" />
+                <input id="T_Cost_Price_TB" type="number" runat="server" step="any"/>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="T_Cost_Price_VLD" ControlToValidate="T_Cost_Price_TB" runat="server"
@@ -348,7 +349,7 @@
         <tr>
             <td>Sale P Discount:</td>
             <td>
-                <input id="Sale_P_Discount_TB" type="text" runat="server" />
+                <input id="Sale_P_Discount_TB" type="number" runat="server" step="any"/>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="Sale_P_Discount_VLD" ControlToValidate="Sale_P_Discount_TB" runat="server"
@@ -360,7 +361,7 @@
         <tr>
             <td>Sale Price $ /CT:</td>
             <td>
-                <input id="Sale_Price_CT_TB" type="text" runat="server" />
+                <input id="Sale_Price_CT_TB" type="number" runat="server" step="any"/>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="Sale_Price_CT_VLD" ControlToValidate="Sale_Price_CT_TB" runat="server"
@@ -372,7 +373,7 @@
         <tr>
             <td>T. Sale Price:</td>
             <td>
-                <input id="T_Sale_Price_TB" type="text" runat="server" />
+                <input id="T_Sale_Price_TB" type="number" runat="server" step="any"/>
             </td>
             <td>
                 <asp:RequiredFieldValidator ID="T_Sale_Price_VLD" ControlToValidate="Sale_Price_ct_TB" runat="server"
@@ -433,7 +434,7 @@
             <tr>
                 <td>password:</td>
                 <td>
-                    <input id="password_TB" type="text" runat="server" />
+                    <input id="password_TB" type="password" runat="server" />
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="password_TB" runat="server"
