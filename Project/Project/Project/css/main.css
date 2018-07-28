@@ -667,7 +667,7 @@ iframe {
     }
 
 
-   
+
 
 
 
@@ -2566,7 +2566,6 @@ label img {
     font-size: 85%;
     margin: 0 0 10px;
     margin-right: 45px;
-    
 }
 
 .input-round-border {
@@ -2588,8 +2587,7 @@ label img {
 .checkbox .btn, .checkbox-inline .btn {
     padding-left: 2em;
     min-width: 6.4em;
-    margin-left:6px;
-    
+    margin-left: 6px;
 }
 
 .checkbox label, .checkbox-inline label {
@@ -2602,6 +2600,18 @@ label img {
     float: left;
 }
 
-.color-widght{
-     min-width: 2em;
+.color-widght {
+    min-width: 2em;
+}
+
+.gildina {
+
+    color: white;
+    padding: 10%;
+    height: initial;
+    width: inherit;
+    background-color:  rgba(0,0,0,.5);
+
+
+   
 }
