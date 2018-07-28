@@ -283,20 +283,20 @@ public class StoneView
         //foreach (DataRow dr in dbs.dt.Rows)
         //{
         DataRow dr = dbs.dt.Rows[0];
-            sv.Name = (string)dr["Stone_Name"];
-            sv.Weight = (double)dr["Stone_Weight"];
-            sv.Shape = (string)dr["Shape_Name"];
-            sv.Color = (string)dr["Color_Name"];
-            sv.Clarity = (string)dr["Clarity_Name"];           
-            sv.Cut = (string)dr["Cut_Name"];
-            sv.Polish = (string)dr["Polish_Name"];
-            sv.Symmetry = (string)dr["Symmetry_Name"];          
-            sv.Cost_P_Discount = (double)dr["Stone_Cost_P_Discount"];
-            sv.T_Cost_Price = (double)dr["Stone_T_Cost_Price"];
-            sv.Sale_P_Discount = (double)dr["Stone_Sale_P_Discount"];
-            sv.T_Sale_Price = (double)dr["Stone_T_Sale_Price"];
-            sv.ImagePath = (string)dr["Stone_Image"];
-            sv.Status = (string)dr["Status_Name"];
+        sv.Name = (string)dr["Stone_Name"];
+        sv.Weight = (double)dr["Stone_Weight"];
+        sv.Shape = (string)dr["Shape_Name"];
+        sv.Color = (string)dr["Color_Name"];
+        sv.Clarity = (string)dr["Clarity_Name"];
+        sv.Cut = (string)dr["Cut_Name"];
+        sv.Polish = (string)dr["Polish_Name"];
+        sv.Symmetry = (string)dr["Symmetry_Name"];
+        sv.Cost_P_Discount = (double)dr["Stone_Cost_P_Discount"];
+        sv.T_Cost_Price = (double)dr["Stone_T_Cost_Price"];
+        sv.Sale_P_Discount = (double)dr["Stone_Sale_P_Discount"];
+        sv.T_Sale_Price = (double)dr["Stone_T_Sale_Price"];
+        sv.ImagePath = (string)dr["Stone_Image"];
+        sv.Status = (string)dr["Status_Name"];
         //}
         return sv;
     }
@@ -392,5 +392,10 @@ public class StoneView
         return sv;
     }
 
-
+    public void  getAllStonesViews_byfilter(List<string> list_shapes, List<string> list_clarity, List<string> list_color,
+          List<string> list_cut, List<string> list_polish, List<string> list_symmetry, List<string> list_lab, double weightMin,
+            double weightMax, double priceMin, double priceMax)
+    {
+    
+    }
 }

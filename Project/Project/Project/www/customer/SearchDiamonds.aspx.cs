@@ -14,7 +14,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
     StoneView s = new StoneView();
 
-    
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -31,14 +31,10 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
         Button_find_diamonds.Attributes["Class"] = "flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-5";
     }
 
-
-
-    protected void Cart_BTN(object sender, EventArgs e)
+    public void btnClick(object sender, EventArgs e)
     {
-        sender.ToString();
 
     }
-
     protected void addproducts()
     {
 
@@ -61,6 +57,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
             HtmlGenericControl a_stone = new HtmlGenericControl("a");
             HtmlGenericControl p_details = new HtmlGenericControl("p");
 
+
             #endregion
 
             #region class for  HtmlGenericControl
@@ -78,12 +75,13 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
             #endregion
 
-            BTN_AddToCart.Attributes.Add("OnClick", "Cart_BTN");
+            //BTN_AddToCart.ServerClick += new EventHandler(btnClick);
 
+            BTN_AddToCart.Attributes.Add("onclick", "alert('test'); return true; ");
 
-            BTN_AddToCart.ID = "BT_AddToCart";
-            BTN_AddToCart.ServerClick += new System.EventHandler(this.Cart_BTN);
+            BTN_AddToCart.Attributes.Add("runat", "server");
 
+            BTN_AddToCart.Attributes.Add("name", item.Name);
 
             p_details.InnerHtml = "Color: " + item.Color + " Clarity: " + item.Clarity + " Cut: " + item.Cut + " Polish: " + item.Polish + " Symmetry: " + item.Symmetry + " Price % :" + item.Sale_P_Discount;
 
@@ -94,8 +92,6 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
             New_stone_span_Price.InnerHtml = "Stone Weight: " + item.Weight.ToString();
 
             a_stone.InnerHtml = "Stone Name: " + item.Name.ToString();
-
-            a_stone.Attributes.Add("href", "product-detail.aspx");
 
             BTN_AddToCart.InnerHtml = "Add to Cart";
 
@@ -153,6 +149,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
         #endregion
 
 
+
         img_for_stone.Src = "../../" + sv.ImagePath;
 
         img_for_stone.Alt = "IMG-PRODUCT";
@@ -185,7 +182,11 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
         else
         {
-            list_stones = s.getAllStonesViewsForaspx();
+            list_stones = s.getAllStonesViews_byfilter(list_shapes, list_clarity, list_color,
+        list_cut, list_polish, list_symmetry, list_lab, weightMin,
+             weightMax, priceMin, priceMax);
+
+
             foreach (var item in list_stones)//ריצה על כל אבן
             {
                 #region create  HtmlGenericControl
@@ -271,6 +272,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
         foreach (var S in list_shapes_)
         {
             var chk_SHAPE = (HtmlInputCheckBox)SAHPE.FindControl("ShapeCB_" + S.ToString());
+
 
             if (chk_SHAPE.Checked == true)
             {
