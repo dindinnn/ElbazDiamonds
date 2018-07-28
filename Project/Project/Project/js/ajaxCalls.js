@@ -82,7 +82,7 @@ function addStoneToCart(stoneName) {
         success: function (results) {
             alert("addStonetoCart results:" + results.d);
             if (results.d == "true")
-            { alert("cart added") }
+            { swal(this.name, "is added to cart !", "success"); }
             else { alert("failed to add cart") }
             
         },

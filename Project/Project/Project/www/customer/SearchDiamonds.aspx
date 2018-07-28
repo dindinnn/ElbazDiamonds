@@ -4,6 +4,26 @@
     Search Diamond
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="Server">
+        <script type="text/javascript">
+        //hover
+        //    $('.block2-btn-addcart w-size1 trans-0-4').on("hover", function () {
+        //    var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();            
+        //    Console.log('addcarthover:');
+        //    addStoneToCart(nameProduct);
+
+        //    });
+
+            //$('.block2-btn-addcart').each(function () {
+            //    //  var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+            //    $(this).on('click', function () {
+            //        // alert('addcartclick:  ' + nameProduct);
+            //        alert('addcartclick:');
+            //        //addStoneToCart(nameProduct);
+            //        document.location.href = "../../www/customer/StoneDetails.html";
+            //        //mobile.changePage("#StoneInfoPage_Customer", { transition: "slide", changeHase: false });
+            //    });
+            //});
+    </script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" runat="Server">
     <!-- Title Page -->

@@ -16,6 +16,28 @@ public partial class www_customer_LoginCustomer : System.Web.UI.Page
 
     protected void submitCustomer_BTN_Click(object sender, EventArgs e)
     {
+
+        StoneFilter sf = new StoneFilter();
+        sf.List_shapes.Add("round");
+        sf.List_shapes.Add("pear");
+        sf.List_shapes.Add("square");
+        sf.List_clarity.Add("VS1");
+        sf.List_clarity.Add("VS2");
+        sf.List_clarity.Add("VVS1");
+        sf.List_color.Add("F");
+        sf.List_color.Add("E");
+        sf.List_color.Add("D");
+        sf.List_cut.Add("EX");
+        sf.List_cut.Add("VG");
+        sf.List_polish.Add("EX");
+        sf.List_polish.Add("VG");
+        sf.List_symmetry.Add("EX");
+        sf.List_symmetry.Add("G");
+        sf.List_lab.Add("IGI");
+        sf.WeightMin = 1;
+        sf.WeightMax = 3;
+        string sql = sf.generateSQLQuery();
+
         string username = Customer_Username_TB.Value;
         string password = Customer_Password_TB.Value;
         customerUser.Username = username;

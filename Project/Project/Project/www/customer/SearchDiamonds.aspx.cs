@@ -22,12 +22,13 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
         {
             Response.Redirect("Login.aspx");
         }
+        Button_find_diamonds.Attributes["Class"] = "flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-5";
         addproducts();
 
         //if (!IsPostBack)
         //{
         //    addproducts();
-        //    Button_find_diamonds.Attributes["Class"] = "flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-5";
+        //   
         //}
 
 
@@ -74,6 +75,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
             New_stone_div6_Price.Attributes["Class"] = "block2-txt p-t-20";
             New_stone_span_Price.Attributes["Class"] = "block2-price m-text6 p-r-5";
             p_details.Attributes["Class"] = "gildina block3-txt";
+            img_for_stone.Attributes["Class"] = "stoneToSelect";
 
             #endregion
 
@@ -95,7 +97,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
             a_stone.InnerHtml =  item.Name.ToString();
 
-            BTN_AddToCart.InnerHtml = "Add to Cart";
+            BTN_AddToCart.InnerHtml = "Add To Cart";
 
             BTN_AddToCart.Attributes.Add("style", "margin-bottom: 10px;");
 
@@ -116,6 +118,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
 
     }
+
     protected void addproducts_ByName(string name)
     {
 
@@ -176,6 +179,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
 
     }
+
     protected void addproducts_after_filter(List<string> list_shapes, List<string> list_clarity, List<string> list_color,
           List<string> list_cut, List<string> list_polish, List<string> list_symmetry, List<string> list_lab, double weightMin,
             double weightMax, double priceMin, double priceMax, string name)
@@ -184,9 +188,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
         else
         {
-        //    list_stones = s.getAllStonesViews_byfilter(list_shapes, list_clarity, list_color,
-        //list_cut, list_polish, list_symmetry, list_lab, weightMin,
-        //     weightMax, priceMin, priceMax);
+            
 
 
             foreach (var item in list_stones)//ריצה על כל אבן
@@ -253,7 +255,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
     protected void Button_find_diamonds_Click(object sender, EventArgs e)
     {
-
+       
 
         List<string> list_shapes = new List<string>();
         List<string> list_clarity = new List<string>();
@@ -414,12 +416,9 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
     //protected void Check_Value_Price(object sender, EventArgs e)
     //{
-
-
-
-
-
     //}
+
+
 
 
 
