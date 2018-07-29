@@ -1,0 +1,23 @@
+﻿/*.ui-content {
+    padding: 0 !important;
+}
+ 
+.ui-listview {
+    margin: 0 !important;
+}
+ 
+.example-wrapper, .example-wrapper div.iscroll-scroller {
+    width: 100% !important;
+}
+#footimg {
+    text-align: center; /* center the image */
+}
+#footimg img {
+    display: block;  /* treat the img like text */
+    margin:  auto;  /* add space between top and bottom edge of container */
+}
+
+#no-results {
+    display : none;
+}*/
+
