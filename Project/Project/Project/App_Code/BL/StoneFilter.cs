@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -173,7 +174,7 @@ public class StoneFilter
     }
     #endregion
 
-    public string generateSQLQuery()
+    public List<StoneView> generateSQLQuery()
     {
 
         string result = "SELECT * FROM View_DDL WHERE ";
@@ -348,10 +349,53 @@ public class StoneFilter
             result += "( Stone_Weight >= " + weightMin + " AND " + "Stone_Weight <= " + weightMax + " ) ";
         }
 
+        if (((list_shapes.Count > 0) || (list_clarity.Count > 0) || (list_color.Count > 0) || (list_cut.Count > 0) || (list_polish.Count > 0) || (list_symmetry.Count > 0) || (list_lab.Count > 0) || (weightMin > -1)) && PriceMin > -1 )
+        {
+            result += "AND ";
+        }
 
-
-        return result;
-
+        if (PriceMin > -1)
+        {
+            result += "( Stone_T_Sale_Price >= " + PriceMin + " AND " + "Stone_T_Sale_Price <= " + priceMax + " ) ";
+        }
+        return readfromyDS_f(result);
     }
-
+    public List<StoneView> readfromyDS_f(string conString)
+    {
+        DBServices dbs = new DBServices();
+        dbs = dbs.ReadFromDataBase_Filter("DBConnectionString", conString);
+        List<StoneView> stones = new List<StoneView>();
+        foreach (DataRow dr in dbs.dt.Rows)
+        {
+            StoneView sv = new StoneView();
+            sv.Name = (string)dr["Stone_Name"];
+            sv.Weight = (double)dr["Stone_Weight"];
+            sv.Shape = (string)dr["Shape_Name"];
+            sv.Color = (string)dr["Color_Name"];
+            sv.Clarity = (string)dr["Clarity_Name"];
+            sv.M1 = (double)dr["Stone_M1"];
+            sv.M2 = (double)dr["Stone_M1"];
+            sv.M3 = (double)dr["Stone_M2"];
+            sv.Depth = (double)dr["Stone_Depth"];
+            sv.Table = (double)dr["Stone_Table"];
+            sv.Girdle = (string)dr["Girdle_Name"];
+            sv.Culet = (string)dr["Culet_Name"];
+            sv.Cut = (string)dr["Cut_Name"];
+            sv.Polish = (string)dr["Polish_Name"];
+            sv.Symmetry = (string)dr["Symmetry_Name"];
+            sv.Fluorescence = (string)dr["Fluorescence_Name"];
+            sv.Lab = (string)dr["Lab_Name"];
+            sv.Certificate = (long)dr["Stone_Certificate"];
+            sv.Cost_P_Discount = (double)dr["Stone_Cost_P_Discount"];
+            sv.Cost_Price_CT = (double)dr["Stone_Cost_Price_$_ct"];
+            sv.T_Cost_Price = (double)dr["Stone_T_Cost_Price"];
+            sv.Sale_P_Discount = (double)dr["Stone_Sale_P_Discount"];
+            sv.Sale_Price_CT = (double)dr["Stone_Sale_Price_$_ct"];
+            sv.T_Sale_Price = (double)dr["Stone_T_Sale_Price"];
+            sv.ImagePath = (string)dr["Stone_Image"];
+            sv.Status = (string)dr["Status_Name"];
+            stones.Add(sv);
+        }
+        return stones;
+    }    
 }

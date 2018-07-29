@@ -98,9 +98,9 @@
                         <nav class="menu">
                             <ul class="main_menu">
                                 <li>
-                                    <a href="../../www/customer/CustomerProfile.aspx">Customer Profile</a>
+                                    <a href="../../www/customer/HomePageCustomer.aspx">Home</a>
                                 </li>
-                                <li>
+                                <li>                                  
                                     <a href="../../www/customer/SearchDiamonds.aspx">Search Diamonds</a>
                                 </li>
                                 <li>
@@ -205,7 +205,7 @@
                     <img src="../../img/logo_big.png" alt="IMG-LOGO" style="max-height: 191px;" />
 
                 </div>
-                <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+                <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4" hidden="hidden">
                     <h4 class="s-text12 p-b-30">Categories
                     </h4>
 
@@ -232,7 +232,7 @@
                     </ul>
                 </div>
 
-                <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+                <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4" hidden="hidden">
                     <h4 class="s-text12 p-b-30">Links
                     </h4>
 
@@ -286,7 +286,7 @@
                     </ul>
                 </div>
 
-                <div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
+                <div class="w-size8 p-t-30 p-l-15 p-r-15 respon3" hidden="hidden">
                     <h4 class="s-text12 p-b-30">Newsletter
                     </h4>
 
