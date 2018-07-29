@@ -96,7 +96,7 @@
                         <h2 style=" color:white">Username:</h2>
                     </td>
                     <td>
-                        <input id="Customer_Username_TB" type="text" runat="server"  style=" color:white" />
+                        <input id="Customer_Username_TB" type="text" runat="server"  />
                     </td>
                     <td>
                         <asp:RequiredFieldValidator ControlToValidate="Customer_Username_TB" ID="Customer_Username_VLD"
@@ -108,7 +108,7 @@
                         <h2 style=" color:white">Password:</h2>
                     </td>
                     <td>
-                        <input id="Customer_Password_TB" style=" color:white" type="password" runat="server" />
+                        <input id="Customer_Password_TB" type="password" runat="server" />
                     </td>
                     <td>
                         <asp:RequiredFieldValidator ControlToValidate="Customer_Password_TB" ID="Customer_Password_VLD"

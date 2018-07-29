@@ -312,11 +312,11 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
         #region Weight
 
         HtmlInputGenericControl weightMin_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
-        //if (weightMin_control.Value == "".ToString()) { weightMin_control.Value = "0.1"; }
+        if (weightMin_control.Value == "".ToString()) { weightMin_control.Value = "0.1"; }
         weightMin = Convert.ToDouble(weightMin_control.Value);
 
         HtmlInputGenericControl weightMax_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMax");
-        //if (weightMax_control.Value == "".ToString()) { weightMin_control.Value = "0.1"; }
+        if (weightMax_control.Value == "".ToString()) { weightMax_control.Value = "0.1"; }
         weightMax = Convert.ToDouble(weightMax_control.Value);
 
         #endregion
@@ -324,12 +324,12 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
         #region Price       
 
         HtmlInputGenericControl priceMin_control = (HtmlInputGenericControl)WEIGHT.FindControl("priceMin");
-        //if (priceMin_control.Value == "".ToString()) { weightMin_control.Value = "1"; }
+        if (priceMin_control.Value == "".ToString()) { priceMin_control.Value = "1"; }
         priceMin = Convert.ToDouble(priceMin_control.Value.ToString());
 
-        HtmlInputGenericControl PriceMax_control = (HtmlInputGenericControl)WEIGHT.FindControl("PriceMax");
-       // if (priceMax_control.Value == "".ToString()) { weightMin_control.Value = "1"; }
-        priceMax = Convert.ToDouble(PriceMax_control.Value.ToString());
+        HtmlInputGenericControl priceMax_control = (HtmlInputGenericControl)WEIGHT.FindControl("priceMax");
+        if (priceMax_control.Value == "".ToString()) { priceMax_control.Value = "1"; }
+        priceMax = Convert.ToDouble(priceMax_control.Value.ToString());
 
         #endregion
 

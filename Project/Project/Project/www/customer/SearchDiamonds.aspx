@@ -120,7 +120,7 @@
                                 <span class="input-background">
                                     <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="$0" class="input-round-border input-left s-text4 size5 " min="1" max="1,000,000" id="priceMin" name="priceMin" type="number" runat="server">
                                     <span style="margin-left: 8px; margin-right: 8px">to</span>
-                                    <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="$1,000,000" class="input-round-border input-left s-text4 size5 " min="1" max="1,000,000" id="PriceMax" name="PriceMax" type="number" runat="server">
+                                    <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="$1,000,000" class="input-round-border input-left s-text4 size5 " min="1" max="1,000,000" id="priceMax" name="priceMax" type="number" runat="server">
                                 </span>
                             </div>
 

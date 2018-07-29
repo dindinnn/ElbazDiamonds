@@ -60,11 +60,11 @@ function getStoneDetails(StoneInfo, renderStoneDetails) {
 }
 
 function addStoneToCart(stoneName) {
-    alert('addStoneToCart received:' + stoneName);
+   
     // serialize the object to JSON string
     //var dataString = JSON.stringify(stoneName);
     var dataString = "{\"diamondName\":\"" + stoneName + "\"}";
-    alert("addStonetoCart data string = " + dataString);
+    
     console.log("addStonetoCart data string = " + dataString);
     $.ajax({
         url: '../../../AjaxWebServiceGetDiamonds.asmx/addStonetoCart',
@@ -73,7 +73,7 @@ function addStoneToCart(stoneName) {
         dataType: "json",
         contentType: 'application/json; charset = utf-8',
         success: function (results) {
-            alert("addStonetoCart results:" + results.d);
+            
             if (results.d == "true")
             { swal(this.name, "is added to cart !", "success"); }
             else { alert("failed to add cart") }
