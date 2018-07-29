@@ -9,6 +9,9 @@ using System.Web;
 /// </summary>
 public class StoneView
 {
+ 
+
+
     #region variables
     protected string name;
     protected double weight;

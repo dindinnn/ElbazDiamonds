@@ -28,11 +28,11 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentBody" runat="Server">
     <!-- Title Page -->
 
-    <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(../../../img/heading-pages-02.jpg);">
-        <h2 class="l-text2 t-center">Women
+    <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(../../img/photo-1476965805533-564543966f62.jpg) ">
+        <h2 class="l-text2 t-center">Search Diamond
         </h2>
         <p class="m-text13 t-center">
-            New Arrivals Women Collection 2018
+            Elbaz Diamond L.TD
         </p>
     </section>
 
@@ -108,7 +108,7 @@
                                     <span class="input-background">
                                         <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="0" class="input-round-border input-left s-text4 size5 " min="0.1" max="10" id="weightMin" name="weightMin" type="number" runat="server">
                                         <span style="margin-left: 8px; margin-right: 8px">to</span>
-                                        <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="10" class="input-round-border input-right s-text4 size5" min="0.1" max="10" id="weightTMax" name="weightTMax" type="number" runat="server">
+                                        <input style="width: 40%; text-align: center; color: black" data-toggle="tooltip" title="10" class="input-round-border input-right s-text4 size5" min="0.1" max="10" id="weightMax" name="weightMax" type="number" runat="server">
                                     </span>
                                     &nbsp;
                                 </div>

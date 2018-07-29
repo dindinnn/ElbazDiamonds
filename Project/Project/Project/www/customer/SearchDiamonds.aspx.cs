@@ -22,22 +22,19 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
         {
             Response.Redirect("Login.aspx");
         }
+
         Button_find_diamonds.Attributes["Class"] = "flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-5";
-        addproducts();
+        //addproducts();
 
-        //if (!IsPostBack)
-        //{
-        //    addproducts();
-        //   
-        //}
+        if (!IsPostBack)
+        {
+            addproducts();
 
+        }
 
-    }
-
-    public void btnClick(object sender, EventArgs e)
-    {
 
     }
+
     protected void addproducts()
     {
 
@@ -95,7 +92,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
             New_stone_span_Price.InnerHtml = "Stone Weight: " + item.Weight.ToString();
 
-            a_stone.InnerHtml =  item.Name.ToString();
+            a_stone.InnerHtml = item.Name.ToString();
 
             BTN_AddToCart.InnerHtml = "Add To Cart";
 
@@ -188,11 +185,26 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
         else
         {
-            
+
+            StoneFilter sf = new StoneFilter();
+            sf.List_shapes = list_shapes;
+            sf.List_clarity = list_clarity;
+            sf.List_color = list_color;
+            sf.List_cut = list_cut;
+            sf.List_polish = list_polish;
+            sf.List_symmetry = list_symmetry;
+            sf.List_lab = list_lab;
+            sf.WeightMin = weightMin;
+            sf.WeightMax = weightMax;
+            sf.PriceMax = priceMax;
+            sf.PriceMin = priceMin;
 
 
-            foreach (var item in list_stones)//ריצה על כל אבן
+            list_stones = sf.generateSQLQuery();
+
+            foreach (var item in list_stones)
             {
+
                 #region create  HtmlGenericControl
 
                 HtmlGenericControl New_stone_div1 = new HtmlGenericControl("div");
@@ -205,6 +217,8 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
                 HtmlGenericControl New_stone_div6_Price = new HtmlGenericControl("div");
                 HtmlGenericControl New_stone_span_Price = new HtmlGenericControl("span");
                 HtmlGenericControl a_stone = new HtmlGenericControl("a");
+                HtmlGenericControl p_details = new HtmlGenericControl("p");
+
 
                 #endregion
 
@@ -219,21 +233,35 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
                 a_stone.Attributes["Class"] = "block2-name dis-block s-text3 p-b-5";
                 New_stone_div6_Price.Attributes["Class"] = "block2-txt p-t-20";
                 New_stone_span_Price.Attributes["Class"] = "block2-price m-text6 p-r-5";
+                p_details.Attributes["Class"] = "gildina block3-txt";
+                img_for_stone.Attributes["Class"] = "stoneToSelect";
 
                 #endregion
 
-                img_for_stone.Src = "/" + item.ImagePath;
+                //BTN_AddToCart.ServerClick += new EventHandler(btnClick);
+
+                //BTN_AddToCart.Attributes.Add("onclick", "alert('test'); return true; ");
+
+                //BTN_AddToCart.Attributes.Add("runat", "server");
+
+                BTN_AddToCart.Attributes.Add("name", item.Name);
+
+                p_details.InnerHtml = "Color: " + item.Color + " Clarity: " + item.Clarity + " Cut: " + item.Cut + " Polish: " + item.Polish + " Symmetry: " + item.Symmetry + " Price % :" + item.Sale_P_Discount;
+
+                img_for_stone.Src = "../../" + item.ImagePath;
 
                 img_for_stone.Alt = "IMG-PRODUCT";
 
                 New_stone_span_Price.InnerHtml = "Stone Weight: " + item.Weight.ToString();
 
-                a_stone.InnerHtml = "Stone Name: " + item.Name.ToString();
+                a_stone.InnerHtml = item.Name.ToString();
 
-                BTN_AddToCart.InnerHtml = "Add to Cart";
+                BTN_AddToCart.InnerHtml = "Add To Cart";
 
+                BTN_AddToCart.Attributes.Add("style", "margin-bottom: 10px;");
 
                 New_stone_div5_AddToCart.Controls.Add(BTN_AddToCart);
+                New_stone_div5_AddToCart.Controls.Add(p_details);
                 New_stone_div4.Controls.Add(New_stone_div5_AddToCart);
                 New_stone_div3.Controls.Add(img_for_stone);
                 New_stone_div3.Controls.Add(New_stone_div4);
@@ -243,19 +271,13 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
                 New_stone_div2.Controls.Add(New_stone_div6_Price);
                 New_stone_div1.Controls.Add(New_stone_div2);
                 stones_div_table.Controls.Add(New_stone_div1);
-
-
             }
+
         }
-
-
-
-
     }
 
     protected void Button_find_diamonds_Click(object sender, EventArgs e)
     {
-       
 
         List<string> list_shapes = new List<string>();
         List<string> list_clarity = new List<string>();
@@ -290,24 +312,24 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
         #region Weight
 
         HtmlInputGenericControl weightMin_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
-        if (weightMin_control.Value == "".ToString()) { weightMin_control.Value = "0.1"; }
+        //if (weightMin_control.Value == "".ToString()) { weightMin_control.Value = "0.1"; }
         weightMin = Convert.ToDouble(weightMin_control.Value);
 
-        HtmlInputGenericControl weightMax_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
-        if (weightMax_control.Value == "".ToString()) { weightMin_control.Value = "0.1"; }
-        weightMax = Convert.ToDouble(weightMin_control.Value);
+        HtmlInputGenericControl weightMax_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMax");
+        //if (weightMax_control.Value == "".ToString()) { weightMin_control.Value = "0.1"; }
+        weightMax = Convert.ToDouble(weightMax_control.Value);
 
         #endregion
 
         #region Price       
 
-        HtmlInputGenericControl priceMin_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
-        if (priceMin_control.Value == "".ToString()) { weightMin_control.Value = "1"; }
-        priceMin = Convert.ToDouble(weightMin_control.Value.ToString());
+        HtmlInputGenericControl priceMin_control = (HtmlInputGenericControl)WEIGHT.FindControl("priceMin");
+        //if (priceMin_control.Value == "".ToString()) { weightMin_control.Value = "1"; }
+        priceMin = Convert.ToDouble(priceMin_control.Value.ToString());
 
-        HtmlInputGenericControl priceMax_control = (HtmlInputGenericControl)WEIGHT.FindControl("weightMin");
-        if (priceMax_control.Value == "".ToString()) { weightMin_control.Value = "1"; }
-        priceMax = Convert.ToDouble(weightMin_control.Value.ToString());
+        HtmlInputGenericControl PriceMax_control = (HtmlInputGenericControl)WEIGHT.FindControl("PriceMax");
+       // if (priceMax_control.Value == "".ToString()) { weightMin_control.Value = "1"; }
+        priceMax = Convert.ToDouble(PriceMax_control.Value.ToString());
 
         #endregion
 
@@ -409,14 +431,9 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
          name);
 
 
-
-
-
     }
 
-    //protected void Check_Value_Price(object sender, EventArgs e)
-    //{
-    //}
+
 
 
 
