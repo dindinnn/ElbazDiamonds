@@ -28,8 +28,19 @@
         }
 
         img {
-            max-height: 150px;
-            max-width: 200px;
+            max-height: 300px;
+            max-width: 600px;
+        }
+
+        body {
+            background-image: url(../../img/5a0c7693fc7e93db098b4567.jpg);
+            background-size: cover;
+        }
+
+        h1 {
+            font-family: "Pristina", sans-serif;
+            font-size: 200px;
+            color: white;
         }
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server">

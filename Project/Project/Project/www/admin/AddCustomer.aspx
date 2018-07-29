@@ -5,10 +5,16 @@
     <style type="text/css">
         .auto-style5 {
             height: 22px;
+
         }
+
+        td {
+            color: white; 
+        }
+
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server" >
     <h1>Add a new customer into the system </h1>
     <table style="width: 90%;">
 

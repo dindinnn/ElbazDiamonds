@@ -10,6 +10,11 @@
         .auto-style4 {
             height: 25px;
         }
+        td {
+            color: white; 
+        }
+
+      
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
