@@ -9,7 +9,7 @@
         }
 
         td {
-            color: white; 
+            color: black; 
         }
 
     </style>
@@ -20,7 +20,7 @@
 
         <%-- USERNAME --%>
         <tr>
-            <td>Username:</td>
+            <td style="color:white">Username:</td>
             <td>
                 <asp:TextBox ID="Username_TB" runat="server"></asp:TextBox>
             </td>
@@ -32,7 +32,7 @@
 
         <%-- PASSWORD --%>
         <tr>
-            <td>Password:</td>
+            <td style="color:white">Password:</td>
             <td>
                 <asp:TextBox ID="Password_TB" runat="server"></asp:TextBox>
             </td>
@@ -44,7 +44,7 @@
 
         <%-- FIRST NAME --%>
         <tr>
-            <td>First Name:</td>
+            <td style="color:white">First Name:</td>
             <td>
                 <asp:TextBox ID="First_Name_TB" runat="server"></asp:TextBox>
             </td>
@@ -56,7 +56,7 @@
 
         <%-- LAST NAME --%>
         <tr>
-            <td>Last Name:</td>
+            <td style="color:white">Last Name:</td>
             <td>
                 <asp:TextBox ID="Last_Name_TB" runat="server"></asp:TextBox>
             </td>
@@ -67,7 +67,7 @@
         </tr>
         <%-- COMPANY NAME --%>
         <tr>
-            <td>Company Name:</td>
+            <td style="color:white">Company Name:</td>
             <td>
                 <asp:TextBox ID="Company_Name_TB" runat="server"></asp:TextBox>
             </td>
@@ -79,7 +79,7 @@
 
         <%-- PHONE --%>
         <tr>
-            <td>Phone:</td>
+            <td style="color:white">Phone:</td>
             <td>
                 <asp:TextBox ID="Phone_TB" runat="server"></asp:TextBox>
             </td>
@@ -91,7 +91,7 @@
 
         <%-- COUNTRY --%>
         <tr>
-            <td>Country:</td>
+            <td style="color:white">Country:</td>
             <td>
                 <asp:TextBox ID="Country_TB" runat="server"></asp:TextBox>
             </td>
@@ -103,7 +103,7 @@
 
         <%-- CITY --%>
         <tr>
-            <td>City:</td>
+            <td style="color:white">City:</td>
             <td>
                 <asp:TextBox ID="City_TB" runat="server"></asp:TextBox>
             </td>
@@ -115,7 +115,7 @@
 
         <%-- ADDRESS --%>
         <tr>
-            <td>Address:</td>
+            <td style="color:white">Address:</td>
             <td>
                 <asp:TextBox ID="Address_TB" runat="server"></asp:TextBox>
             </td>
@@ -127,7 +127,7 @@
 
         <%-- EMAIL --%>
         <tr>
-            <td class="auto-style5">Email:</td>
+            <td class="auto-style5" style="color:white">Email:</td>
             <td class="auto-style5">
                 <asp:TextBox ID="Email_TB" runat="server" type="email"></asp:TextBox>
             </td>
@@ -137,8 +137,8 @@
             </td>
         </tr>
         <tr>
-            <td>
-                <asp:Button ID="btnAddCustomer" runat="server" Text="add customer" OnClick="btnAddCustomer_Click" ValidationGroup="addCustomerValidationGroup"/>
+            <td >
+                <asp:Button ID="btnAddCustomer" runat="server" Text="add customer" OnClick="btnAddCustomer_Click" ValidationGroup="addCustomerValidationGroup" />
             </td>
         </tr>
         <tr>
@@ -149,17 +149,53 @@
     </table>
     <div>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="User_Id" DataSourceID="SqlDataSource1">
-        <Columns>
-            <asp:BoundField DataField="User_Name" HeaderText="Customer Name" SortExpression="User_Name" />
-            <asp:BoundField DataField="User_Password" HeaderText="Customer Password" SortExpression="User_Password" />
-            <asp:BoundField DataField="First_Name" HeaderText="First Name" SortExpression="First_Name" />
-            <asp:BoundField DataField="Last_Name" HeaderText="Last Name" SortExpression="Last_Name" />
-            <asp:BoundField DataField="Company_Name" HeaderText="Company Name" SortExpression="Company_Name" />
-            <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
-            <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
-            <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
-            <asp:BoundField DataField="Country" HeaderText="Country" SortExpression="Country" />
-            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+        <Columns >
+            <asp:BoundField DataField="User_Name" HeaderText="Customer Name" SortExpression="User_Name" >
+            <ControlStyle ForeColor="White" />
+            <FooterStyle ForeColor="White" />
+            <HeaderStyle ForeColor="White" />
+            <ItemStyle ForeColor="White" />
+            </asp:BoundField>
+            <asp:BoundField DataField="User_Password" HeaderText="Customer Password" SortExpression="User_Password" >
+            <ControlStyle ForeColor="White" />
+            <HeaderStyle ForeColor="White" />
+            <ItemStyle ForeColor="White" />
+            </asp:BoundField>
+            <asp:BoundField DataField="First_Name" HeaderText="First Name" SortExpression="First_Name" >
+            <ControlStyle ForeColor="White" />
+            <FooterStyle ForeColor="White" />
+            <HeaderStyle ForeColor="White" />
+            <ItemStyle ForeColor="White" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Last_Name" HeaderText="Last Name" SortExpression="Last_Name" >
+            <HeaderStyle ForeColor="White" />
+            <ItemStyle ForeColor="White" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Company_Name" HeaderText="Company Name" SortExpression="Company_Name" >
+            <HeaderStyle ForeColor="White" />
+            <ItemStyle ForeColor="White" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" >
+            <HeaderStyle ForeColor="White" />
+            <ItemStyle ForeColor="White" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" >
+            <HeaderStyle ForeColor="White" />
+            <ItemStyle ForeColor="White" />
+            </asp:BoundField>
+            <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" >
+            <HeaderStyle ForeColor="White" />
+            <ItemStyle ForeColor="White" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Country" HeaderText="Country" SortExpression="Country" >
+            <HeaderStyle ForeColor="White" />
+            <ItemStyle ForeColor="White" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" >
+            <FooterStyle ForeColor="White" />
+            <HeaderStyle ForeColor="White" />
+            <ItemStyle ForeColor="White" />
+            </asp:BoundField>
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DBConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>

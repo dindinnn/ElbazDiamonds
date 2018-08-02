@@ -12,12 +12,12 @@
 			<div class="container-table-cart pos-relative">
 				<div class="wrap-table-shopping-cart bgwhite" id="divfortable" runat="server">
 					
-						<tr class="table-head">
+						<%--<tr class="table-head">
 							<th class="column-1"></th>
 							<th class="column-2">Product</th>
 							<th class="column-3">Price</th>
 							<th class="column-5">Total</th>
-						</tr>
+						</tr>--%>
 
 					<%--	<tr class="table-row">
 							<td class="column-1">

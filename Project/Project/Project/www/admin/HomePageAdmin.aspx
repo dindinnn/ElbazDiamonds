@@ -12,7 +12,7 @@
     
     <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDataSource_statisticsForDay"  >
         <Series>
-            <asp:Series Name="Series1" XValueMember="hour" YValueMembers="Count_Purchases" ChartType="SplineArea">
+            <asp:Series Name="Series1" XValueMember="hour" YValueMembers="Count_Purchases">
             </asp:Series>
         </Series>
         <ChartAreas>

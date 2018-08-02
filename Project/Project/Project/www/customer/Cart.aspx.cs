@@ -18,9 +18,7 @@ public partial class www_customer_Cert : System.Web.UI.Page
     {
         if (Session["User_Customer"] == null)
         {
-           
-
-            Response.Redirect("Login.aspx");
+            Response.Redirect("LoginCustomer.aspx");
         }
 
         customerUser = (Customer)Session["User_Customer"];

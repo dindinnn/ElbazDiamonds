@@ -11,7 +11,7 @@
             height: 25px;
         }
         td {
-            color: white; 
+            color: black; 
         }
 
       
@@ -23,7 +23,7 @@
 
         <%-- NAME --%>
         <tr>
-            <td>Name:</td>
+            <td style="color:white">Name:</td>
             <td>
                 <input id="Name_TB" type="text" runat="server" causesvalidation="False" />
             </td>
@@ -36,7 +36,7 @@
 
         <%-- WEIGHT --%>
         <tr>
-            <td>Weight:</td>
+            <td style="color:white">Weight:</td>
             <td>
                 <input id="Weight_TB" type="number" runat="server" step="any"/>
             </td>
@@ -52,7 +52,7 @@
 
         <%-- SHAPE --%>
         <tr>
-            <td>Shape:</td>
+            <td style="color:white">Shape:</td>
             <td>
                 <asp:DropDownList ID="DDL_Shape_Id" runat="server" DataSourceID="SqlDataSource1"
                     DataTextField="Shape_Name" DataValueField="ID" AppendDataBoundItems="True">
@@ -74,7 +74,7 @@
 
         <%-- COLOR --%>
         <tr>
-            <td>Color:</td>
+            <td style="color:white">Color:</td>
             <td>
                 <asp:DropDownList ID="DDL_Color_Id" runat="server" DataSourceID="SqlDataSource2"
                     DataTextField="Color_Name" DataValueField="ID" AppendDataBoundItems="True">
@@ -96,7 +96,7 @@
 
         <%-- CLARITY --%>
         <tr>
-            <td>Clarity:</td>
+            <td style="color:white">Clarity:</td>
             <td>
                 <asp:DropDownList ID="DDL_Clarity_Id" runat="server" DataSourceID="SqlDataSource3"
                     DataTextField="Clarity_Name" DataValueField="ID" AppendDataBoundItems="True">
@@ -118,7 +118,7 @@
 
         <%-- M1 --%>
         <tr>
-            <td>M1:</td>
+            <td style="color:white">M1:</td>
             <td>
                 <input id="M1_TB" type="number" runat="server" step="any"/>
             </td>
@@ -130,7 +130,7 @@
 
         <%-- M2 --%>
         <tr>
-            <td>M2:</td>
+            <td style="color:white">M2:</td>
             <td>
                 <input id="M2_TB" type="number" runat="server" step="any"/>
             </td>
@@ -142,7 +142,7 @@
 
         <%-- M3 --%>
         <tr>
-            <td>M3:</td>
+            <td style="color:white">M3:</td>
             <td>
                 <input id="M3_TB" type="number" runat="server" step="any"/>
             </td>
@@ -154,7 +154,7 @@
 
         <%-- DEPTH --%>
         <tr>
-            <td>Depth:</td>
+            <td style="color:white">Depth:</td>
             <td>
                 <input id="Depth_TB" type="number" runat="server" step="any"/>
             </td>
@@ -166,7 +166,7 @@
 
         <%-- TABLE --%>
         <tr>
-            <td>Table:</td>
+            <td style="color:white">Table:</td>
             <td>
                 <input id="Table_TB" type="number" runat="server" step="any"/>
             </td>
@@ -178,7 +178,7 @@
 
         <%-- GIRDLE --%>
         <tr>
-            <td>Girdle:</td>
+            <td style="color:white">Girdle:</td>
             <td>
                 <asp:DropDownList ID="DDL_Girdle_Id" runat="server" DataSourceID="SqlDataSource4"
                     DataTextField="Girdle_Name" DataValueField="ID" AppendDataBoundItems="True">
@@ -196,7 +196,7 @@
 
         <%-- CULET --%>
         <tr>
-            <td>Culet:</td>
+            <td style="color:white">Culet:</td>
             <td>
                 <asp:DropDownList ID="DDL_Culet_Id" runat="server" DataSourceID="SqlDataSource5"
                     DataTextField="Culet_Name" DataValueField="ID" AppendDataBoundItems="True">
@@ -214,7 +214,7 @@
 
         <%-- CUT --%>
         <tr>
-            <td>Cut:</td>
+            <td style="color:white">Cut:</td>
             <td>
                 <asp:DropDownList ID="DDL_Cut_Id" runat="server" DataSourceID="SqlDataSource6"
                     DataTextField="Cut_Name" DataValueField="ID" AppendDataBoundItems="True">
@@ -232,7 +232,7 @@
 
         <%-- POLISH --%>
         <tr>
-            <td>Polish:</td>
+            <td style="color:white">Polish:</td>
             <td>
                 <asp:DropDownList ID="DDL_Polish_Id" runat="server" DataSourceID="SqlDataSource7"
                     DataTextField="Polish_Name" DataValueField="ID" AppendDataBoundItems="True">
@@ -250,7 +250,7 @@
 
         <%-- SYMMETRY --%>
         <tr>
-            <td>Symmetry:</td>
+            <td style="color:white">Symmetry:</td>
             <td>
                 <asp:DropDownList ID="DDL_Symmetry_Id" runat="server" DataSourceID="SqlDataSource8"
                     DataTextField="Symmetry_Name" DataValueField="ID" AppendDataBoundItems="True">
@@ -268,7 +268,7 @@
 
         <%-- FLUORESCENCE --%>
         <tr>
-            <td>Fluorescence:</td>
+            <td style="color:white">Fluorescence:</td>
             <td>
                 <asp:DropDownList ID="DDL_Fluorescence_Id" runat="server" DataSourceID="SqlDataSource9"
                     DataTextField="Fluorescence_Name" DataValueField="ID" AppendDataBoundItems="True">
@@ -286,7 +286,7 @@
 
         <%-- LAB --%>
         <tr>
-            <td>Lab:</td>
+            <td style="color:white">Lab:</td>
             <td>
                 <asp:DropDownList ID="DDL_Lab_Id" runat="server" DataSourceID="SqlDataSource10"
                     DataTextField="Lab_Name" DataValueField="ID" AppendDataBoundItems="True">
@@ -304,7 +304,7 @@
 
         <%-- CERTIFICATE --%>
         <tr>
-            <td>Certificate:</td>
+            <td style="color:white">Certificate:</td>
             <td>
                 <input id="Certificate_TB" type="number" runat="server" />
             </td>
@@ -316,7 +316,7 @@
 
         <%-- COST P DISCOUNT --%>
         <tr>
-            <td>Cost P Discount:</td>
+            <td style="color:white">Cost P Discount:</td>
             <td>
                 <input id="Cost_P_Discount_TB" type="number" runat="server" step="any"/>
             </td>
@@ -328,7 +328,7 @@
 
         <%-- COST PRICE $ CT --%>
         <tr>
-            <td>Cost Price $ CT:</td>
+            <td style="color:white">Cost Price $ CT:</td>
             <td>
                 <input id="Cost_Price_CT_TB" type="number" runat="server" step="any"/>
             </td>
@@ -340,7 +340,7 @@
 
         <%-- T COST PRICE --%>
         <tr>
-            <td>T. Cost Price:</td>
+            <td style="color:white">T. Cost Price:</td>
             <td>
                 <input id="T_Cost_Price_TB" type="number" runat="server" step="any"/>
             </td>
@@ -352,7 +352,7 @@
 
         <%-- SALE P DISCOUNT --%>
         <tr>
-            <td>Sale P Discount:</td>
+            <td style="color:white">Sale P Discount:</td>
             <td>
                 <input id="Sale_P_Discount_TB" type="number" runat="server" step="any"/>
             </td>
@@ -364,7 +364,7 @@
 
         <%-- SALE PRICE $ CT --%>
         <tr>
-            <td>Sale Price $ /CT:</td>
+            <td style="color:white">Sale Price $ /CT:</td>
             <td>
                 <input id="Sale_Price_CT_TB" type="number" runat="server" step="any"/>
             </td>
@@ -376,7 +376,7 @@
 
         <%-- T SALE PRICE --%>
         <tr>
-            <td>T. Sale Price:</td>
+            <td style="color:white">T. Sale Price:</td>
             <td>
                 <input id="T_Sale_Price_TB" type="number" runat="server" step="any"/>
             </td>
@@ -388,7 +388,7 @@
 
         <%-- IMAGE --%>
         <tr>
-            <td>Image:</td>
+            <td style="color:white">Image:</td>
             <td>
                 <asp:FileUpload ID="File_Load" runat="server" />
             </td>
@@ -400,7 +400,7 @@
 
         <%-- STATUS --%>
         <tr>
-            <td>Status:</td>
+            <td style="color:white">Status:</td>
             <td>
                 <asp:RadioButtonList ID="Status_RBL" runat="server" DataSourceID="SqlDataSource11"
                     DataTextField="Status_Name" DataValueField="ID">
@@ -426,7 +426,7 @@
         <%-- USERNAME --%>
         <table>
             <tr>
-                <td>username:</td>
+                <td style="color:white">username:</td>
                 <td>
                     <input id="username_TB" type="text" runat="server" />
                 </td>
@@ -437,7 +437,7 @@
             </tr>
             <%-- PASSWORD --%>
             <tr>
-                <td>password:</td>
+                <td style="color:white">password:</td>
                 <td>
                     <input id="password_TB" type="password" runat="server" />
                 </td>

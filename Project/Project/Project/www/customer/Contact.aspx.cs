@@ -9,6 +9,13 @@ public partial class www_customer_Contact : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["User_Customer"] == null)
+        {
+            Response.Redirect("LoginCustomer.aspx");
+        }
     }
+
+  
+
+
 }

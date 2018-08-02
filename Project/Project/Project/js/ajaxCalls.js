@@ -76,11 +76,11 @@ function addStoneToCart(stoneName) {
             
             if (results.d == "true")
             { swal(this.name, "is added to cart !", "success"); }
-            else { alert("failed to add cart") }
+            //else { alert("failed to add cart") }
             
         },
         error: function (request, error) {
-            alert('Network error has occurred please try again!');
+            //alert('Network error has occurred please try again!');
         }
     });
 }

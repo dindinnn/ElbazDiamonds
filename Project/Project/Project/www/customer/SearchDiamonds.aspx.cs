@@ -20,7 +20,7 @@ public partial class www_SearchDiamonds : System.Web.UI.Page
 
         if (Session["User_Customer"] == null)
         {
-            Response.Redirect("Login.aspx");
+            Response.Redirect("LoginCustomer.aspx");
         }
 
         Button_find_diamonds.Attributes["Class"] = "flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-5";
